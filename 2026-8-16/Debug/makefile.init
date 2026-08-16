@@ -1,0 +1,10 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+arg1 = $(1)
+export PATH=D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\toolchains\llvm_arm\ATfE-21.1.1-Windows-x86_64\bin\;D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\eclipse\plugins\com.renesas.ide.exttools.busybox.win32.x86_64_1.3.6.v20230615-0931\bin\;D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\eclipse\plugins\com.renesas.ide.exttools.gnumake.win32.x86_64_4.3.1.v20240909-0854\mk\;D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\eclipse\plugins\com.renesas.ide.exttools.scandep.win32.x86_64_1.0.0.v20230915-1033\sd\;D:/Renesas/RA/e2studio_v2025-12_fsp_v6.4.0/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916/jre/bin/server;D:/Renesas/RA/e2studio_v2025-12_fsp_v6.4.0/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916/jre/bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Program Files\Bandizip\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\dotnet\;D:\Program Files\Git\cmd;C:\Users\Rainy\AppData\Local\Microsoft\WindowsApps;D:\Users\Rainy\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Rainy\AppData\Local\Python\bin;C:\Users\Rainy\AppData\Local\GitHubDesktop\bin;C:\Users\Rainy\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg.Essentials_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-essentials_build\bin;C:\Users\Rainy\AppData\Local\PowerToys\DSCModules\;D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\eclipse
+export TCINSTALL=D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\toolchains\llvm_arm\ATfE-21.1.1-Windows-x86_64$(call arg1,\)
+export CWD=$(CURDIR)
+export TC_VERSION=21.1.1
+export PWD=$(CURDIR)

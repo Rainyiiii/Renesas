@@ -1,0 +1,22 @@
+[name]
+model_name=ho
+
+[train-configure]
+epochs=100
+steps=70,90
+batch_size=16
+subdivisions=1
+learning_rate=0.001
+
+[model-configure]
+pre_weights=None
+classes=4
+width=352
+height=352
+anchor_num=3
+anchors=37.63,57.74, 58.83,72.29, 68.67,38.51, 77.35,125.38, 103.39,51.94, 113.09,136.10
+
+[data-configure]
+train=./datasets/ho/train.txt
+val=./datasets/ho/val.txt
+names=./data/ho.names

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DrpAiTranslatorProjectSettings>
+    <ProjectSettingsInfo>
+        <framework>1</framework>
+        <modelfile>Yolo-FastestV2/weights/2026-08-12.onnx</modelfile>
+        <output_directory>conversion_results</output_directory>
+        <product>RA8P1 (CPU+Ethos-U55)</product>
+        <tool_name>RUHMI Framework AI Compiler</tool_name>
+        <docker_image_name>Unused property</docker_image_name>
+        <PytorchSettingInfo>
+            <configuration_type>false</configuration_type>
+            <configuration_file/>
+            <modelname/>
+            <model_weight/>
+            <input_layer_shape/>
+        </PytorchSettingInfo>
+    </ProjectSettingsInfo>
+    <DRP-AI_TVMSettingInfo>
+        <TransSettingInfo>
+            <item key="C:\Users\Rainy\Downloads\ho-ra8p1-192-uint8-raw-op11.onnx">conversion_results/conversion_tool_settings/ho-ra8p1-192-uint8-raw-op11.onnx_trans_config.json</item>
+            <item key="Yolo-FastestV2/weights/2026-08-11.onnx">conversion_results/conversion_tool_settings/2026-08-11.onnx_trans_config.json</item>
+            <item key="C:\Users\Rainy\Downloads\ho-ra8p1-192-float-raw-op11.onnx">conversion_results/conversion_tool_settings/ho-ra8p1-192-float-raw-op11.onnx_trans_config.json</item>
+            <item key="Yolo-FastestV2/weights/my-first-project-v1-ra8p1-192-raw-op11-sim.onnx">conversion_results/conversion_tool_settings/my-first-project-v1-ra8p1-192-raw-op11-sim.onnx_trans_config.json</item>
+            <item key="Yolo-FastestV2/weights/2026-08-12.onnx">conversion_results/conversion_tool_settings/2026-08-12.onnx_trans_config.json</item>
+            <item key="C:\Users\Rainy\Downloads\ho-ruhmi-raw-op11-sim.onnx">conversion_results/conversion_tool_settings/ho-ruhmi-raw-op11-sim.onnx_trans_config.json</item>
+            <item key="C:\Users\Rainy\Downloads\ho-ruhmi-raw-op11-norank5-sim.onnx">conversion_results/conversion_tool_settings/ho-ruhmi-raw-op11-norank5-sim.onnx_trans_config.json</item>
+        </TransSettingInfo>
+        <QuantizationSetting>
+            <item key="C:\Users\Rainy\Downloads\ho-ra8p1-192-uint8-raw-op11.onnx">conversion_results/conversion_tool_settings/ho-ra8p1-192-uint8-raw-op11.onnx_quant_config.json</item>
+            <item key="Yolo-FastestV2/weights/2026-08-11.onnx">conversion_results/conversion_tool_settings/2026-08-11.onnx_quant_config.json</item>
+            <item key="C:\Users\Rainy\Downloads\ho-ra8p1-192-float-raw-op11.onnx">conversion_results/conversion_tool_settings/ho-ra8p1-192-float-raw-op11.onnx_quant_config.json</item>
+            <item key="Yolo-FastestV2/weights/my-first-project-v1-ra8p1-192-raw-op11-sim.onnx">conversion_results/conversion_tool_settings/my-first-project-v1-ra8p1-192-raw-op11-sim.onnx_quant_config.json</item>
+            <item key="Yolo-FastestV2/weights/2026-08-12.onnx">conversion_results/conversion_tool_settings/2026-08-12.onnx_quant_config.json</item>
+            <item key="C:\Users\Rainy\Downloads\ho-ruhmi-raw-op11-sim.onnx">conversion_results/conversion_tool_settings/ho-ruhmi-raw-op11-sim.onnx_quant_config.json</item>
+            <item key="C:\Users\Rainy\Downloads\ho-ruhmi-raw-op11-norank5-sim.onnx">conversion_results/conversion_tool_settings/ho-ruhmi-raw-op11-norank5-sim.onnx_quant_config.json</item>
+        </QuantizationSetting>
+    </DRP-AI_TVMSettingInfo>
+</DrpAiTranslatorProjectSettings>

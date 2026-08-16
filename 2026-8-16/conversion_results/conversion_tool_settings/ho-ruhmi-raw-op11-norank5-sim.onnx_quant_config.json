@@ -1,0 +1,25 @@
+{
+  "skip_preprocess": "False",
+  "num_calibrate_samples": -1,
+  "calibrate_method": "MinMax",
+  "percentile_value": 99.999,
+  "quant_options": "",
+  "drp_compiler_version": "100",
+  "cpu_data_type": "float16",
+  "nodes": [
+    {
+      "name": "images",
+      "calibrate_sample_dir": "",
+      "mean": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "std": [
+        250.0,
+        250.0,
+        250.0
+      ]
+    }
+  ]
+}
