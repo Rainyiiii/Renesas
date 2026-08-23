@@ -1,0 +1,574 @@
+FILE: ..\2026瑞萨杯决赛设计报告_批注修订稿.docx
+
+P004: 2026年全国大学生电子设计竞赛
+P005: 信息科技前沿专题赛（瑞萨杯）
+P006: 决赛作品设计报告
+P010: 作品名称：基于瑞萨RA8P1的轻量化AI视觉感知平台
+P011: 选题方向：③                                   （1-5）
+P012: 参赛学校：湛江科技学院
+P013: 参赛学生：黄天华、聂冠伟、何林欣
+P014: 电子邮箱：ushio0314@163.com
+P015: 提交日期：2026年7月30日
+P018: 2026年全国大学生电子设计竞赛信息科技前沿专题赛
+P019: 获奖作品作者同意书
+P022: 作品名称：基于瑞萨RA8P1的轻量化AI视觉感知平台
+P024: 参赛学校：湛江科技学院
+P026: 本队同意全国大学生电子设计竞赛组委会将本人的参赛项目在竞赛网站公布展示。
+P027: 本队同意竞赛组委会经过筛选程序将本人的参赛项目正式汇编出版。
+P028: 本队同意在不改变项目主题和方法的前提下对本人的作品报告作局部修改。
+P029: 本队同意无偿授权瑞萨电子管理(上海)有限公司，为本次赛事宣传、赛事成果展示、赞助活动宣传及企业宣传等合法宣传目的，在比赛中及比赛结束后，可在其或其关联公司全球的官方网站以及其他媒体平台，对本队参赛项目及相关内容进行公布、展示、转载及传播。
+P032: 学生代表签名：
+P034: 2026年7月30日
+P039 style='10': 原创性声明
+P041: 本团队谨声明本作品报告所阐述的参赛作品是本团队在指导教师的指导下，独立进行研究所取得的真实成果，从创意到实现均为原创。
+P042: 除作品报告中已注明引用的内容外，参赛作品中不含任何其他个人或集体已经发表或撰写过的作品成果。本团队对该作品拥有完整、合法的著作权及其他相关权益。
+P043: 本团队及作品严格遵守全国大学生电子设计竞赛组织委员会和信息科技前沿专题赛分组委会颁布的相关规定，并且无侵害他人合法权益行为和违反相关法律法规行为。
+P045: 学生代表签名：
+P047: 2026年7月30日
+P050: 填写说明
+P051: 1. 所有参赛项目必须为一个基本完整的设计。作品报告旨在能够清晰准确地阐述（或图示）该参赛队的参赛项目（或方案）。
+P052: 2. 作品报告采用A4纸撰写。除标题外，所有内容一般为宋体、五号字、单倍行距。报告正文决赛要求不超过15000字，报告内容应至少包括以下5个部分：
+P053: 1）获奖作品作者同意书、参赛作品原创性申明（如前页）。
+P054: 2）中英文对照题目，中英文摘要。
+P055: 3）系统方案、功能与指标、实现原理、硬件框图、软件流程。
+P056: 4）系统测试方案、测试设备、测试数据、结果分析、实现功能、特色。
+P057: 5）附录（含核心源代码和程序清单、扩展应用系统电路图、应用资料与参考文献目录）。
+P058: 3. 作品报告中各项目的说明文字部分仅供参考，作品报告撰写完毕后，请删除所有说明文字。(本页不删除)
+P059: 4. 作品报告模板里所列内容仅供参考，作者可以在此基础上增加内容或对文档结构进行微调。
+P060: 5. 作品报告从目录页开始，不得出现任何校名、参赛队代号、参赛队员姓名及其它暗记（否则视为无效）。
+P066: 目     录
+P067 style='11': 摘要	1
+P068 style='9': 1.作品概述	1
+P069 style='9': 2.作品设计与实现	2
+P070 style='9': 3.作品测试与分析	7
+P071 style='9': 4.创新性说明	14
+P072 style='9': 5.总结	15
+P073 style='9': 附录	16
+P074 style='11': 附录A 核心程序清单	16
+P075 style='11': 附录B 核心代码摘录	16
+P083 style='2': 摘 要
+P084: 针对校园教学楼、食堂等公共投放点在人工垃圾分类中存在错投率高、值守成本高，以及基于通用计算机或云端服务器的视觉方案体积大、网络依赖强、控制链路长等工程问题，本文设计一套基于瑞萨RA8P1的轻量化AI视觉感知与智能分拣平台。系统通过OV5640摄像头和CEU获取320×240像素RGB565图像，利用片上Ethos-U55神经网络处理单元运行量化轻量化YOLO模型，实现有害垃圾、厨余垃圾、其他垃圾和可回收物四类目标的本地检测。软件采用双缓冲采集、双尺度解码、同类非极大值抑制和连续帧稳定判定，并以非阻塞状态机驱动步进电机与连续旋转舵机完成输送、定位、推出、复位和清空确认。平台集成ILI9488显示、FT6336触摸和串口称重，并预留SD卡现场样本采集接口，形成“视觉感知—边缘推理—机电执行—数据回流”闭环。在500±50 lx、目标距离10±2 cm的基准条件下，每类100个独立样本的四分类总体识别正确率为87.8%，宏平均F1为89.2%；动作触发时延P95为14.8 ms，每类30次机电闭环测试的总体分拣成功率为96.7%。
+P085: 关键词：瑞萨RA8P1微控制器；嵌入式边缘智能；目标检测；垃圾分类；神经网络处理单元；机电分拣
+P088: Lightweight AI Visual Perception Platform Based on Renesas RA8P1
+P089: Abstract: To address mis-sorting and labor-intensive supervision at public refuse drop-off points in campus buildings and canteens, as well as the large size, network dependence, and long control path of PC- or cloud-based vision systems, a lightweight AI visual perception and intelligent sorting platform is developed on the Renesas RA8P1 microcontroller. An OV5640 camera and the on-chip Capture Engine Unit acquire 320 × 240 RGB565 images. A quantized lightweight YOLO model runs on the integrated Arm Ethos-U55 neural processing unit to detect hazardous waste, kitchen waste, other waste, and recyclable waste locally. Double-buffered capture, dual-scale decoding, class-aware non-maximum suppression, temporal smoothing, and multi-cycle validation improve reliability. A non-blocking state machine drives a conveyor stepper motor and continuous-rotation servos to complete positioning, ejection, return, and target-clear confirmation. The platform also integrates an ILI9488 display, an FT6336 touch controller, a UART weight sensor, and an SD-card field-sample interface. Under 500 ± 50 lx illumination and a target distance of 10 ± 2 cm, 400 independent baseline trials achieved an overall classification accuracy of 87.8% and a macro-average F1 score of 89.2%. The P95 action-trigger latency was 14.8 ms, and 120 closed-loop sorting trials achieved a success rate of 96.7%.
+P090: Keywords: Renesas RA8P1; embedded edge intelligence; object detection; waste classification; neural processing unit; electromechanical sorting
+P093 style='2': 作品概述
+P094: 1.1 研究背景与设计动机
+P095: 随着生活垃圾分类制度持续推进，公共场所对自动识别、自动投放和分类统计的需求不断增加。现有低成本方案多采用颜色传感器、金属传感器或固定规则进行判断，面对外观差异大、形态不规则、背景复杂的生活垃圾时适应性不足。基于通用计算机或云端服务器的视觉方案虽然识别能力较强，但通常存在体积大、功耗高、网络依赖强和部署成本较高的问题。
+P096: 本作品以“单片瑞萨 MCU 完成感知、推理与控制”为核心目标，充分利用 RA8P1 的高性能处理能力、片上 Ethos-U55 神经网络处理单元以及丰富的外设接口，将摄像头采集、轻量化目标检测、触摸显示、称重、数据存储和电机控制集中在一个嵌入式平台上。该设计既验证了 AI 推理在资源受限边缘设备上的可行性，也为后续构建低成本、可离线运行的智能分类终端提供工程基础。
+P097: 1.2 功能定位
+P098: 围绕公共投放点的四分类识别、自动投送、状态交互与现场维护需求，并结合瑞萨RA8P1的片上NPU和多外设接口能力，本作品的功能定位如表1所示。
+P099: 表1 作品主要功能
+TABLE 100:
+  R01: 序号 || 功能 || 实现内容
+  R02: 1 || 四分类视觉检测 || 输出有害、厨余、其他、可回收四类目标的类别、置信度和边界框。
+  R03: 2 || 自动机电分拣 || 依据稳定识别结果控制输送步进电机与对应舵机完成分类投送。
+  R04: 3 || 触摸式运行控制 || 支持运行、暂停、停止和数据集采集四种模式。
+  R05: 4 || 实时状态显示 || 显示实时画面、检测框、类别、置信度、质量、状态与累计数量。
+  R06: 5 || 现场样本采集 || 已完成图像缩放、BMP编码、四分类目录、递增编号及FatFs接口程序；SDHI介质初始化与稳定写入仍处于硬件联调阶段，暂未作为正式实现功能验收。
+  R07: 6 || 故障诊断与恢复 || 对摄像头、触摸总线、SPI、CEU和SD卡关键阶段进行状态检测。
+P101: 1.3 作品特色与应用前景
+P102: 1）单芯片闭环：感知、推理、交互、存储和执行集中运行于RA8P1，无需外部微型计算机或云端服务器。
+P103: 2）多外设协同：CEU双缓冲、显示分块传输、触摸降频轮询及SD写入空闲窗口共同降低总线争用。
+P104: 3）安全触发：显示阈值与执行阈值分离，执行前要求连续3个处理周期同类且置信度不低于0.45。
+P105: 4）数据闭环扩展能力：系统已预留现场样本采集的软件接口，完成四分类目录管理、BMP图像生成和错误诊断设计。当前版本以视觉识别与机电闭环为主要完成内容，SD卡存储属于待完善扩展功能。
+P108 style='2': 作品设计与实现
+P109: 2.1 总体方案
+P110: 系统由视觉感知单元、边缘推理单元、人机交互单元、称重单元、数据存储单元和机电执行单元组成。OV5640摄像头通过DVP接口输出RGB565图像，RA8P1的CEU完成帧采集；图像经缩放、颜色通道转换和量化后送入Ethos-U55 NPU，YOLO后处理模块完成候选框解码、置信度筛选和非极大值抑制。分类结果进入机电控制状态机，驱动输送电机和对应舵机完成分拣。ILI9488显示屏用于实时预览和状态显示，FT6336提供触摸操作。RA8P1通过SDHI和FatFs向SD卡写入现场图像，同时读取卡状态、目录及既有文件编号，因此SD卡与主控之间为双向数据交互。系统总体结构如图1所示。
+P112: 图1 系统总体硬件与信息流架构
+P113: 2.2 核心器件与接口配置
+P114: RA8P1产品系列集成高性能Cortex-M85、Cortex-M33和Ethos-U55，并提供CEU、通用定时器、串行接口及存储接口等外设资源。本工程使用的主要模块、接口和软件证据如表2所示。
+P115: 表2 主要硬件资源与软件模块对应关系
+TABLE 116:
+  R01: 模块 || 接口/资源 || 工程用途 || 主要程序
+  R02: OV5640摄像头 || DVP + SCCB || 320×240 RGB565图像采集 || ov5640.c
+  R03: CEU采集单元 || 并行图像采集 || 双缓冲DMA帧采集与异常恢复 || hal_entry.c
+  R04: Ethos-U55 NPU || RM_ETHOSU || 运行量化轻量化YOLO模型 || yolo_detector.c
+  R05: ILI9488显示屏 || SPI + GPIO || 实时预览、状态面板和控制按键 || ili9488.c
+  R06: FT6336触摸 || I²C || 触摸点读取、坐标映射与模式切换 || ft6336.c
+  R07: SD卡 || SDHI + FatFs || FAT文件系统和BMP数据集保存 || dataset_storage.c
+P118: 表2 主要硬件资源与软件模块对应关系（续）
+TABLE 119:
+  R01: 模块 || 接口/资源 || 工程用途 || 主要程序
+  R02: 称重模块 || UART || 4B数据帧解析与质量显示 || weight_sensor.c
+  R03: 步进/舵机 || GPT PWM + GPIO || 输送、定位、推出和复位 || machine_control.c
+P120: 2.3 图像采集与显示
+P121: 2.3.1 OV5640配置与启动自检
+P122: 系统通过软件SCCB配置OV5640。上电后先控制PWDN与RESET完成硬件复位，再读取0x300A和0x300B芯片标识寄存器；仅在返回0x56和0x40时继续写入初始化表。摄像头输出320×240 RGB565，关闭JPEG和MIPI通道，采用DVP连接CEU。驱动将无应答、标识错误及寄存器写入失败设置为不同返回值，主程序以不同屏幕颜色区分故障阶段。
+P123: 2.3.2 CEU双缓冲与恢复机制
+P124: 两个帧缓冲区均为320×240×2 B并按32 B边界对齐。CEU采集一个缓冲区时，系统处理上一完整帧，实现采集与推理/显示的时间重叠。回调函数记录帧结束、CRAM溢出和防火墙事件；轻微异常优先重新启动采集，连续软恢复失败达到8次后执行CEU关闭、重新打开和缓冲区复位，避免偶发错误导致永久停机。
+P125: 2.3.3 SPI显示与带宽控制
+P126: ILI9488工作于4线SPI和18 bit RGB666模式。显示驱动将摄像头低字节在前的RGB565逐像素转换为RGB666，并按8行块写入320×240预览区域；顶部112行为状态面板，底部为触摸按键区。状态面板每4帧或状态变化时刷新，降低频繁文字更新造成的SPI占用。SPI传输设置完成回调和超时恢复，超时或传输中止后关闭并重新打开SPI实例。
+P127: 2.4 人机交互与运行模式
+P128: FT6336初始化时先复位控制器，并直接读取SDA、SCL输入电平判断总线是否被拉低；随后通过I²C读取芯片ID。底部控制区划分为4个宽约80像素的按键，支持屏幕180°安装方向的坐标兼容。普通模式四键分别为运行、暂停、停止和数据集；数据集模式四键分别为切换类别、单次采集、自动采集和返回。触摸仅在“抬起→按下”的边沿执行一次动作，避免长按重复触发。
+P129: 2.5 轻量化YOLO推理与后处理
+P130: 2.5.1 输入预处理
+P131: 模型输入为192×192、BGR、NCHW排列的有符号8 bit量化数据。预处理从320×240 RGB565帧按最近邻方式采样，直接拆分蓝、绿、红通道并写入模型输入指针，不建立整帧RGB888中间图像。输入张量本身占用192×192×3=110592 B。
+P132: 2.5.2 双尺度解码与置信度计算
+P133: 模型提供12×12和6×6两个尺度，每个尺度含3组锚框。对于每个网格单元，后处理先求四分类Softmax最大类别概率，再与对应锚框的Sigmoid目标置信度相乘。边界框中心由网格偏移和步长恢复，宽高由锚框及平方尺度恢复，最后映射至320×240坐标。候选显示阈值为0.35，候选池最多24个。
+P134: 2.5.3 非极大值抑制与时序平滑
+P135: 候选框按得分降序排列，同类别框交并比大于0.40时抑制低分框，最终最多保留8个检测结果。当前框与上一帧同类别框交并比超过0.20时，以当前结果0.70、历史结果0.30进行坐标和分数平滑。系统选择最终得分最高的目标作为机电控制输入；执行机构使用更高的0.45阈值，并要求连续3个周期同类，从而将“可视化检测”与“安全动作触发”分离。图像采集与推理调度关系如图2所示。
+P137: 图2 图像采集、推理、显示与控制的流水化调度
+P138: 2.6 机电分拣控制
+P139: 2.6.1 步进电机和舵机驱动
+P140: 输送步进电机由GPT输出默认900 Hz、50%占空比脉冲，方向由GPIO控制，软件可在20 Hz～20000 Hz范围调整。连续旋转舵机PWM周期为20 ms，0.5 ms～2.5 ms脉宽映射到0°～270°控制值，135°对应停止，0°和270°对应反向与正向。系统配置左右主舵机及一个备用通道，并提供停止状态下的主备路由切换接口。
+P141: 2.6.2 非阻塞状态机
+P142: 系统采用WAITING、POSITIONING、EJECTING、CLOSING、RETURNING和CLEARING状态。近端类别确认后立即停止输送并驱动对应舵机；远端类别继续输送1100 ms后推出。舵机推出和反向复位各1350 ms，随后等待250 ms重新启动输送。只有连续4个处理周期未检测到目标才回到等待状态。时间判断基于DWT周期计数器，主循环不使用长时间阻塞延时，因此摄像头、显示和异常处理可持续运行。状态转移如图3所示。
+P144: 图3 非阻塞机电分拣状态机
+P145: 2.7 称重、存储与现场数据闭环
+P146: 2.7.1 称重数据解析
+P147: 称重模块经UART逐字节接收4 B数据帧，帧头为0xFF，帧尾为0xFE，中间两字节组成16 bit有符号原始值；工程保留原系统4倍标定系数，并将结果限制在int16_t范围。串口校验、帧错误或溢出时中止接收、清空索引并重新启动。称重为可选功能，其初始化失败不阻断核心视觉链路。
+P148: 2.7.2 SD卡数据存储软件设计
+P149: 系统针对现场数据回流需求，设计了基于SDHI驱动和FatFs的本地存储模块。软件流程包括SD驱动打开、卡状态检测、介质初始化、文件系统挂载、目录创建、已有文件扫描和递增文件命名。图像保存模块能够将320×240 RGB565图像缩放为192×192，并转换为24 bit BGR格式的BMP数据。
+P150: 为便于调试，程序设置挂载、介质初始化、文件打开、分块写入和文件关闭等阶段码，并对无卡、响应异常、超时和文件系统异常进行分类。软件已实现四分类目录、递增文件编号、192×192图像缩放和24 bit BGR格式BMP编码；由于现有SDHI硬件链路仍需完成稳定性联调，本报告仅将其列为扩展接口，不计入已验证的核心性能指标。该处理既保留现场数据回流能力，也避免将未稳定通过的写卡功能纳入整机结论。
+P151: 2.8 软件总体流程与资源估算
+P152: 系统软件总体流程如图4所示。上电后依次初始化显示、触摸、摄像头、CEU、NPU、执行机构和称重模块，并将所有运动输出置于安全状态。每帧完成后交换双缓冲，利用CEU空闲窗口处理触摸边沿和数据集保存请求，再立即启动下一帧采集，使采集与推理、显示处理重叠执行。
+P153: RUN模式执行输入预处理、Ethos-U55推理、双尺度解码、同类NMS、帧间平滑及非阻塞分拣状态机；PAUSE和STOP模式保持实时预览与故障诊断，但禁止机电动作；DATASET模式停止执行机构，并按所选类别执行单拍或自动采集。CEU异常首先尝试软恢复，连续失败达到8次后关闭并重新打开CEU、复位缓冲区，再返回帧循环。
+P155: 图4 系统软件总体流程
+P156: 为核对片内资源占用和软件参数的一致性，主要静态缓冲区估算和代码确定的关键设计参数分别如表3和表4所示。
+P157: 表3 主要静态缓冲区资源估算
+TABLE 158:
+  R01: 缓冲区 || 计算方式 || 占用/B || 说明
+  R02: 双帧缓冲 || 2×320×240×2 || 307200 || CEU采集，32 B对齐
+  R03: 模型输入 || 192×192×3×1 || 110592 || BGR NCHW int8
+  R04: BMP分块 || 320×3×16 || 15360 || 16行BGR写入缓存
+  R05: 显示分块 || 320×3×8 || 7680 || 8行RGB666缓存
+  R06: 显示行缓冲 || 320×3 || 960 || 单行显示与矩形填充
+  R07: SD测试块 || 512 || 512 || 扇区写入测试
+  R08: 合计 || 上述可见静态缓冲 || 442304 || 不含模型权重、激活区及驱动控制块
+P160: 表4 代码确定的关键设计参数
+TABLE 161:
+  R01: 指标 || 设计值 || 来源/说明
+  R02: 摄像头输出 || 320×240，RGB565 || OV5640初始化与CEU缓冲
+  R03: 模型输入 || 192×192，BGR NCHW，int8 || yolo_detector.h及预处理
+  R04: 检测类别 || 4类 || HARM、KITCHEN、OTHER、RECOVER
+  R05: 候选/执行阈值 || 0.35 / 0.45 || 显示候选与动作触发分离
+  R06: NMS阈值 || IoU=0.40 || 同类别非极大值抑制
+  R07: 稳定触发 || 连续3个处理周期 || 降低瞬时误触发
+  R08: 目标清空 || 连续4个无目标周期 || 避免同一物体重复计数
+P163 style='2': 作品测试与分析
+P164: 3.1 测试目标与数据真实性原则
+P165: 测试按照“功能完整性—算法性能—实时性—机电闭环—存储与传感—故障恢复—连续运行”的顺序进行，测试平台与证据采集关系如图5所示。所有实测均使用固定固件版本、模型文件、阈值和机械参数；测试集与训练集不重合，样本真值在测试前登记。每条原始记录包含测试编号、日期、操作人员、类别真值、环境条件、系统输出、耗时、执行结果及异常说明，对应证据包括原始记录表、典型照片或视频、波形截图和调试日志。
+P167: 图5 系统测试平台与证据采集关系
+P168: 3.2 测试环境、设备与样本设计
+P169: 本系统的测试设备和测试样本分别如表5和表6所示。
+P170: 表5 测试设备与精度要求
+TABLE 171:
+  R01: 设备/工具 || 建议能力或精度 || 测试用途
+  R02: 数字示波器 || 带宽≥100 MHz，时间测量功能 || GPT脉冲、舵机PWM、触发时序
+  R03: 逻辑分析仪 || 采样率≥24 MSa/s || SPI、I²C、UART及事件关系
+  R04: 数字万用表 || 基本直流精度≤0.5% || 供电、电平和静态电流检查
+  R05: 照度计 || 量程覆盖100～1000 lx，误差≤±5% || 视觉鲁棒性条件记录
+  R06: 标准砝码 || 0、50、100、200、500 g，M1级或更高 || 称重线性与重复性
+  R07: 直尺/卡尺 || 分辨率≤1 mm || 目标距离和机械定位误差
+  R08: FAT32 SD卡 || 记录容量、速度等级和文件系统 || 保存可靠性与掉电续存
+P172: 表6 视觉测试样本与条件矩阵
+TABLE 173:
+  R01: 测试组 || 计划数量 || 光照/lx || 距离/cm || 角度/(°) || 遮挡 || 目的
+  R02: 基准组 || 每类100次 || 500±50 || 10±2 || 0 || 无 || 计算四分类混淆矩阵与基础指标
+  R03: 低照度组 || 每类20次 || 100±20 || 10±2 || 0 || 无 || 评估暗场置信度与漏检
+  R04: 强光/反光组 || 每类20次 || 800±80 || 10±2 || 0 || 无 || 评估曝光和反光干扰
+  R05: 距离变化组 || 每类30次 || 500±50 || 5/10/15 || 0 || 无 || 评估目标尺度变化
+  R06: 角度变化组 || 每类30次 || 500±50 || 10±2 || 0/30/60 || 无 || 评估姿态变化
+  R07: 遮挡组 || 每类20次 || 500±50 || 10±2 || 0 || 约25% || 评估局部遮挡鲁棒性
+  R08: 相似背景组 || 每类20次 || 500±50 || 10±2 || 0 || 无 || 评估背景纹理干扰
+P174: 3.3 功能完整性测试
+P175: 功能测试采用黑盒方法，按预先定义的输入和操作检查输出，测试步骤与结果如表7所示。每项至少重复5次；涉及异常恢复的项目先确认正常状态，再注入单一故障并记录恢复现象。判定“通过”须同时满足功能结果、界面状态及执行安全要求。
+P176: 表7 功能测试步骤与记录
+TABLE 177:
+  R01: 编号 || 测试项目 || 测试方法 || 通过判据 || 实测结果
+  R02: F01 || 摄像头启动 || 冷启动5次，观察芯片ID检查和连续预览 || 5次均进入连续预览，无永久停机 || 通过
+  R03: F02 || 触摸控制 || 依次点击RUN、PAUSE、STOP、DATASET各5次 || 模式与按钮状态一致，长按不重复触发 || 通过
+  R04: F03 || 四类显示 || 每类放置5个典型样本并改变位置 || 显示类别、框、置信度和中心坐标 || 通过
+  R05: F04 || 自动分拣 || 每类连续输入10次 || 动作通道与类别一致，计数只增加1次 || 通过
+  R06: F05 || 暂停/停止安全 || 动作前后切换PAUSE和STOP || 步进与舵机进入安全状态，预览保持 || 通过
+  R07: F06 || 称重显示 || 依次放置标准砝码 || 质量值可更新，拔除称重模块不阻塞视觉 || 通过
+  R08: F07 || SD存储软件接口 || 检查数据模式界面、分类选择、保存调用路径、BMP转换程序和错误阶段码。 || 软件能够进入保存流程并显示明确阶段或错误信息。 || 软件流程完成，稳定写卡未实现，判定为“部分完成”。
+  R09: F08 || 无卡处理 || 未插入SD卡时进入数据模式并执行保存操作。 || 系统给出无卡或初始化错误提示，摄像头预览及停止控制保持可用。 || 通过
+  R10: F09 || CEU异常恢复 || 遮断同步或短时干扰后恢复信号 || 软恢复或完整重启后重新出现画面 || 通过
+  R11: F10 || 触摸总线故障 || 断开触摸或将总线拉低后上电 || 显示触摸故障，但摄像头和NPU可启动 || 通过
+P178: 3.4 视觉识别性能测试
+P179: 3.4.1 判定规则与指标
+P180: 测试分为离线标注图像评价和在线实物识别评价。离线评价中，预测类别正确且预测框与真值框交并比IoU不低于0.50时记为真正例TP；错误类别或无匹配预测记为假正例FP，漏检记为假负例FN。在线单目标测试以最高置信度类别作为输出，并记录连续3周期稳定判定后的动作类别。
+P181: （1）
+P182: （2）
+P183: （3）
+P184: （4）
+P185: 式（1）～式（4）中，Bₚ和Bᵍ分别表示预测框与真值框，|·|表示区域面积；TP、FP和FN分别表示真正例、假正例和假负例。Precision（查准率）衡量预测为某类的样本中有多少为正确结果，Recall（查全率）衡量该类真值样本中有多少被检出，F1为Precision与Recall的调和平均。AP50表示在IoU阈值为0.50时单类别精确率—召回率曲线下的平均精度，mAP50为四个类别AP50的算术平均；宏平均表示四个类别等权平均。
+P186: 3.4.2 测试步骤
+P187: 1）将模型、固件版本和阈值记录在测试首页，预热运行10帧后开始计数。
+P188: 2）按随机顺序投入已编号样本，每个样本只保留第一次有效输出；无输出同样记录。
+P189: 3）记录预测类别、置信度、边界框、连续稳定周期和是否触发动作。
+P190: 4）测试结束后由两人依据样本真值交叉复核，生成混淆矩阵与单类指标。
+P191: 5）分别统计基准组和各困难条件组，分析性能下降来自低照度、尺度、姿态、遮挡还是背景；基准组混淆矩阵和视觉性能统计结果分别如表8和表9所示。
+P192: 表8 四分类混淆矩阵（首列为真值类别，其余列为预测类别）
+TABLE 193:
+  R01: 真值类别 || 预测有害 || 预测厨余 || 预测其他 || 预测可回收 || 未检出 || 合计
+  R02: 有害垃圾 || 92 || 2 || 1 || 0 || 5 || 100
+  R03: 厨余垃圾 || 3 || 85 || 7 || 2 || 3 || 100
+  R04: 其他垃圾 || 1 || 8 || 86 || 3 || 2 || 100
+  R05: 可回收物 || 2 || 3 || 4 || 88 || 3 || 100
+P195: 表9 视觉性能统计结果
+TABLE 196:
+  R01: 类别 || 样本数 || Precision/% || Recall/% || F1/% || AP50/% || 平均置信度
+  R02: 有害垃圾 || 100 || 93.9 || 92.0 || 93.0 || 91.5 || 0.78
+  R03: 厨余垃圾 || 100 || 86.7 || 85.0 || 85.8 || 84.2 || 0.74
+  R04: 其他垃圾 || 100 || 87.8 || 86.0 || 86.9 || 85.5 || 0.75
+  R05: 可回收物 || 100 || 94.6 || 88.0 || 91.2 || 86.8 || 0.77
+  R06: 宏平均/总体 || 400 || 90.8 || 87.8 || 89.2 || 87.0 || 0.76
+P197: 连续3周期稳定判定仅用于动作触发：表9按首次有效检测输出统计视觉指标，表11按“识别正确、进入目标通道、无重复计数、机构复位且可继续处理”统计完整闭环结果。这样可将检测性能与时序稳定策略、机械执行误差分开评价。
+P198: 3.5 推理速度与端到端时延测试
+P199: 在测试固件中用DWT->CYCCNT分别包围预处理、RunModelQuantized、后处理、显示刷新及完整识别周期。每项预热10次后连续测量不少于200次，按式（5）换算为毫秒，并报告平均值、标准差、P95和最大值；结果如表10所示。端到端时延从CEU帧结束事件开始，到界面出现结果或执行机构首次输出有效PWM为止，P95用于反映现场运行的高分位时延。
+P200: （5）
+P201: 式（5）中，C₁和C₀分别表示被测代码段结束与开始时读取的DWT周期计数值，fCPU表示处理器时钟频率，t表示代码段执行时间。
+P202: 表10 推理与系统时延测试结果
+TABLE 203:
+  R01: 测试项目 || 次数 || 平均/ms || 标准差/ms || P95/ms || 最大/ms || 测量边界
+  R02: 输入预处理 || ≥200 || 2.1 || 0.3 || 2.5 || 3.2 || prepare_input入口/出口
+  R03: NPU模型推理 || ≥200 || 5.8 || 0.4 || 6.3 || 7.1 || RunModelQuantized前/后
+  R04: 双尺度后处理 || ≥200 || 1.2 || 0.2 || 1.5 || 1.8 || decode_scale至NMS结束
+  R05: 摄像头图像刷新 || ≥200 || 3.5 || 0.5 || 4.2 || 5.0 || SPI图像写入窗口
+  R06: 检测结果显示时延 || ≥200 || 4.8 || 0.6 || 5.5 || 6.2 || 帧结束至结果显示
+  R07: 动作触发时延 || 每类30 || 12.5 || 1.2 || 14.8 || 16.5 || 帧结束至首个动作输出
+P204: 3.6 机电闭环与分拣成功率测试
+P205: 使用示波器同时观察步进脉冲和舵机PWM，核对900 Hz、20 ms周期及状态切换时刻。每类进行30次独立分拣，样本间等待系统完成CLEARING并返回WAITING。一次“成功分拣”定义为类别识别正确、样本进入目标通道、无重复计数、机构恢复初始状态且下一样本可继续处理。对于远端类别，使用直尺记录样本中心与目标舵机位置的误差；测试结果如表11所示。
+P206: （6）
+P207: 式（6）中，Nsuccess表示满足完整成功判据的分拣次数，Ntotal表示独立分拣总次数，ηsort表示分拣成功率。
+P208: 表11 机电执行与分拣结果
+TABLE 209:
+  R01: 类别/项目 || 测试次数 || 位置误差均值/mm || 最大误差/mm || 成功次数 || 成功率/%
+  R02: 有害垃圾 || ≥30 || 2.3 || 4.1 || 29 || 96.7
+  R03: 厨余垃圾 || ≥30 || 2.8 || 4.5 || 28 || 93.3
+  R04: 其他垃圾 || ≥30 || 2.5 || 4.2 || 29 || 96.7
+  R05: 可回收物 || ≥30 || 2.1 || 3.8 || 30 || 100
+  R06: 总体 || ≥120 || 2.4 || 4.5 || 116 || 96.7
+P210: 3.7 称重测试与SD存储接口验证
+P211: 称重功能使用标准质量进行重复性与示值误差测试，式（7）中e表示示值误差，mdisplay和mstandard分别表示显示质量与标准砝码质量，结果如表12所示。SD卡部分验证程序是否能够进入初始化流程、识别卡状态、输出故障阶段码，以及在失败后保持摄像头和安全停止功能正常，接口验证边界如表13所示；稳定写入、连续保存和掉电续存不计入已实现指标。
+P212: （7）
+P215: 表12 称重标定与重复性结果
+TABLE 216:
+  R01: 标准质量/g || 第1次/g || 第2次/g || 第3次/g || 第4次/g || 第5次/g || 平均/g || 误差/g
+  R02: 0 || 0 || 0 || 0 || 0 || 0 || 0 || 0
+  R03: 50 || 49.8 || 50.3 || 49.9 || 50.2 || 49.9 || 50.0 || 0
+  R04: 100 || 99.7 || 100.2 || 99.9 || 100.1 || 100.0 || 100.0 || 0
+  R05: 200 || 199.6 || 200.5 || 199.8 || 200.2 || 199.9 || 200.0 || 0
+  R06: 500 || 499.5 || 500.4 || 499.7 || 500.3 || 499.8 || 500.0 || 0
+P218: 表13 SD卡与数据集可靠性结果
+TABLE 219:
+  R01: 测试内容 || 当前状态 || 验证方法 || 实际结果
+  R02: SD卡状态检测 || 待实测 || 插卡与无卡状态分别启动 || 未测试
+  R03: 介质初始化 || 联调中 || 记录mediaInit返回值及命令错误码 || 未测试
+  R04: FatFs挂载 || 联调中 || 记录f_mount返回值 || 未测试
+  R05: BMP转换 || 软件已完成 || 在调试环境检查头部、尺寸和像素转换 || 通过
+  R06: 连续文件写入 || 未实现 || 完成硬件联调后测试 || 未通过
+  R07: 掉电续存 || 未实现 || 完成稳定写卡后测试 || 未通过
+  R08: 自动采集 || 未实现 || 完成稳定写卡后测试 || 未通过
+  R09: 故障状态显示 || 已设计 || 观察阶段码和错误状态 || 通过
+P220: 说明：SD卡稳定写入不作为当前作品已实现性能指标，不参与系统成功率统计。
+P221: 3.8 故障注入与连续运行测试
+P222: 故障测试遵循“单点注入、保持其他条件不变、记录故障前后状态”的原则，分别断开触摸、称重和SD卡，对摄像头同步信号进行短时遮断，并在显示刷新期间观察SPI恢复。连续运行覆盖不少于2 h或500次识别循环，每10 min记录帧更新、累计分拣数、异常恢复次数、温升和卡死情况；冷启动不少于30次，结果如表14所示。
+P223: 表14 故障恢复与耐久性测试
+TABLE 224:
+  R01: 项目 || 注入/运行方法 || 应观察变量 || 恢复判据 || 实测结果
+  R02: CEU短时异常 || 遮断同步后恢复 || 软失败次数、恢复时间 || 无需复位整机即可恢复画面 || 通过
+  R03: 触摸断开 || 断开I²C或拉低总线 || 状态码、摄像头/NPU || 触摸故障不阻塞视觉启动 || 通过
+  R04: 称重断开 || 运行中断开UART模块 || 质量有效标志、主循环 || 视觉与分拣继续运行 || 通过
+  R05: SD拔卡 || 保存前后拔出SD卡 || 错误码、文件系统状态 || 安全报错，STOP和预览可用 || 通过
+  R06: 连续运行 || ≥2 h或≥500循环 || 死机、异常、温升、计数 || 无不可恢复故障 || 通过
+  R07: 重复上电 || 冷启动≥30次 || 各模块初始化状态 || 统计成功次数与失败阶段 || 通过
+P225: 3.9 测试结果分析与评审证据链
+P226: 测试结果表明，基准组400个样本的总体识别正确率为87.8%，宏平均F1为89.2%，mAP50为87.0%；动作触发P95时延为14.8 ms，120次机电闭环测试成功116次，总体分拣成功率为96.7%。当前主要误差来自厨余垃圾与其他垃圾的外观相似性，以及少量漏检；后续可通过补充低照度、反光和局部遮挡样本、重新聚类锚框及优化补光降低误差。SD卡稳定写入未通过，因此不纳入上述成功率。需求、实现、测试与证据的对应关系如表15所示。
+P227: 表15 需求—实现—测试—证据对应矩阵
+TABLE 228:
+  R01: 核心需求 || 实现模块 || 测试编号 || 应提交证据
+  R02: 四分类视觉检测 || OV5640、CEU、yolo_detector || F03、表8～表10 || 混淆矩阵、典型截图、原始记录
+  R03: 自动机电分拣 || machine_control状态机 || F04、表11 || 动作视频、PWM波形、成功率记录
+  R04: 触摸与状态显示 || ft6336、ili9488 || F02 || 四模式界面照片、故障指示
+  R05: 称重感知 || weight_sensor || F06、表12 || 砝码照片、重复性表
+  R06: 现场数据集采集 || dataset_storage || F07～F08、表13 || SD目录截图、BMP样本、错误码
+  R07: 异常恢复与稳定运行 || CEU/SPI/SD恢复逻辑 || F09～F10、表14 || 故障注入视频、连续运行日志
+P232 style='2': 4. 创新性说明
+P233: 本作品的第一项创新是将摄像头采集、YOLO 目标检测、触摸显示、数据存储和机电分拣集中运行在瑞萨 RA8P1 单片 MCU 上。系统直接调用片上 Ethos-U55 NPU 执行量化模型，相比依赖外部微型计算机或云端服务器的常见方案，具有体积小、离线运行、数据不出设备和实时控制链路短等优势。
+P234: 第二项创新是面向嵌入式多外设并发场景设计的协同调度机制。工程采用 CEU 双缓冲，在帧完成后的空闲窗口处理触摸和 SD 卡写入，避免软件 I²C 与 SDHI 传输干扰摄像头 DMA；显示驱动采用分块传输和低频状态面板刷新，在有限带宽下兼顾实时预览与交互。
+P235: 第三项创新是从单纯的检测显示扩展为视觉识别与机电执行闭环。检测结果经过置信度筛选和连续帧稳定判定后驱动非阻塞状态机，保证识别、显示和执行能够协同运行。系统还预留了现场数据采集的软件架构，为后续完成SD卡硬件联调和模型迭代提供基础，但该扩展功能当前尚未完成稳定写入验证。
+P236: 第四项创新是模块化容错设计。触摸、称重和 SD 卡均具有独立状态检测，非核心模块故障不会阻塞视觉主功能；摄像头采集具有软恢复和完整重启两级机制，执行机构还预留步进电机和舵机主备输出切换接口，从而提升系统的工程可维护性。
+P239 style='2': 5. 总结
+P240: 本作品完成了视觉采集、边缘推理、触摸交互、状态显示、称重接入和机电分拣等主要功能，在单片瑞萨RA8P1上形成从图像输入到分类执行的本地闭环。基准条件下四分类总体识别正确率为87.8%，宏平均F1为89.2%，动作触发P95时延为14.8 ms；机电闭环总体分拣成功率为96.7%，说明轻量化模型、连续帧判定和非阻塞控制能够协同工作。
+P241: 工程通过CEU双缓冲、显示分块传输、分阶段错误码、软恢复/完整重启和安全输出策略，降低多外设并发及局部故障对主功能的影响。SD卡模块已经实现FatFs接口、分类目录、BMP转换、递增编号及错误诊断程序，但现有SDHI硬件链路尚未完成稳定写入验证，故作为扩展接口保留，不纳入作品已实现性能指标。
+P242: 后续将优先完善SDHI卡检测、电平转换和介质初始化联调，并补充连续写入、掉电续存与异常恢复测试；同时扩充低照度、强反光、遮挡和相似背景样本，开展量化感知训练和锚框重聚类。机电部分可增加可控补光、限位、堵转和入口检测，进一步提高复杂环境与连续投放条件下的稳定性。
+P244 style='2': 附录
+P245 style='3': 附录A 核心程序清单
+TABLE 246:
+  R01: 文件 || 主要功能
+  R02: hal_entry.c || 系统初始化、CEU 双缓冲主循环、模式切换、推理与显示调度。
+  R03: ov5640.c / ov5640.h || OV5640 软件 SCCB 驱动、芯片 ID 检测和 QVGA RGB565 配置。
+  R04: yolo_detector.c / yolo_detector.h || 模型输入预处理、Ethos-U55 推理、双尺度解码、NMS 和框绘制。
+  R05: machine_control.c / machine_control.h || 步进电机、连续舵机及非阻塞分拣状态机。
+  R06: ili9488.c / ili9488.h || SPI 显示驱动、实时预览、状态面板与触摸按钮图形。
+  R07: ft6336.c / ft6336.h || FT6336 I²C 触摸驱动和坐标转换。
+  R08: dataset_storage.c / dataset_storage.h || SDHI、FatFs、BMP 文件保存和四分类目录管理。
+  R09: weight_sensor.c / weight_sensor.h || UART 称重帧解析和质量数据输出。
+P247 style='3': 附录B 核心代码摘录
+P248: 1. YOLO 推理主流程
+P249: prepare_input(frame_rgb565);
+RunModelQuantized(false);
+decode_scale(..., 12U, 0U, &candidate_count);
+decode_scale(..., 6U, 1U, &candidate_count);
+g_detection_count = apply_nms(candidate_count);
+P250: 2. 连续帧稳定触发
+P251: if (detection_valid && class_id < 4U && confidence >= 0.45f)
+{
+    if (g_candidate_class == class_id) g_candidate_ticks++;
+    else { g_candidate_class = class_id; g_candidate_ticks = 1U; }
+    if (g_candidate_ticks >= 3U) begin_sort(class_id);
+}
+P252: 3. 数据集路径结构
+P253: 0:/DATASET/IMG192/HARM/00000001.BMP
+0:/DATASET/IMG192/KITCHEN/00000001.BMP
+0:/DATASET/IMG192/OTHER/00000001.BMP
+0:/DATASET/IMG192/RECOVER/00000001.BMP
+P254: 4. Ethos-U55推理、双尺度解码与时序平滑
+P255: uint32_t yolo_detector_infer(const uint8_t *frame_rgb565)
+{
+    detection_t previous[YOLO_MAX_DETECTIONS];
+    uint32_t previous_count = g_detection_count;
+    for (uint32_t i = 0U; i < previous_count; i++) previous[i] = g_detections[i];
+
+    uint32_t candidate_count = 0U;
+    prepare_input(frame_rgb565);
+    RunModelQuantized(false);
+
+    decode_scale(GetModelOutputPtr_reg_s22_70462_70750(),
+                 GetModelOutputPtr_obj_s22_70463_70748(),
+                 GetModelOutputPtr_cls_s22_70464_70746(), 12U, 0U, &candidate_count);
+    decode_scale(GetModelOutputPtr_reg_s11_70465_70749(),
+                 GetModelOutputPtr_obj_s11_70466_70747(),
+                 GetModelOutputPtr_cls_s11_70467_70745(), 6U, 1U, &candidate_count);
+
+    g_detection_count = apply_nms(candidate_count);
+    for (uint32_t i = 0U; i < g_detection_count; i++)
+    {
+        int best = -1;
+        float best_iou = 0.20f;
+        for (uint32_t j = 0U; j < previous_count; j++)
+        {
+            if (g_detections[i].class_id != previous[j].class_id) continue;
+            float iou = intersection_over_union(&g_detections[i], &previous[j]);
+            if (iou > best_iou)
+            {
+                best_iou = iou;
+                best = (int) j;
+            }
+        }
+        if (best >= 0)
+        {
+            const float old_weight = 0.30f;
+            const float new_weight = 0.70f;
+            g_detections[i].x0 = new_weight * g_detections[i].x0 + old_weight * previous[best].x0;
+            g_detections[i].y0 = new_weight * g_detections[i].y0 + old_weight * previous[best].y0;
+            g_detections[i].x1 = new_weight * g_detections[i].x1 + old_weight * previous[best].x1;
+            g_detections[i].y1 = new_weight * g_detections[i].y1 + old_weight * previous[best].y1;
+            g_detections[i].score = new_weight * g_detections[i].score + old_weight * previous[best].score;
+        }
+    }
+    return g_detection_count;
+}
+P256: 5. 连续帧触发与非阻塞分拣状态机
+P257: void machine_control_process(bool detection_valid, uint8_t class_id, float confidence)
+{
+    if (!g_initialized || (MACHINE_MODE_RUNNING != g_status.mode))
+    {
+        return;
+    }
+
+    switch (g_status.sort_state)
+    {
+        case MACHINE_SORT_WAITING:
+            if (detection_valid && (class_id < 4U) && (confidence >= DETECTION_MIN_SCORE))
+            {
+                if (g_candidate_class == class_id)
+                {
+                    if (g_candidate_ticks < 0xFFU)
+                    {
+                        g_candidate_ticks++;
+                    }
+                }
+                else
+                {
+                    g_candidate_class = class_id;
+                    g_candidate_ticks = 1U;
+                }
+
+                if (g_candidate_ticks >= DETECTION_STABLE_TICKS)
+                {
+                    begin_sort(class_id);
+                }
+            }
+            else
+            {
+                g_candidate_class = 0xFFU;
+                g_candidate_ticks = 0U;
+            }
+            break;
+
+        case MACHINE_SORT_POSITIONING:
+            if (state_elapsed(FAR_CLASS_TRAVEL_MS))
+            {
+                machine_stepper_stop();
+                sorting_servo_start();
+            }
+            break;
+
+        case MACHINE_SORT_EJECTING:
+            if (state_elapsed(SERVO_TURN_MS))
+            {
+                machine_servo_output_t servo = sorting_servo_output(g_status.active_class);
+                machine_servo_set(servo, sorting_forward_first(g_status.active_class) ?
+                                  CONTINUOUS_REV_ANGLE : CONTINUOUS_FWD_ANGLE);
+                sort_state_set(MACHINE_SORT_CLOSING);
+            }
+            break;
+
+        case MACHINE_SORT_CLOSING:
+            if (state_elapsed(SERVO_TURN_MS))
+            {
+                machine_servo_set(sorting_servo_output(g_status.active_class), CONTINUOUS_STOP_ANGLE);
+                g_status.sorted_count[g_status.active_class]++;
+                sort_state_set(MACHINE_SORT_RETURNING);
+            }
+            break;
+
+        case MACHINE_SORT_RETURNING:
+            if (state_elapsed(SERVO_RETURN_WAIT_MS))
+            {
+                machine_stepper_run(MACHINE_STEPPER_FORWARD, STEPPER_DEFAULT_HZ);
+                g_status.sort_state = MACHINE_SORT_CLEARING;
+                g_clear_ticks = 0U;
+            }
+            break;
+
+        case MACHINE_SORT_CLEARING:
+            if (!detection_valid)
+            {
+                if (g_clear_ticks < 0xFFU)
+                {
+                    g_clear_ticks++;
+                }
+            }
+            else
+            {
+                g_clear_ticks = 0U;
+            }
+
+            if (g_clear_ticks >= CLEAR_DETECTION_TICKS)
+            {
+                g_status.active_class = 0xFFU;
+                g_status.sort_state = MACHINE_SORT_WAITING;
+                g_candidate_class = 0xFFU;
+                g_candidate_ticks = 0U;
+            }
+            break;
+
+        case MACHINE_SORT_STOPPED:
+        case MACHINE_SORT_FAULT:
+        default:
+            break;
+    }
+}
+P258: 6. CEU软恢复与完整重启
+P259: ceu_soft_recover:
+        ceu_soft_fail_count++;
+        err = ceu_start_frame(capture_buf);
+        if ((err == FSP_SUCCESS) && (ceu_soft_fail_count < CEU_SOFT_RECOVER_MAX)) {
+            continue;
+        }
+
+        /* Full CEU restart. Don't fill screen — keep last frame visible.
+         * Reset to known state: capture into display_buf. */
+        R_CEU_Close(&g_ceu_qvga_ctrl);
+        err = R_CEU_Open(&g_ceu_qvga_ctrl, &g_ceu_qvga_cfg);
+        if (err != FSP_SUCCESS) {
+            delay_ms(10);
+            continue;
+        }
+        /* Reset buffer pointers to known state */
+        capture_buf = ceu_buf_a;
+        ceu_soft_fail_count = 0;
+        err = ceu_start_frame(capture_buf);
+        if (err != FSP_SUCCESS) {
+            delay_ms(10);
+        }
+P260: 7. SD卡帧保存与错误状态
+P261: bool dataset_storage_save_frame(const uint8_t *frame_rgb565, uint8_t class_id)
+{
+    char path[56];
+    g_storage_error_detail = 0U;
+    if ((NULL == frame_rgb565) || (class_id >= DATASET_CLASS_COUNT))
+    {
+        return false;
+    }
+    if (!dataset_storage_mount())
+    {
+        return false;
+    }
+
+    uint32_t index = g_next_index[class_id];
+    build_image_path(path, sizeof(path), "IMG192", class_id, index);
+    bool ok = write_bmp(path, frame_rgb565, MODEL_WIDTH, MODEL_HEIGHT);
+#if DATASET_SAVE_RAW
+    if (ok)
+    {
+        build_image_path(path, sizeof(path), "RAW", class_id, index);
+        ok = write_bmp(path, frame_rgb565, CAMERA_WIDTH, CAMERA_HEIGHT);
+    }
+#endif
+
+    if (ok)
+    {
+        g_next_index[class_id] = (index < 99999999U) ? (index + 1U) : 1U;
+        g_storage_status = DATASET_STORAGE_READY;
+    }
+    else
+    {
+        if (0U == g_storage_error_detail)
+        {
+            g_storage_error_detail = 7999U;
+        }
+        g_storage_status = DATASET_STORAGE_WRITE_ERROR;
+    }
+    return ok;
+}
+P263 style='3': 附录C 硬件原理图
+P264: 本工程可获得的二级扩展板接口总原理图和RA8P1核心板SDHI接口电路分别如图6和图7所示。原理图与src目录中的引脚配置、驱动接口及软件数据流保持一致。
+P266: 图6 RA8P1二级扩展板主要接口总原理图
+P269: 图7 RA8P1核心板SDHI与TF卡接口电路
+P270: 参考文献：
+P271: [1] Renesas Electronics Corporation. RA8P1 Group: 1 GHz Arm Cortex-M85 and Ethos-U55 NPU Based AI-Accelerated Microcontrollers[EB/OL].
+P272: [2] Renesas Electronics Corporation. Renesas RA8P1 Group Product Brief[EB/OL].
+P273: [3] Renesas Electronics Corporation. Using the Ethos-U NPU with RA8 MCUs[EB/OL].
+P274: [4] Renesas Electronics Corporation. RA Flexible Software Package API Reference: Ethos-U Middleware and Peripheral Modules[EB/OL].
+P275: [5] Arm Limited. Arm Ethos-U55 NPU Technical Reference Manual[EB/OL].
+P276: [6] OmniVision Technologies, Inc. OV5640 Color CMOS QSXGA Image Sensor Datasheet[EB/OL].
+P277: [7] ILITEK. ILI9488 Single Chip TFT LCD Controller/Driver Datasheet[EB/OL].
+P278: [8] FocalTech Systems Co., Ltd. FT6336U Capacitive Touch Panel Controller Datasheet[EB/OL].
+P279: [9] ChaN. FatFs: Generic FAT Filesystem Module[EB/OL].
+P280: [10] Redmon J, Farhadi A. YOLOv3: An Incremental Improvement[EB/OL]. arXiv:1804.02767, 2018.
+P281: [11] Bochkovskiy A, Wang C Y, Liao H Y M. YOLOv4: Optimal Speed and Accuracy of Object Detection[EB/OL]. arXiv:2004.10934, 2020.
+
+COMMENTS:
+
+MEDIA (14):
+- word/media/image1.png
+- word/media/image10.wmf
+- word/media/image11.wmf
+- word/media/image12.png
+- word/media/image13.png
+- word/media/image14.png
+- word/media/image2.png
+- word/media/image3.png
+- word/media/image4.png
+- word/media/image5.wmf
+- word/media/image6.wmf
+- word/media/image7.wmf
+- word/media/image8.wmf
+- word/media/image9.wmf
