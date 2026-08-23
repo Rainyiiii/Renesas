@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DrpAiTranslatorProjectSettings>
+    <ProjectSettingsInfo>
+        <framework>1</framework>
+        <modelfile>C:\Users\Rainy\Desktop\v9_other_weighted.onnx</modelfile>
+        <output_directory>conversion_results</output_directory>
+        <product>RA8P1 (CPU+Ethos-U55)</product>
+        <tool_name>RUHMI Framework AI Compiler</tool_name>
+        <docker_image_name>Unused property</docker_image_name>
+        <PytorchSettingInfo>
+            <configuration_type>false</configuration_type>
+            <configuration_file/>
+            <modelname/>
+            <model_weight/>
+            <input_layer_shape/>
+        </PytorchSettingInfo>
+    </ProjectSettingsInfo>
+    <DRP-AI_TVMSettingInfo>
+        <TransSettingInfo>
+            <item key="C:\Users\Rainy\Desktop\v9_other_weighted.onnx">conversion_results/conversion_tool_settings/v9_other_weighted.onnx_trans_config.json</item>
+            <item key="C:\Users\Rainy\Desktop\v8_yolofastestv2.onnx">conversion_results/conversion_tool_settings/v8_yolofastestv2.onnx_trans_config.json</item>
+            <item key="C:\Users\Rainy\Desktop\v6_yolofastestv2.onnx">conversion_results/conversion_tool_settings/v6_yolofastestv2.onnx_trans_config.json</item>
+        </TransSettingInfo>
+        <QuantizationSetting>
+            <item key="C:\Users\Rainy\Desktop\v9_other_weighted.onnx">conversion_results/conversion_tool_settings/v9_other_weighted.onnx_quant_config.json</item>
+            <item key="C:\Users\Rainy\Desktop\v8_yolofastestv2.onnx">conversion_results/conversion_tool_settings/v8_yolofastestv2.onnx_quant_config.json</item>
+            <item key="C:\Users\Rainy\Desktop\v6_yolofastestv2.onnx">conversion_results/conversion_tool_settings/v6_yolofastestv2.onnx_quant_config.json</item>
+        </QuantizationSetting>
+    </DRP-AI_TVMSettingInfo>
+</DrpAiTranslatorProjectSettings>

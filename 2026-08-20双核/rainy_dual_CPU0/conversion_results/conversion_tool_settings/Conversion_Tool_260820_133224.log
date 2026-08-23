@@ -1,0 +1,151 @@
+2026-08-20 13:31:44,037 [INFO] (check_requirements.py #28, load_requirements): 📥 Downloading requirements from https://Tool-support.renesas.com/tool-support/Zoo/MCT/requirements.txt
+2026-08-20 13:31:44,043 [DEBUG] (connectionpool.py #1062, _new_conn): Starting new HTTPS connection (1): tool-support.renesas.com:443
+2026-08-20 13:31:44,637 [DEBUG] (connectionpool.py #544, _make_request): https://tool-support.renesas.com:443 "GET /tool-support/Zoo/MCT/requirements.txt HTTP/1.1" 200 None
+2026-08-20 13:31:44,646 [INFO] (check_requirements.py #51, _handle_http_requirement): mera: INSTALLED (2.6.0+pkg.4815)
+2026-08-20 13:31:44,650 [INFO] (check_requirements.py #51, _handle_http_requirement): mera_visualizer: INSTALLED (2.5.0+mcuv4)
+2026-08-20 13:31:44,653 [INFO] (check_requirements.py #71, _handle_pypi_requirement): onnx==1.17.0: OK
+2026-08-20 13:31:44,656 [INFO] (check_requirements.py #71, _handle_pypi_requirement): tflite==2.18.0: OK
+[INFO] Success to execute the command
+Exit code: 0
+2026-08-20 13:31:47,341 [INFO] (check_requirements.py #28, load_requirements): 📥 Downloading requirements from https://Tool-support.renesas.com/tool-support/Zoo/MCT/requirements.txt
+2026-08-20 13:31:47,346 [DEBUG] (connectionpool.py #1062, _new_conn): Starting new HTTPS connection (1): tool-support.renesas.com:443
+2026-08-20 13:31:50,814 [DEBUG] (connectionpool.py #544, _make_request): https://tool-support.renesas.com:443 "GET /tool-support/Zoo/MCT/requirements.txt HTTP/1.1" 200 None
+2026-08-20 13:31:50,820 [INFO] (check_requirements.py #51, _handle_http_requirement): mera: INSTALLED (2.6.0+pkg.4815)
+2026-08-20 13:31:50,822 [INFO] (check_requirements.py #51, _handle_http_requirement): mera_visualizer: INSTALLED (2.5.0+mcuv4)
+2026-08-20 13:31:50,825 [INFO] (check_requirements.py #71, _handle_pypi_requirement): onnx==1.17.0: OK
+2026-08-20 13:31:50,827 [INFO] (check_requirements.py #71, _handle_pypi_requirement): tflite==2.18.0: OK
+[INFO] Success to execute the command
+Exit code: 0
+CMD:[D:/RA/second/.metadata/.plugins/com.renesas.ai.translator/py.bat D:/RA/second/rainy_dual_CPU0/.settings/.plugin/com.renesas.ai.translator/renesas_aicompiler_caller/cli.py comm get_model_info --framework onnx --input_model C:\Users\Rainy\Desktop\v8_yolofastestv2.onnx --output_shape_dict_jsonpath D:/RA/second/rainy_dual_CPU0/conversion_results/conversion_tool_settings/v8_yolofastestv2.onnx_input_shape.json --output_model_info_jsonpath D:/RA/second/rainy_dual_CPU0/conversion_results/conversion_tool_settings/v8_yolofastestv2.onnx_model_info.json --accelerator_type ethos-u55 ]
+2026-08-20 13:31:56,713 [INFO] (environment_check.py #360, check_ruhmi_environment): Checking RUHMI environment ...
+2026-08-20 13:31:57,147 [DEBUG] (__init__.py #342, wrapper): matplotlib data path: D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\lib\site-packages\matplotlib\mpl-data
+2026-08-20 13:31:57,152 [DEBUG] (__init__.py #342, wrapper): CONFIGDIR=C:\Users\Rainy\.matplotlib
+2026-08-20 13:31:57,154 [DEBUG] (__init__.py #1560, <module>): interactive is False
+2026-08-20 13:31:57,154 [DEBUG] (__init__.py #1561, <module>): platform is win32
+2026-08-20 13:31:57,184 [DEBUG] (__init__.py #342, wrapper): CACHEDIR=C:\Users\Rainy\.matplotlib
+2026-08-20 13:31:57,187 [DEBUG] (font_manager.py #1635, _load_fontmanager): Using fontManager instance from C:\Users\Rainy\.matplotlib\fontlist-v390.json
+2026-08-20 13:31:58,033 [INFO] (environment_check.py #248, _check_python_deps_for_ruhmi): mera version 2.6.0+pkg.4815 released on 2026-03-05
+2026-08-20 13:31:58,034 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera' version 2.6.0+pkg.4815 is installed.
+2026-08-20 13:31:58,037 [INFO] (environment_check.py #234, _check_python_package_and_version): 'ethos-u-vela' version 4.2.0 is installed.
+2026-08-20 13:31:58,039 [INFO] (environment_check.py #234, _check_python_package_and_version): 'tflite' version 2.18.0 is installed.
+2026-08-20 13:31:58,041 [INFO] (environment_check.py #234, _check_python_package_and_version): 'onnx' version 1.17.0 is installed.
+2026-08-20 13:31:58,044 [INFO] (environment_check.py #234, _check_python_package_and_version): 'typing_extensions' version 4.16.0 is installed.
+2026-08-20 13:31:58,046 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera-visualizer' version 2.5.0+mcuv4 is installed.
+2026-08-20 13:31:58,048 [INFO] (get_model_info.py #533, main): Environment check passed.
+2026-08-20 13:31:58,048 [INFO] (get_model_info.py #538, main): [Parsing input model node start...]
+2026-08-20 13:31:58,048 [INFO] (get_model_info.py #424, make_shape_dict_from_model): Make shape_dict from model.
+2026-08-20 13:31:58,146 [INFO] (get_model_info.py #318, get_onnx_shape_dict): shape_dict: {'images': [1, 3, 192, 192]}
+2026-08-20 13:31:58,146 [INFO] (get_model_info.py #328, get_onnx_shape_dict): Validated shape_dict: {'images': [1, 3, 192, 192]}
+2026-08-20 13:31:58,149 [INFO] (get_model_info.py #506, write_dict2json): Write dictionary to json file.
+2026-08-20 13:31:58,150 [INFO] (get_model_info.py #506, write_dict2json): Write dictionary to json file.
+2026-08-20 13:31:58,150 [INFO] (get_model_info.py #552, main): [Parsing input model node finished]
+Variable container does not have anything...
+[INFO] Success to execute the command
+CMD:[D:/RA/second/.metadata/.plugins/com.renesas.ai.translator/py.bat D:/RA/second/rainy_dual_CPU0/.settings/.plugin/com.renesas.ai.translator/renesas_aicompiler_caller/cli.py ruhmi quantize --framework onnx --input_model C:\Users\Rainy\Desktop\v8_yolofastestv2.onnx --output_dir D:/RA/second/rainy_dual_CPU0/conversion_results/quantized --quant_config_json D:/RA/second/rainy_dual_CPU0/conversion_results/conversion_tool_settings/v8_yolofastestv2.onnx_quant_config.json --shape_dict_json D:/RA/second/rainy_dual_CPU0/conversion_results/conversion_tool_settings/v8_yolofastestv2.onnx_input_shape.json ]
+2026-08-20 13:32:22,032 [DEBUG] (__init__.py #342, wrapper): matplotlib data path: D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\lib\site-packages\matplotlib\mpl-data
+2026-08-20 13:32:22,037 [DEBUG] (__init__.py #342, wrapper): CONFIGDIR=C:\Users\Rainy\.matplotlib
+2026-08-20 13:32:22,040 [DEBUG] (__init__.py #1560, <module>): interactive is False
+2026-08-20 13:32:22,040 [DEBUG] (__init__.py #1561, <module>): platform is win32
+2026-08-20 13:32:22,068 [DEBUG] (__init__.py #342, wrapper): CACHEDIR=C:\Users\Rainy\.matplotlib
+2026-08-20 13:32:22,069 [DEBUG] (font_manager.py #1635, _load_fontmanager): Using fontManager instance from C:\Users\Rainy\.matplotlib\fontlist-v390.json
+2026-08-20 13:32:22,736 [INFO] (environment_check.py #360, check_ruhmi_environment): Checking RUHMI environment ...
+2026-08-20 13:32:22,736 [INFO] (environment_check.py #248, _check_python_deps_for_ruhmi): mera version 2.6.0+pkg.4815 released on 2026-03-05
+2026-08-20 13:32:22,737 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera' version 2.6.0+pkg.4815 is installed.
+2026-08-20 13:32:22,739 [INFO] (environment_check.py #234, _check_python_package_and_version): 'ethos-u-vela' version 4.2.0 is installed.
+2026-08-20 13:32:22,741 [INFO] (environment_check.py #234, _check_python_package_and_version): 'tflite' version 2.18.0 is installed.
+2026-08-20 13:32:22,742 [INFO] (environment_check.py #234, _check_python_package_and_version): 'onnx' version 1.17.0 is installed.
+2026-08-20 13:32:22,743 [INFO] (environment_check.py #234, _check_python_package_and_version): 'typing_extensions' version 4.16.0 is installed.
+2026-08-20 13:32:22,745 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera-visualizer' version 2.5.0+mcuv4 is installed.
+2026-08-20 13:32:22,748 [INFO] (quantize_model.py #465, main): Arguments: Namespace(framework='onnx', input_model='C:\\Users\\Rainy\\Desktop\\v8_yolofastestv2.onnx', output_dir='D:/RA/second/rainy_dual_CPU0/conversion_results/quantized', quant_config_json='D:/RA/second/rainy_dual_CPU0/conversion_results/conversion_tool_settings/v8_yolofastestv2.onnx_quant_config.json', shape_dict_json='D:/RA/second/rainy_dual_CPU0/conversion_results/conversion_tool_settings/v8_yolofastestv2.onnx_input_shape.json')
+Variable container does not have anything...
+2026-08-20 13:32:22,749 [INFO] (quantize_model.py #485, main): Using Device Platform: ALT2
+2026-08-20 13:32:22,749 [INFO] (quantize_model.py #388, quantize): Running MERA quantization ...
+2026-08-20 13:32:22,824 [INFO] (utils.py #49, get_onnx_symbolic_shape_mapping): Check input name: images ...
+2026-08-20 13:32:22,825 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in model
+2026-08-20 13:32:22,828 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\fe_onnx_cli --io_desc_input C:\Users\Rainy\Desktop\v8_yolofastestv2.onnx --io_desc_result C:\Users\Rainy\AppData\Local\Temp\tmp5igf8bqg\tempfile'
+2026-08-20 13:32:22,919 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'input_desc.json' into D:\RA\second\rainy_dual_CPU0\conversion_results\quantized\model
+2026-08-20 13:32:22,920 [DEBUG] (deploy_project.py #248, popd): (popd) cwd is now D:\RA\second\rainy_dual_CPU0\conversion_results\quantized
+2026-08-20 13:32:22,920 [INFO] (quantize_model.py #88, generate_random_data): Generate sample images with npy extension to temp_dir='C:\\Users\\Rainy\\AppData\\Local\\Temp\\tmp0_2cq9bq'...
+2026-08-20 13:32:22,930 [INFO] (quantize_model.py #155, glob_calibration_data_file): Calibration data size: 5
+2026-08-20 13:32:22,930 [INFO] (quantize_model.py #165, glob_calibration_data_file): Updated: {'skip_preprocess': 'False', 'num_calibrate_samples': 5, 'calibrate_method': 'MinMax', 'percentile_value': 99.999, 'quant_options': '', 'drp_compiler_version': '100', 'cpu_data_type': 'float16', 'nodes': [{'name': 'images', 'calibrate_sample_dir': 'C:\\Users\\Rainy\\AppData\\Local\\Temp\\tmp0_2cq9bq', 'mean': [0.0, 0.0, 0.0], 'std': [255.0, 255.0, 255.0], 'file_list': array([WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmp0_2cq9bq/rand3.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmp0_2cq9bq/rand2.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmp0_2cq9bq/rand1.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmp0_2cq9bq/rand0.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmp0_2cq9bq/rand4.npy')],
+      dtype=object)}], 'node': [{'name': 'images', 'calibrate_sample_dir': 'C:\\Users\\Rainy\\AppData\\Local\\Temp\\tmp0_2cq9bq', 'mean': [0.0, 0.0, 0.0], 'std': [255.0, 255.0, 255.0], 'file_list': array([WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmp0_2cq9bq/rand3.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmp0_2cq9bq/rand2.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmp0_2cq9bq/rand1.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmp0_2cq9bq/rand0.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmp0_2cq9bq/rand4.npy')],
+      dtype=object)}]}
+2026-08-20 13:32:22,930 [INFO] (quantize_model.py #197, read_calibration_data): Load C:\Users\Rainy\AppData\Local\Temp\tmp0_2cq9bq\rand3.npy...
+2026-08-20 13:32:22,930 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: C:\Users\Rainy\AppData\Local\Temp\tmp0_2cq9bq\rand3.npy
+2026-08-20 13:32:22,931 [INFO] (quantize_model.py #197, read_calibration_data): Load C:\Users\Rainy\AppData\Local\Temp\tmp0_2cq9bq\rand2.npy...
+2026-08-20 13:32:22,931 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: C:\Users\Rainy\AppData\Local\Temp\tmp0_2cq9bq\rand2.npy
+2026-08-20 13:32:22,931 [INFO] (quantize_model.py #197, read_calibration_data): Load C:\Users\Rainy\AppData\Local\Temp\tmp0_2cq9bq\rand1.npy...
+2026-08-20 13:32:22,931 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: C:\Users\Rainy\AppData\Local\Temp\tmp0_2cq9bq\rand1.npy
+2026-08-20 13:32:22,932 [INFO] (quantize_model.py #197, read_calibration_data): Load C:\Users\Rainy\AppData\Local\Temp\tmp0_2cq9bq\rand0.npy...
+2026-08-20 13:32:22,932 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: C:\Users\Rainy\AppData\Local\Temp\tmp0_2cq9bq\rand0.npy
+2026-08-20 13:32:22,933 [INFO] (quantize_model.py #197, read_calibration_data): Load C:\Users\Rainy\AppData\Local\Temp\tmp0_2cq9bq\rand4.npy...
+2026-08-20 13:32:22,933 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: C:\Users\Rainy\AppData\Local\Temp\tmp0_2cq9bq\rand4.npy
+2026-08-20 13:32:22,933 [INFO] (deploy.py #309, deploy):  *** mera v2.6.0+pkg.4815 ***
+2026-08-20 13:32:22,933 [INFO] (deploy.py #310, deploy): Starting deployment of model 'v8_yolofastestv2'...
+2026-08-20 13:32:22,933 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in build
+2026-08-20 13:32:22,934 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in MERAInterpreter
+2026-08-20 13:32:22,935 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'deploy_cfg.json' into D:\RA\second\rainy_dual_CPU0\conversion_results\quantized\build\MERAInterpreter
+2026-08-20 13:32:22,936 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\fe_onnx_cli D:\RA\second\rainy_dual_CPU0\conversion_results\quantized\build\MERAInterpreter\deploy_cfg.json'
+2026-08-20 13:32:23,478 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in model
+2026-08-20 13:32:23,479 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'input_desc.json' into D:\RA\second\rainy_dual_CPU0\conversion_results\quantized\model
+2026-08-20 13:32:23,479 [DEBUG] (deploy_project.py #248, popd): (popd) cwd is now D:\RA\second\rainy_dual_CPU0\conversion_results\quantized\build\MERAInterpreter
+2026-08-20 13:32:23,481 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'qtz_conf.json' into D:\RA\second\rainy_dual_CPU0\conversion_results\quantized\build\MERAInterpreter
+[2026-08-20 13:32:23.525] [info] Setting up observers
+[2026-08-20 13:32:23.527] [info] Quantizer Ready
+2026-08-20 13:32:23,527 [INFO] (mera_quantizer.py #229, __init__): Model ready for quantization
+2026-08-20 13:32:23,527 [INFO] (mera_quantizer.py #322, __run_samples_core): Running model calibration with 5 samples ...
+[2026-08-20 13:32:22.994] [info] Loading and converting ONNX model ... 
+[2026-08-20 13:32:23.145] [info] Converting to canonical ...
+[2026-08-20 13:32:23.415] [info] Converting to target IR ...
+
+Running calibration:   0%|[33m                                               [0m| 0/5 [00:00<?,? samples/s][0m
+Running calibration:  40%|[33m��������������������������������                       [0m| 2/5 [00:00<00:00,13.36 samples/s][0m
+Running calibration:  80%|[33m����������������������������������������������������������������       [0m| 4/5 [00:00<00:00,15.81 samples/s][0m
+Running calibration: 100%|[33m������������������������������������������������������������������������������[0m| 5/5 [00:00<00:00,15.78 samples/s][0m
+[2026-08-20 13:32:23.860] [info]  + At Concat _backbone_stage2_stage2_0_Concat_output_0_70168, fused 2/2 input domains
+[2026-08-20 13:32:23.860] [info]  + At Concat _backbone_stage2_stage2_1_Concat_output_0_70186, fused 2/2 input domains
+[2026-08-20 13:32:23.860] [info]  + At Concat _backbone_stage2_stage2_2_Concat_output_0_70204, fused 2/2 input domains
+[2026-08-20 13:32:23.860] [info]  + At Concat _backbone_stage2_stage2_3_Concat_output_0_70222, fused 2/2 input domains
+[2026-08-20 13:32:23.860] [info]  + At Concat _backbone_stage3_stage3_0_Concat_output_0_70231, fused 2/2 input domains
+[2026-08-20 13:32:23.860] [info]  + At Concat _backbone_stage3_stage3_1_Concat_output_0_70249, fused 2/2 input domains
+[2026-08-20 13:32:23.861] [info]  + At Concat _backbone_stage3_stage3_2_Concat_output_0_70267, fused 2/2 input domains
+[2026-08-20 13:32:23.861] [info]  + At Concat _backbone_stage3_stage3_3_Concat_output_0_70285, fused 2/2 input domains
+[2026-08-20 13:32:23.861] [info]  + At Concat _backbone_stage3_stage3_4_Concat_output_0_70303, fused 2/2 input domains
+[2026-08-20 13:32:23.861] [info]  + At Concat _backbone_stage3_stage3_5_Concat_output_0_70321, fused 2/2 input domains
+[2026-08-20 13:32:23.861] [info]  + At Concat _backbone_stage3_stage3_6_Concat_output_0_70339, fused 2/2 input domains
+[2026-08-20 13:32:23.861] [info]  + At Concat _backbone_stage3_stage3_7_Concat_output_0_70357, fused 2/2 input domains
+[2026-08-20 13:32:23.862] [info]  + At Concat _backbone_stage4_stage4_0_Concat_output_0_70366, fused 2/2 input domains
+[2026-08-20 13:32:23.862] [info]  + At Concat _backbone_stage4_stage4_1_Concat_output_0_70384, fused 2/2 input domains
+[2026-08-20 13:32:23.862] [info]  + At Concat _backbone_stage4_stage4_2_Concat_output_0_70402, fused 2/2 input domains
+[2026-08-20 13:32:23.862] [info]  + At Concat _backbone_stage4_stage4_3_Concat_output_0_70420, fused 2/2 input domains
+[2026-08-20 13:32:23.862] [info]  + At Concat _fpn_Concat_output_0_70437, fused 2/2 input domains
+[2026-08-20 13:32:24.505] [info] All recipes applied successfully
+[2026-08-20 13:32:24.505] [info] All nodes checked and transformed
+2026-08-20 13:32:24,565 [INFO] (quantize_model.py #494, main): SUCCESS, saved at D:\RA\second\rainy_dual_CPU0\conversion_results\quantized\model.mera
+Model param post-quantization report:
+  Original size:    1.7MB (418.1K params)
+  Transformed size: 436.9KB (418.5K params)
+  Not transformed size: 0.0B (0.0)
+  Transform ratio: 3.83
+╒═════════════════════════════╤═══════════════╤═════════════╕
+│ Node Class                  │ # Int8        │ # Float32   │
+╞═════════════════════════════╪═══════════════╪═════════════╡
+│ TFLiteQConv2dBias           │ 92 (435.1KB)  │ 0           │
+│ TFLiteRelu                  │ 46            │ 0           │
+│ TFLiteAveragePool           │ 1             │ 0           │
+│ TFLiteConcatenate           │ 17            │ 0           │
+│ TFLiteTranspose             │ 59 (944.0B)   │ 0           │
+│ TFLiteSlice                 │ 26 (832.0B)   │ 0           │
+│ TFLiteResizeNearestNeighbor │ 1 (8.0B)      │ 0           │
+│ Var                         │ 0             │ 1           │
+│ TOTAL                       │ 242 (436.9KB) │ 1 (0.0B)    │
+╘═════════════════════════════╧═══════════════╧═════════════╛
+[INFO] Success to execute the command

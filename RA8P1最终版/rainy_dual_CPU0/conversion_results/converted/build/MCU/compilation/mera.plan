@@ -1,0 +1,454 @@
+{
+  "execution": {
+    "stages": [
+      [
+        [
+          [
+            {
+              "backend": "mera_c99_source_cpu",
+              "binaries_location": "sub_0000__CPU_C_CODEGEN",
+              "name": "sub_0000"
+            },
+            {
+              "input_buffers": {
+                "images": 0
+              },
+              "input_order": [
+                "images"
+              ],
+              "output_buffers": {
+                "images_70682_11487_70629": 1
+              },
+              "output_order": [
+                "images_70682_11487_70629"
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            {
+              "backend": "mera_c99_source_ethos_u55",
+              "binaries_location": "sub_0001__ARM_ETHOS_U55_C_CODEGEN",
+              "name": "sub_0001"
+            },
+            {
+              "input_buffers": {
+                "images_70682_11487_70629": 1
+              },
+              "input_order": [
+                "images_70682_11487_70629"
+              ],
+              "output_buffers": {
+                "_backbone_stage3_stage3_7_Concat_output_0_70357_11551": 2,
+                "_backbone_stage4_stage4_3_Concat_output_0_70420_11567": 3,
+                "cls_s11_70457_70735_11479": 4,
+                "obj_s11_70456_70737_11491": 5,
+                "reg_s11_70455_70739_11499": 6
+              },
+              "output_order": [
+                "_backbone_stage3_stage3_7_Concat_output_0_70357_11551",
+                "_backbone_stage4_stage4_3_Concat_output_0_70420_11567",
+                "cls_s11_70457_70735_11479",
+                "obj_s11_70456_70737_11491",
+                "reg_s11_70455_70739_11499"
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            {
+              "backend": "mera_c99_source_cpu",
+              "binaries_location": "sub_0002__CPU_C_CODEGEN",
+              "name": "sub_0002"
+            },
+            {
+              "input_buffers": {
+                "_backbone_stage4_stage4_3_Concat_output_0_70420_11567": 3,
+                "cls_s11_70457_70735_11479": 4,
+                "obj_s11_70456_70737_11491": 5,
+                "reg_s11_70455_70739_11499": 6
+              },
+              "input_order": [
+                "_backbone_stage4_stage4_3_Concat_output_0_70420_11567",
+                "cls_s11_70457_70735_11479",
+                "obj_s11_70456_70737_11491",
+                "reg_s11_70455_70739_11499"
+              ],
+              "output_buffers": {
+                "_fpn_Resize_output_0_70436_11129": 7,
+                "cls_s11_70457_70735": 16,
+                "obj_s11_70456_70737": 15,
+                "reg_s11_70455_70739": 14
+              },
+              "output_order": [
+                "_fpn_Resize_output_0_70436_11129",
+                "cls_s11_70457_70735",
+                "obj_s11_70456_70737",
+                "reg_s11_70455_70739"
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            {
+              "backend": "mera_c99_source_ethos_u55",
+              "binaries_location": "sub_0003__ARM_ETHOS_U55_C_CODEGEN",
+              "name": "sub_0003"
+            },
+            {
+              "input_buffers": {
+                "_backbone_stage3_stage3_7_Concat_output_0_70357_11551": 2,
+                "_fpn_Resize_output_0_70436_11129": 7
+              },
+              "input_order": [
+                "_fpn_Resize_output_0_70436_11129",
+                "_backbone_stage3_stage3_7_Concat_output_0_70357_11551"
+              ],
+              "output_buffers": {
+                "cls_s22_70454_70736_11483": 8,
+                "obj_s22_70453_70738_11495": 9,
+                "reg_s22_70452_70740_11503": 10
+              },
+              "output_order": [
+                "cls_s22_70454_70736_11483",
+                "obj_s22_70453_70738_11495",
+                "reg_s22_70452_70740_11503"
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            {
+              "backend": "mera_c99_source_cpu",
+              "binaries_location": "sub_0004__CPU_C_CODEGEN",
+              "name": "sub_0004"
+            },
+            {
+              "input_buffers": {
+                "cls_s22_70454_70736_11483": 8,
+                "obj_s22_70453_70738_11495": 9,
+                "reg_s22_70452_70740_11503": 10
+              },
+              "input_order": [
+                "cls_s22_70454_70736_11483",
+                "obj_s22_70453_70738_11495",
+                "reg_s22_70452_70740_11503"
+              ],
+              "output_buffers": {
+                "cls_s22_70454_70736": 13,
+                "obj_s22_70453_70738": 12,
+                "reg_s22_70452_70740": 11
+              },
+              "output_order": [
+                "cls_s22_70454_70736",
+                "obj_s22_70453_70738",
+                "reg_s22_70452_70740"
+              ]
+            }
+          ]
+        ]
+      ]
+    ]
+  },
+  "memory": {
+    "buffers": [
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 442368,
+        "data_type": "float32",
+        "name": "images",
+        "offset": 0,
+        "shape": [
+          1,
+          3,
+          192,
+          192
+        ],
+        "size": 110592
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 110592,
+        "data_type": "int8",
+        "name": "images_70682_11487_70629",
+        "offset": 0,
+        "shape": [
+          3,
+          36864
+        ],
+        "size": 110592
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 13824,
+        "data_type": "int8",
+        "name": "_backbone_stage3_stage3_7_Concat_output_0_70357_11551",
+        "offset": 0,
+        "shape": [
+          1,
+          12,
+          12,
+          96
+        ],
+        "size": 13824
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 6912,
+        "data_type": "int8",
+        "name": "_backbone_stage4_stage4_3_Concat_output_0_70420_11567",
+        "offset": 0,
+        "shape": [
+          1,
+          6,
+          6,
+          192
+        ],
+        "size": 6912
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 144,
+        "data_type": "int8",
+        "name": "cls_s11_70457_70735_11479",
+        "offset": 0,
+        "shape": [
+          1,
+          4,
+          6,
+          6
+        ],
+        "size": 144
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 108,
+        "data_type": "int8",
+        "name": "obj_s11_70456_70737_11491",
+        "offset": 0,
+        "shape": [
+          1,
+          3,
+          6,
+          6
+        ],
+        "size": 108
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 432,
+        "data_type": "int8",
+        "name": "reg_s11_70455_70739_11499",
+        "offset": 0,
+        "shape": [
+          1,
+          12,
+          6,
+          6
+        ],
+        "size": 432
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 27648,
+        "data_type": "int8",
+        "name": "_fpn_Resize_output_0_70436_11129",
+        "offset": 0,
+        "shape": [
+          1,
+          12,
+          12,
+          192
+        ],
+        "size": 27648
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 576,
+        "data_type": "int8",
+        "name": "cls_s22_70454_70736_11483",
+        "offset": 0,
+        "shape": [
+          1,
+          4,
+          12,
+          12
+        ],
+        "size": 576
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 432,
+        "data_type": "int8",
+        "name": "obj_s22_70453_70738_11495",
+        "offset": 0,
+        "shape": [
+          1,
+          3,
+          12,
+          12
+        ],
+        "size": 432
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 1728,
+        "data_type": "int8",
+        "name": "reg_s22_70452_70740_11503",
+        "offset": 0,
+        "shape": [
+          1,
+          12,
+          12,
+          12
+        ],
+        "size": 1728
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 6912,
+        "data_type": "float32",
+        "name": "reg_s22_70452_70740",
+        "offset": 0,
+        "shape": [
+          1,
+          12,
+          12,
+          12
+        ],
+        "size": 1728
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 1728,
+        "data_type": "float32",
+        "name": "obj_s22_70453_70738",
+        "offset": 0,
+        "shape": [
+          1,
+          3,
+          12,
+          12
+        ],
+        "size": 432
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 2304,
+        "data_type": "float32",
+        "name": "cls_s22_70454_70736",
+        "offset": 0,
+        "shape": [
+          1,
+          4,
+          12,
+          12
+        ],
+        "size": 576
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 1728,
+        "data_type": "float32",
+        "name": "reg_s11_70455_70739",
+        "offset": 0,
+        "shape": [
+          1,
+          12,
+          6,
+          6
+        ],
+        "size": 432
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 432,
+        "data_type": "float32",
+        "name": "obj_s11_70456_70737",
+        "offset": 0,
+        "shape": [
+          1,
+          3,
+          6,
+          6
+        ],
+        "size": 108
+      },
+      {
+        "alignment": 256,
+        "alloc_mode": "linux_malloc",
+        "bytes_size": 576,
+        "data_type": "float32",
+        "name": "cls_s11_70457_70735",
+        "offset": 0,
+        "shape": [
+          1,
+          4,
+          6,
+          6
+        ],
+        "size": 144
+      }
+    ],
+    "input_buffers": [
+      [
+        "images",
+        0
+      ]
+    ],
+    "output_buffers": [
+      [
+        "reg_s22_70452_70740",
+        11
+      ],
+      [
+        "obj_s22_70453_70738",
+        12
+      ],
+      [
+        "cls_s22_70454_70736",
+        13
+      ],
+      [
+        "reg_s11_70455_70739",
+        14
+      ],
+      [
+        "obj_s11_70456_70737",
+        15
+      ],
+      [
+        "cls_s11_70457_70735",
+        16
+      ]
+    ]
+  }
+}
