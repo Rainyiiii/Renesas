@@ -1,0 +1,3 @@
+No style-system deviation.
+Slide 3: the old single-core raster diagram is covered within its original frame and replaced with editable PowerPoint shapes showing Cortex-M85, Cortex-M33, Ethos-U55, IPC, SDRAM and peripheral ownership.
+All other slides retain original composition, images, page numbering and competition footer.

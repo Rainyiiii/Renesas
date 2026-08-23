@@ -1,0 +1,6 @@
+Template source: RA8P1智能垃圾分类分拣系统_3分钟答辩.pptx
+Slide count: 7
+Aspect ratio: 16:9
+Visual system: white canvas, navy headings, blue section labels, orange/green accents, dark closing slide.
+Reusable frames: cover image, capability photo-and-list, architecture image frame, inference pipeline, state-machine illustration, PCB spread, metric close.
+Decision: preserve all seven source slides and edit inherited text and media frames in place. Slide 3 receives a native editable dual-core diagram inside the existing architecture frame.

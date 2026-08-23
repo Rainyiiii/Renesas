@@ -1,0 +1,9 @@
+{
+  "slide_1": "source slide 1: cover",
+  "slide_2": "source slide 2: board photo and capability list",
+  "slide_3": "source slide 3: architecture frame, rebuilt internally for dual-core",
+  "slide_4": "source slide 4: inference pipeline and four classes",
+  "slide_5": "source slide 5: sorting state-machine flow",
+  "slide_6": "source slide 6: PCB spread",
+  "slide_7": "source slide 7: dark metric conclusion"
+}

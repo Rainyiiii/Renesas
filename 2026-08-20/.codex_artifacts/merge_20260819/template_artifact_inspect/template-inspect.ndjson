@@ -1,0 +1,132 @@
+{"kind":"deck","id":"pr/87kaoi","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"智能垃圾分类分拣系统","textShapes":5}
+{"kind":"shape","id":"sh/wn6dc7eh","slide":1,"name":"矩形 9","bbox":[0,0,18,720]}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"name":"矩形 1","text":"智能垃圾分类分拣系统","textPreview":"智能垃圾分类分拣系统","textChars":10,"textLines":1,"bbox":[66,112,560,142]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"name":"矩形 2","text":"基于瑞萨 RA8P1 的单芯片视觉控制方案","textPreview":"基于瑞萨 RA8P1 的单芯片视觉控制方案","textChars":21,"textLines":1,"bbox":[68,275,540,50]}
+{"kind":"textbox","id":"sh/7qp4be9c","slide":1,"name":"矩形 3","text":"感知 · 推理 · 交互 · 执行","textPreview":"感知 · 推理 · 交互 · 执行","textChars":17,"textLines":1,"bbox":[68,344,480,36]}
+{"kind":"shape","id":"sh/65g3298r","slide":1,"name":"矩形 4","bbox":[68,423,420,3]}
+{"kind":"textbox","id":"sh/ts7md4r2","slide":1,"name":"矩形 5","text":"全国大学生电子设计竞赛信息科技前沿专题赛 · 瑞萨杯","textPreview":"全国大学生电子设计竞赛信息科技前沿专题赛 · 瑞萨杯","textChars":26,"textLines":1,"bbox":[68,450,520,56]}
+{"kind":"shape","id":"sh/sryl4zqx","slide":1,"name":"圆角矩形 6","bbox":[681,54,533,600]}
+{"kind":"textbox","id":"sh/utg3698n","slide":1,"name":"矩形 8","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[68,664,32,20]}
+{"kind":"image","id":"im/ipofexcz","slide":1,"name":"图片 16","geometry":"roundRect","bbox":[710.81,72,473.39,564]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"各位评委老师好，我们的作品是基于瑞萨 RA8P1 的智能垃圾分类分拣系统。它把摄像头识别、屏幕交互、传送带控制和分类执行集中到一颗主控上，目标是完成从看见垃圾到完成分拣的完整闭环。\n\n[Sources]\n- D:/RA/second/rainy/工程对接文档.md\n- D:/RA/second/rainy/ppt_build/assets/machine_cad.jpg"}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"核心方案","textShapes":16}
+{"kind":"textbox","id":"sh/hcvy14ne","slide":2,"name":"矩形 23","text":"核心方案","textPreview":"核心方案","textChars":4,"textLines":1,"bbox":[62,32,470,24]}
+{"kind":"textbox","id":"sh/9072xkry","slide":2,"name":"矩形 1","text":"RA8P1 完成视觉、交互与机电控制","textPreview":"RA8P1 完成视觉、交互与机电控制","textChars":18,"textLines":1,"bbox":[62,66,1110,56]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"name":"矩形 2","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1188,34,34,24]}
+{"kind":"shape","id":"sh/b29kza94","slide":2,"name":"圆角矩形 3","bbox":[62,148,620,470]}
+{"kind":"textbox","id":"sh/x4r21kru","slide":2,"name":"矩形 5","text":"瑞萨 RA8P1","textPreview":"瑞萨 RA8P1","textChars":8,"textLines":1,"bbox":[728,154,320,42]}
+{"kind":"textbox","id":"sh/w3i1sfa9","slide":2,"name":"矩形 6","text":"单芯片构建完整智能分拣控制核心","textPreview":"单芯片构建完整智能分拣控制核心","textChars":15,"textLines":1,"bbox":[728,199,440,36]}
+{"kind":"textbox","id":"sh/r65knqtk","slide":2,"name":"矩形 7","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[728,272,34,26]}
+{"kind":"shape","id":"sh/q5wjelsz","slide":2,"name":"圆角矩形 8","bbox":[772,274,4,61]}
+{"kind":"textbox","id":"sh/ove9o7yd","slide":2,"name":"矩形 9","text":"Cortex-M85","textPreview":"Cortex-M85","textChars":10,"textLines":1,"bbox":[798,271,350,31]}
+{"kind":"textbox","id":"sh/9wnqhczy","slide":2,"name":"矩形 10","text":"实时任务调度与机电状态机","textPreview":"实时任务调度与机电状态机","textChars":12,"textLines":1,"bbox":[798,307,370,34]}
+{"kind":"textbox","id":"sh/mtwrmxg7","slide":2,"name":"矩形 11","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[728,368,34,26]}
+{"kind":"shape","id":"sh/nu58f2hs","slide":2,"name":"圆角矩形 12","bbox":[772,370,4,61]}
+{"kind":"textbox","id":"sh/wjy9sry9","slide":2,"name":"矩形 13","text":"Ethos-U55 NPU","textPreview":"Ethos-U55 NPU","textChars":13,"textLines":1,"bbox":[798,367,350,31]}
+{"kind":"textbox","id":"sh/xk7qlczu","slide":2,"name":"矩形 14","text":"192×192 int8 模型离线推理","textPreview":"192×192 int8 模型离线推理","textChars":19,"textLines":1,"bbox":[798,403,370,34]}
+{"kind":"textbox","id":"sh/ahwrqhgj","slide":2,"name":"矩形 15","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[728,464,34,26]}
+{"kind":"shape","id":"sh/bip8jmho","slide":2,"name":"圆角矩形 16","bbox":[772,466,4,61]}
+{"kind":"textbox","id":"sh/cnupgny5","slide":2,"name":"矩形 17","text":"丰富外设接口","textPreview":"丰富外设接口","textChars":6,"textLines":1,"bbox":[798,463,350,31]}
+{"kind":"textbox","id":"sh/do3q9szq","slide":2,"name":"矩形 18","text":"摄像头、屏幕、触摸、称重与电机","textPreview":"摄像头、屏幕、触摸、称重与电机","textChars":15,"textLines":1,"bbox":[798,499,370,34]}
+{"kind":"shape","id":"sh/t8byxkn2","slide":2,"name":"圆角矩形 19","bbox":[728,566,440,44]}
+{"kind":"textbox","id":"sh/s72xofmh","slide":2,"name":"矩形 20","text":"视觉识别结果直接进入分拣控制状态机","textPreview":"视觉识别结果直接进入分拣控制状态机","textChars":17,"textLines":1,"bbox":[750,577,400,24]}
+{"kind":"shape","id":"sh/76twva5c","slide":2,"name":"矩形 21","bbox":[62,681,1156,1]}
+{"kind":"textbox","id":"sh/65kfmpor","slide":2,"name":"矩形 22","text":"全国大学生电子设计竞赛信息科技前沿专题赛 · 瑞萨杯","textPreview":"全国大学生电子设计竞赛信息科技前沿专题赛 · 瑞萨杯","textChars":26,"textLines":1,"bbox":[62,690,720,18]}
+{"kind":"image","id":"im/zqlgral0","slide":2,"name":"图片 27","geometry":"roundRect","bbox":[82,168,580,430]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"系统以 RA8P1 作为整机控制核心。Cortex-M85 负责实时任务调度和机电状态机，Ethos-U55 NPU 负责量化模型推理；同时通过片上外设连接摄像头、显示屏、触摸、称重模块、步进电机和舵机，使识别结果可以直接转化为分拣动作。\n\n[Sources]\n- D:/RA/second/rainy/工程对接文档.md\n- D:/RA/second/rainy/ppt_build/assets/hardware_bench.jpg"}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"系统架构","textShapes":7}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"name":"矩形 10","text":"系统架构","textPreview":"系统架构","textChars":4,"textLines":1,"bbox":[62,32,470,24]}
+{"kind":"textbox","id":"sh/cza94vmx","slide":3,"name":"矩形 1","text":"一颗芯片串起感知、推理、执行与交互","textPreview":"一颗芯片串起感知、推理、执行与交互","textChars":17,"textLines":1,"bbox":[62,66,1110,56]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"name":"矩形 2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1188,34,34,24]}
+{"kind":"shape","id":"sh/298ryl4v","slide":3,"name":"圆角矩形 3","bbox":[62,142,1156,458]}
+{"kind":"shape","id":"sh/obq90bml","slide":3,"name":"圆角矩形 5","bbox":[62,617,1156,48]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"name":"矩形 6","text":"OV5640 / CEU","textPreview":"OV5640 / CEU","textChars":12,"textLines":1,"bbox":[83,629,210,24]}
+{"kind":"textbox","id":"sh/m5cra54z","slide":3,"name":"矩形 7","text":"Ethos-U55 / YOLO","textPreview":"Ethos-U55 / YOLO","textChars":16,"textLines":1,"bbox":[349,629,230,24]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"name":"矩形 8","text":"状态机 / PWM / UART","textPreview":"状态机 / PWM / UART","textChars":16,"textLines":1,"bbox":[636,629,260,24]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"name":"矩形 9","text":"屏幕 · 触摸 · TF卡","textPreview":"屏幕 · 触摸 · TF卡","textChars":13,"textLines":1,"bbox":[963,629,220,24]}
+{"kind":"image","id":"im/ipw7elwr","slide":3,"name":"图片 14","bbox":[290,157,700,420]}
+{"kind":"image","id":"im/3q5onqdc","slide":3,"name":"F360BE8B-6686-4F3D-AEAF-501FE73E4058-1","bbox":[293,215.33,702.2,320.33]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"数据流从 OV5640 开始，由 CEU 采集 RGB565 图像；图像预处理后送入 Ethos-U55 推理；识别结果再进入控制状态机，驱动步进电机和舵机，同时更新 ILI9488 屏幕。触摸和 TF 卡还提供模式控制与现场数据采集。\n\n[Sources]\n- D:/RA/second/rainy/report_work/final_media/image1.png\n- D:/RA/second/rainy/src/hal_entry.c"}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"边缘智能","textShapes":15}
+{"kind":"textbox","id":"sh/1wbapc7q","slide":4,"name":"矩形 23","text":"边缘智能","textPreview":"边缘智能","textChars":4,"textLines":1,"bbox":[62,32,470,24]}
+{"kind":"textbox","id":"sh/1cj2d8b6","slide":4,"name":"矩形 1","text":"192×192 量化模型完成四类离线识别","textPreview":"192×192 量化模型完成四类离线识别","textChars":20,"textLines":1,"bbox":[62,66,1110,56]}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"name":"矩形 2","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1188,34,34,24]}
+{"kind":"shape","id":"sh/rm1k7yt4","slide":4,"name":"圆角矩形 3","bbox":[62,146,760,458]}
+{"kind":"textbox","id":"sh/doj29oba","slide":4,"name":"矩形 5","text":"只采用最高置信度目标","textPreview":"只采用最高置信度目标","textChars":10,"textLines":1,"bbox":[858,151,330,42]}
+{"kind":"textbox","id":"sh/sna103ap","slide":4,"name":"矩形 6","text":"减少多目标干扰，让控制对象唯一","textPreview":"减少多目标干扰，让控制对象唯一","textChars":15,"textLines":1,"bbox":[858,196,330,48]}
+{"kind":"shape","id":"sh/3ihk3et8","slide":4,"name":"圆角矩形 7","bbox":[858,276,14,48]}
+{"kind":"textbox","id":"sh/ih8ju9sn","slide":4,"name":"矩形 8","text":"有害垃圾","textPreview":"有害垃圾","textChars":4,"textLines":1,"bbox":[890,278,170,26]}
+{"kind":"textbox","id":"sh/kbm987y5","slide":4,"name":"矩形 9","text":"HARM","textPreview":"HARM","textChars":4,"textLines":1,"bbox":[890,305,160,20]}
+{"kind":"shape","id":"sh/5cva1cfq","slide":4,"name":"圆角矩形 10","bbox":[858,348,14,48]}
+{"kind":"textbox","id":"sh/i94r6xgz","slide":4,"name":"矩形 11","text":"厨余垃圾","textPreview":"厨余垃圾","textChars":4,"textLines":1,"bbox":[890,350,170,26]}
+{"kind":"textbox","id":"sh/jadsz2xk","slide":4,"name":"矩形 12","text":"KITCHEN","textPreview":"KITCHEN","textChars":7,"textLines":1,"bbox":[890,377,160,20]}
+{"kind":"shape","id":"sh/w72947yt","slide":4,"name":"圆角矩形 13","bbox":[858,420,14,48]}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"name":"矩形 14","text":"可回收物","textPreview":"可回收物","textChars":4,"textLines":1,"bbox":[890,422,170,26]}
+{"kind":"textbox","id":"sh/a5kr2xg3","slide":4,"name":"矩形 15","text":"RECOVER","textPreview":"RECOVER","textChars":7,"textLines":1,"bbox":[890,449,160,20]}
+{"kind":"shape","id":"sh/v6tsv2xo","slide":4,"name":"圆角矩形 16","bbox":[858,492,14,48]}
+{"kind":"textbox","id":"sh/g36tgryd","slide":4,"name":"矩形 17","text":"其他垃圾","textPreview":"其他垃圾","textChars":4,"textLines":1,"bbox":[890,494,170,26]}
+{"kind":"textbox","id":"sh/h4fa9wfy","slide":4,"name":"矩形 18","text":"OTHER","textPreview":"OTHER","textChars":5,"textLines":1,"bbox":[890,521,160,20]}
+{"kind":"shape","id":"sh/p0batw72","slide":4,"name":"矩形 19","bbox":[858,584,310,2]}
+{"kind":"textbox","id":"sh/oz29krqh","slide":4,"name":"矩形 20","text":"本地推理 · 无需云端 · 结果直接驱动执行","textPreview":"本地推理 · 无需云端 · 结果直接驱动执行","textChars":22,"textLines":1,"bbox":[858,598,330,44]}
+{"kind":"shape","id":"sh/3ytsrmpw","slide":4,"name":"矩形 21","bbox":[62,681,1156,1]}
+{"kind":"textbox","id":"sh/2xkrih8b","slide":4,"name":"矩形 22","text":"全国大学生电子设计竞赛信息科技前沿专题赛 · 瑞萨杯","textPreview":"全国大学生电子设计竞赛信息科技前沿专题赛 · 瑞萨杯","textChars":26,"textLines":1,"bbox":[62,690,720,18]}
+{"kind":"image","id":"im/v618be10","slide":4,"name":"图片 27","bbox":[84,223.9,716,302.21]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":"识别侧使用 192 乘 192 的 int8 量化模型，在 Ethos-U55 上离线运行，输出有害、厨余、可回收和其他四类。系统只保留当前概率最高的目标，并通过连续帧确认和阈值过滤后再触发动作，避免画面中多个目标同时干扰控制。\n\n[Sources]\n- D:/RA/second/rainy/report_work/final_media/image2.png\n- D:/RA/second/rainy/src/yolo_detector.c"}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"分拣闭环","textShapes":14}
+{"kind":"textbox","id":"sh/fe94nm1w","slide":5,"name":"矩形 21","text":"分拣闭环","textPreview":"分拣闭环","textChars":4,"textLines":1,"bbox":[62,32,470,24]}
+{"kind":"textbox","id":"sh/dgbulwnm","slide":5,"name":"矩形 1","text":"识别结果被转化为可重复的机械动作","textPreview":"识别结果被转化为可重复的机械动作","textChars":16,"textLines":1,"bbox":[62,66,1110,56]}
+{"kind":"textbox","id":"sh/cf2tcr61","slide":5,"name":"矩形 2","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1188,34,34,24]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"name":"矩形 3","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[66,155,55,36]}
+{"kind":"shape","id":"sh/yhkbe1o7","slide":5,"name":"圆角矩形 4","bbox":[128,160,4,74]}
+{"kind":"textbox","id":"sh/l4bupwny","slide":5,"name":"矩形 5","text":"识别锁定","textPreview":"识别锁定","textChars":4,"textLines":1,"bbox":[154,155,270,36]}
+{"kind":"textbox","id":"sh/032tgr6d","slide":5,"name":"矩形 6","text":"连续帧确认类别与置信度","textPreview":"连续帧确认类别与置信度","textChars":11,"textLines":1,"bbox":[154,198,310,45]}
+{"kind":"textbox","id":"sh/n6dcr65o","slide":5,"name":"矩形 7","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[66,287,55,36]}
+{"kind":"shape","id":"sh/m5kbi1oj","slide":5,"name":"圆角矩形 8","bbox":[128,292,4,74]}
+{"kind":"textbox","id":"sh/w32dkbuh","slide":5,"name":"矩形 9","text":"视觉对齐","textPreview":"视觉对齐","textChars":4,"textLines":1,"bbox":[154,287,270,36]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"name":"矩形 10","text":"根据目标位置修正传送带","textPreview":"根据目标位置修正传送带","textChars":11,"textLines":1,"bbox":[154,330,310,45]}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"name":"矩形 11","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[66,419,55,36]}
+{"kind":"shape","id":"sh/v2twb6dw","slide":5,"name":"圆角矩形 12","bbox":[128,424,4,74]}
+{"kind":"textbox","id":"sh/k7mxovud","slide":5,"name":"矩形 13","text":"输送与推料","textPreview":"输送与推料","textChars":5,"textLines":1,"bbox":[154,419,270,36]}
+{"kind":"textbox","id":"sh/58vehgvy","slide":5,"name":"矩形 14","text":"步进定位，舵机完成分类","textPreview":"步进定位，舵机完成分类","textChars":11,"textLines":1,"bbox":[154,462,310,45]}
+{"kind":"shape","id":"sh/i54fmlc7","slide":5,"name":"圆角矩形 15","bbox":[500,146,718,484]}
+{"kind":"shape","id":"sh/sb6xsvu9","slide":5,"name":"圆角矩形 17","bbox":[62,571,390,58]}
+{"kind":"textbox","id":"sh/tcfel0vu","slide":5,"name":"矩形 18","text":"防重复：锁定一次目标，完成 RETURN / CLEAR 后再重新识别","textPreview":"防重复：锁定一次目标，完成 RETURN / CLEAR 后再重新识别","textChars":35,"textLines":1,"bbox":[82,584,350,34]}
+{"kind":"shape","id":"sh/hgrmpwj2","slide":5,"name":"矩形 19","bbox":[62,681,1156,1]}
+{"kind":"textbox","id":"sh/gfi5grih","slide":5,"name":"矩形 20","text":"全国大学生电子设计竞赛信息科技前沿专题赛 · 瑞萨杯","textPreview":"全国大学生电子设计竞赛信息科技前沿专题赛 · 瑞萨杯","textChars":26,"textLines":1,"bbox":[62,690,720,18]}
+{"kind":"image","id":"im/lgbydg7i","slide":5,"name":"图片 37","bbox":[520,205.39,678,361.23]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"识别成功并不是立刻推料。系统先锁定目标，再根据画面位置做对齐；到达设定位置后，步进电机停止，舵机执行推料和复位。动作完成后进入返回与清空状态，确认目标离开后才重新识别，从而避免同一个电池被反复触发。\n\n[Sources]\n- D:/RA/second/rainy/report_work/final_media/image3.png\n- D:/RA/second/rainy/src/machine_control.c"}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"06","textShapes":3}
+{"kind":"textbox","id":"sh/zi98nu94","slide":6,"name":"矩形 2","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1188,34,34,24]}
+{"kind":"shape","id":"sh/cbe5g3ih","slide":6,"name":"矩形 19","bbox":[62,681,1156,1]}
+{"kind":"textbox","id":"sh/dcnm98zm","slide":6,"name":"矩形 20","text":"全国大学生电子设计竞赛信息科技前沿专题赛 · 瑞萨杯","textPreview":"全国大学生电子设计竞赛信息科技前沿专题赛 · 瑞萨杯","textChars":26,"textLines":1,"bbox":[62,690,720,18]}
+{"kind":"textbox","id":"sh/0fy5k3id","slide":6,"name":"矩形 23","text":"RA8P1拓展板与电源供电板PCB设计","textPreview":"RA8P1拓展板与电源供电板PCB设计","textChars":19,"textLines":1,"bbox":[5,37.07,1110,56]}
+{"kind":"image","id":"im/md8ru5sv","slide":6,"name":"图片 16","bbox":[5,105,566,568]}
+{"kind":"image","id":"im/90zqp0r6","slide":6,"name":"图片 22","bbox":[579.53,178.53,555,417]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":""}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"作品价值","textShapes":14}
+{"kind":"textbox","id":"sh/50v2pgna","slide":7,"name":"矩形 22","text":"作品价值","textPreview":"作品价值","textChars":4,"textLines":1,"bbox":[62,40,220,24]}
+{"kind":"textbox","id":"sh/cb2tkvap","slide":7,"name":"矩形 1","text":"让 RA8P1 同时成为眼睛、大脑和控制器","textPreview":"让 RA8P1 同时成为眼睛、大脑和控制器","textChars":21,"textLines":1,"bbox":[62,82,1110,58]}
+{"kind":"textbox","id":"sh/dcbud0ra","slide":7,"name":"矩形 2","text":"从识别到执行，再到现场数据回流，形成完整可演示闭环。","textPreview":"从识别到执行，再到现场数据回流，形成完整可演示闭环。","textChars":26,"textLines":1,"bbox":[62,151,900,38]}
+{"kind":"shape","id":"sh/ydkbm5sv","slide":7,"name":"圆角矩形 3","bbox":[62,245,354,228]}
+{"kind":"shape","id":"sh/zedcfa9g","slide":7,"name":"圆角矩形 4","bbox":[62,245,354,7]}
+{"kind":"textbox","id":"sh/kzmdova1","slide":7,"name":"矩形 5","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[90,280,100,78]}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"name":"矩形 6","text":"颗 RA8P1","textPreview":"颗 RA8P1","textChars":7,"textLines":1,"bbox":[174,304,190,34]}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"name":"矩形 7","text":"统一视觉推理与整机控制","textPreview":"统一视觉推理与整机控制","textChars":11,"textLines":1,"bbox":[90,386,294,52]}
+{"kind":"shape","id":"sh/fi9c369c","slide":7,"name":"圆角矩形 8","bbox":[448,245,354,228]}
+{"kind":"shape","id":"sh/baxkjqlk","slide":7,"name":"圆角矩形 9","bbox":[448,245,354,7]}
+{"kind":"textbox","id":"sh/a9ojq5kz","slide":7,"name":"矩形 10","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[476,280,100,78]}
+{"kind":"textbox","id":"sh/xcz2l03q","slide":7,"name":"矩形 11","text":"类垃圾","textPreview":"类垃圾","textChars":3,"textLines":1,"bbox":[560,304,190,34]}
+{"kind":"textbox","id":"sh/cbq1sv25","slide":7,"name":"矩形 12","text":"最高置信度目标离线识别","textPreview":"最高置信度目标离线识别","textChars":11,"textLines":1,"bbox":[476,386,294,52]}
+{"kind":"shape","id":"sh/n6x0fqlo","slide":7,"name":"圆角矩形 13","bbox":[834,245,354,228]}
+{"kind":"shape","id":"sh/25ojml43","slide":7,"name":"圆角矩形 14","bbox":[834,245,354,7]}
+{"kind":"textbox","id":"sh/p8fih03e","slide":7,"name":"矩形 15","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[862,280,100,78]}
+{"kind":"textbox","id":"sh/o761ov2t","slide":7,"name":"矩形 16","text":"套闭环","textPreview":"套闭环","textChars":3,"textLines":1,"bbox":[946,304,190,34]}
+{"kind":"textbox","id":"sh/f2d0b6lc","slide":7,"name":"矩形 17","text":"触摸、称重、执行与 TF 采集","textPreview":"触摸、称重、执行与 TF 采集","textChars":15,"textLines":1,"bbox":[862,386,294,52]}
+{"kind":"shape","id":"sh/eh4jil4r","slide":7,"name":"矩形 18","bbox":[62,526,1156,1]}
+{"kind":"shape","id":"sh/id4ju1oz","slide":7,"name":"矩形 19","bbox":[62,554,1040,48]}
+{"kind":"textbox","id":"sh/jedkn654","slide":7,"name":"矩形 20","text":"谢谢各位评委老师","textPreview":"谢谢各位评委老师","textChars":8,"textLines":1,"bbox":[62,654,420,26]}
+{"kind":"textbox","id":"sh/4fm1wb6p","slide":7,"name":"矩形 21","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1184,654,34,20]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"总结来说，我们的亮点不是单独完成一次识别，而是用一颗 RA8P1 打通感知、推理、交互、执行和数据采集。后续我们会继续用实机数据做模型与机械参数标定，提升复杂环境下的识别稳定性和分拣一致性。谢谢各位评委老师。\n\n[Sources]\n- D:/RA/second/rainy/工程对接文档.md\n- D:/RA/second/rainy/RA8P1整机替代接线与迁移说明.md"}
