@@ -1,0 +1,22 @@
+[name]
+model_name=my-first-project-v1-ra8p1-192
+
+[train-configure]
+epochs=41
+steps=25,35
+batch_size=16
+subdivisions=1
+learning_rate=0.0005
+
+[model-configure]
+pre_weights=./weights/ho-best.pth
+classes=4
+width=192
+height=192
+anchor_num=3
+anchors=16.27,154.30, 30.19,114.33, 36.82,52.03, 63.05,76.91, 74.12,39.90, 84.99,112.03
+
+[data-configure]
+train=./datasets/my_first_project_v1_192/train.txt
+val=./datasets/my_first_project_v1_192/val.txt
+names=./data/ho.names

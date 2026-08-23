@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install training dependencies",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe -m pip install -r requirements-windows.txt",
+      "problemMatcher": []
+    },
+    {
+      "label": "Generate dataset lists",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe tools\\make_yolo_lists.py --dataset datasets\\custom",
+      "problemMatcher": []
+    },
+    {
+      "label": "Generate anchors",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe genanchors.py --traintxt datasets\\custom\\train.txt --output_dir data --input_width 352 --input_height 352",
+      "problemMatcher": []
+    },
+    {
+      "label": "Train custom dataset",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe train.py --data data\\custom.data",
+      "problemMatcher": []
+    },
+    {
+      "label": "Train My First Project v1 (RA8P1 192)",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe train.py --data data\\my_first_project_v1_192.data --npu-friendly",
+      "problemMatcher": []
+    },
+    {
+      "label": "Train My First Project v2 (RA8P1 192)",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe train.py --data data\\my_first_project_v2_192.data --npu-friendly",
+      "problemMatcher": []
+    },
+    {
+      "label": "Train My First Project v3 (RA8P1 192, 101 epochs)",
+      "type": "shell",
+      "command": ".\\.venv\\Scripts\\python.exe train.py --data data\\my_first_project_v3_192.data --npu-friendly --workers 0",
+      "problemMatcher": []
+    }
+  ]
+}

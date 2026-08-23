@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Train custom dataset",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\train.py",
+      "console": "integratedTerminal",
+      "args": ["--data", "data/custom.data"]
+    },
+    {
+      "name": "Test image",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\test.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--data", "data/custom.data",
+        "--weights", "weights/custom-best.pth",
+        "--img", "img/000139.jpg"
+      ]
+    }
+  ]
+}
