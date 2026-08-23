@@ -1,0 +1,421 @@
+/*
+ * ST7735S / ILI9163 128x160 SPI Display Driver - Hardware SPI (g_spi1)
+ * For EK-RA8P1 + 1.8" TFT (128x160)
+ */
+
+#include "hal_data.h"
+#include "st7789.h"
+#include <stdbool.h>
+#include <stdint.h>
+
+#define DISPLAY_WIDTH   128
+#define DISPLAY_HEIGHT  160
+#define SPI_WRITE_TIMEOUT_LOOPS  (300000UL)
+
+/* Control pin assignments (SPI data/clock are now hardware peripheral pins). */
+#define PIN_CS_PORT    4
+#define PIN_CS_PIN     4
+#define PIN_DC_PORT    4
+#define PIN_DC_PIN     10
+#define PIN_RST_PORT   4
+#define PIN_RST_PIN    9
+#define PIN_BLK_PORT   4
+#define PIN_BLK_PIN    15
+
+#define PODR_REG(port_num) \
+    (*(volatile uint16_t *)((uint32_t)R_PORT0_BASE + (port_num) * 0x20UL + 0x02UL))
+
+/* PCNTR3 atomic set/clear: lower16=SET, upper16=CLEAR */
+#define PCNTR3_REG(port_num) \
+    (*(volatile uint32_t *)((uint32_t)R_PORT0_BASE + (port_num) * 0x20UL + 0x08UL))
+
+#define GPIO_SET(port_num, pin_num) \
+    (PCNTR3_REG(port_num) = (1U << (pin_num)))
+
+#define GPIO_CLR(port_num, pin_num) \
+    (PCNTR3_REG(port_num) = (1U << (16U + (pin_num))))
+
+#define PFS_PmnPFS(port_num, pin_num) \
+    (R_PFS->PORT[(port_num)].PIN[(pin_num)].PmnPFS)
+
+#define PWPR_REG  (R_PMISC->PWPR)
+
+/* Single line staging buffer for display writes. */
+static uint8_t g_line_buf[DISPLAY_WIDTH * 2];
+
+/* SPI state driven by FSP callback. */
+static volatile spi_event_t g_spi_last_event = SPI_EVENT_TRANSFER_ABORTED;
+static volatile bool g_spi_transfer_done = false;
+static bool g_spi_opened = false;
+
+void spi_callback(spi_callback_args_t *p_args)
+{
+    if (0 == p_args) {
+        return;
+    }
+
+    g_spi_last_event = p_args->event;
+    g_spi_transfer_done = true;
+}
+
+static void delay_ms_approx(uint32_t ms)
+{
+    for (volatile uint32_t i = 0; i < ms * 12000UL; i++) {
+    }
+}
+
+static void pfs_unlock(void)
+{
+    PWPR_REG = 0x00;
+    PWPR_REG = 0x40;
+}
+
+static void pfs_lock(void)
+{
+    PWPR_REG = 0x00;
+    PWPR_REG = 0x80;
+}
+
+static void gpio_init_output(uint8_t port, uint8_t pin)
+{
+    pfs_unlock();
+    PFS_PmnPFS(port, pin) = 0x00000004UL;
+    pfs_lock();
+    PODR_REG(port) &= ~(1U << pin);
+}
+
+static void gpio_write(uint8_t port, uint8_t pin, uint8_t level)
+{
+    if (level) {
+        GPIO_SET(port, pin);
+    } else {
+        GPIO_CLR(port, pin);
+    }
+}
+
+static fsp_err_t spi_init_once(void)
+{
+    if (g_spi_opened) {
+        return FSP_SUCCESS;
+    }
+
+    fsp_err_t err = g_spi1.p_api->open(g_spi1.p_ctrl, g_spi1.p_cfg);
+    if (FSP_SUCCESS == err) {
+        g_spi_opened = true;
+    }
+
+    return err;
+}
+
+static fsp_err_t spi_recover(void)
+{
+    if (g_spi_opened) {
+        (void) g_spi1.p_api->close(g_spi1.p_ctrl);
+        g_spi_opened = false;
+    }
+
+    return spi_init_once();
+}
+
+static fsp_err_t spi_write_bytes(const uint8_t *p_data, uint32_t length)
+{
+    if ((0 == p_data) || (0U == length)) {
+        return FSP_SUCCESS;
+    }
+
+    fsp_err_t err = spi_init_once();
+    if (FSP_SUCCESS != err) {
+        return err;
+    }
+
+    g_spi_transfer_done = false;
+    g_spi_last_event = SPI_EVENT_TRANSFER_ABORTED;
+
+    err = g_spi1.p_api->write(g_spi1.p_ctrl, p_data, length, SPI_BIT_WIDTH_8_BITS);
+    if (FSP_SUCCESS != err) {
+        return err;
+    }
+
+    uint32_t timeout = SPI_WRITE_TIMEOUT_LOOPS;
+    while ((!g_spi_transfer_done) && (timeout-- > 0U)) {
+    }
+
+    if (!g_spi_transfer_done) {
+        (void) spi_recover();
+        return FSP_ERR_TIMEOUT;
+    }
+
+    if (SPI_EVENT_TRANSFER_COMPLETE != g_spi_last_event) {
+        (void) spi_recover();
+        return FSP_ERR_TRANSFER_ABORTED;
+    }
+
+    return FSP_SUCCESS;
+}
+
+static void wr_cmd(uint8_t cmd)
+{
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 0);
+    gpio_write(PIN_DC_PORT, PIN_DC_PIN, 0);
+    (void) spi_write_bytes(&cmd, 1);
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 1);
+}
+
+static void wr_data(uint8_t data)
+{
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 0);
+    gpio_write(PIN_DC_PORT, PIN_DC_PIN, 1);
+    (void) spi_write_bytes(&data, 1);
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 1);
+}
+
+void st7789_backlight(uint8_t on)
+{
+    gpio_write(PIN_BLK_PORT, PIN_BLK_PIN, on ? 1U : 0U);
+}
+
+void st7789_init(void)
+{
+    gpio_init_output(PIN_CS_PORT, PIN_CS_PIN);
+    gpio_init_output(PIN_DC_PORT, PIN_DC_PIN);
+    gpio_init_output(PIN_RST_PORT, PIN_RST_PIN);
+    gpio_init_output(PIN_BLK_PORT, PIN_BLK_PIN);
+
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 1);
+    gpio_write(PIN_DC_PORT, PIN_DC_PIN, 0);
+    gpio_write(PIN_BLK_PORT, PIN_BLK_PIN, 0);
+
+    (void) spi_init_once();
+
+    /* Hardware reset */
+    gpio_write(PIN_RST_PORT, PIN_RST_PIN, 1);
+    delay_ms_approx(50);
+    gpio_write(PIN_RST_PORT, PIN_RST_PIN, 0);
+    delay_ms_approx(50);
+    gpio_write(PIN_RST_PORT, PIN_RST_PIN, 1);
+    delay_ms_approx(200);
+
+    /* ST7735S compatible init sequence */
+    wr_cmd(0x11);
+    delay_ms_approx(200);
+
+    wr_cmd(0xB1); wr_data(0x01); wr_data(0x2C); wr_data(0x2D);
+    wr_cmd(0xB2); wr_data(0x01); wr_data(0x2C); wr_data(0x2D);
+    wr_cmd(0xB4); wr_data(0x07);
+
+    wr_cmd(0xC0); wr_data(0xA2); wr_data(0x02); wr_data(0x84);
+    wr_cmd(0xC1); wr_data(0xC5);
+    wr_cmd(0xC2); wr_data(0x0A); wr_data(0x00);
+    wr_cmd(0xC3); wr_data(0x8A); wr_data(0x2A);
+    wr_cmd(0xC4); wr_data(0x8A); wr_data(0xEE);
+    wr_cmd(0xC5); wr_data(0x0E);
+
+    wr_cmd(0xE0);
+    wr_data(0x0F); wr_data(0x1A); wr_data(0x0F); wr_data(0x18);
+    wr_data(0x2F); wr_data(0x28); wr_data(0x20); wr_data(0x22);
+    wr_data(0x1F); wr_data(0x1B); wr_data(0x23); wr_data(0x37);
+    wr_data(0x00); wr_data(0x07); wr_data(0x02); wr_data(0x10);
+
+    wr_cmd(0xE1);
+    wr_data(0x0F); wr_data(0x1B); wr_data(0x0F); wr_data(0x17);
+    wr_data(0x33); wr_data(0x2C); wr_data(0x29); wr_data(0x2E);
+    wr_data(0x30); wr_data(0x30); wr_data(0x39); wr_data(0x3F);
+    wr_data(0x00); wr_data(0x07); wr_data(0x03); wr_data(0x10);
+
+    wr_cmd(0x3A); wr_data(0x05);   /* RGB565 */
+    wr_cmd(0x36); wr_data(0x00);   /* Portrait */
+
+    wr_cmd(0x13);
+    delay_ms_approx(10);
+    wr_cmd(0x29);
+    delay_ms_approx(100);
+
+    st7789_fill_color(0xFFFF);
+    st7789_backlight(1);
+}
+
+void st7789_set_window(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
+{
+    wr_cmd(0x2A);
+    wr_data((uint8_t) (x1 >> 8)); wr_data((uint8_t) x1);
+    wr_data((uint8_t) (x2 >> 8)); wr_data((uint8_t) x2);
+
+    wr_cmd(0x2B);
+    wr_data((uint8_t) (y1 >> 8)); wr_data((uint8_t) y1);
+    wr_data((uint8_t) (y2 >> 8)); wr_data((uint8_t) y2);
+
+    wr_cmd(0x2C);
+}
+
+void st7789_fill_color(uint16_t color)
+{
+    uint8_t hi = (uint8_t) (color >> 8);
+    uint8_t lo = (uint8_t) color;
+
+    for (int x = 0; x < DISPLAY_WIDTH; x++) {
+        g_line_buf[2 * x + 0] = hi;
+        g_line_buf[2 * x + 1] = lo;
+    }
+
+    st7789_set_window(0, 0, DISPLAY_WIDTH - 1, DISPLAY_HEIGHT - 1);
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 0);
+    gpio_write(PIN_DC_PORT, PIN_DC_PIN, 1);
+
+    for (int y = 0; y < DISPLAY_HEIGHT; y++) {
+        if (FSP_SUCCESS != spi_write_bytes(g_line_buf, sizeof(g_line_buf))) {
+            break;
+        }
+    }
+
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 1);
+}
+
+void st7789_draw_colorbar(void)
+{
+    static const uint16_t colors[] =
+    {
+        0xF800, 0x07E0, 0x001F, 0xFFFF, 0xFFE0, 0x07FF, 0xF81F, 0x0000
+    };
+
+    uint8_t n = (uint8_t) (sizeof(colors) / sizeof(colors[0]));
+    uint16_t h = DISPLAY_HEIGHT / n;
+
+    for (uint8_t i = 0; i < n; i++) {
+        uint8_t hi = (uint8_t) (colors[i] >> 8);
+        uint8_t lo = (uint8_t) colors[i];
+
+        for (int x = 0; x < DISPLAY_WIDTH; x++) {
+            g_line_buf[2 * x + 0] = hi;
+            g_line_buf[2 * x + 1] = lo;
+        }
+
+        st7789_set_window(0, (uint16_t) (i * h), DISPLAY_WIDTH - 1, (uint16_t) ((i + 1) * h - 1));
+        gpio_write(PIN_CS_PORT, PIN_CS_PIN, 0);
+        gpio_write(PIN_DC_PORT, PIN_DC_PIN, 1);
+
+        for (uint16_t y = 0; y < h; y++) {
+            if (FSP_SUCCESS != spi_write_bytes(g_line_buf, sizeof(g_line_buf))) {
+                break;
+            }
+        }
+
+        gpio_write(PIN_CS_PORT, PIN_CS_PIN, 1);
+    }
+}
+
+void st7789_display_rgb565(const uint8_t *buf, int src_w, int src_h)
+{
+    if ((src_w == 320) && (src_h == 240)) {
+        st7789_display_rgb565_qvga_center(buf);
+        return;
+    }
+
+    int dst_w = DISPLAY_WIDTH;
+    int dst_h = DISPLAY_HEIGHT;
+    int off_x = (src_w - dst_w) / 2;
+    int off_y = (src_h - dst_h) / 2;
+    int row_bytes = src_w * 2;
+
+    const uint8_t *row_ptr = buf + (off_y * src_w + off_x) * 2;
+
+    st7789_set_window(0, 0, (uint16_t) (dst_w - 1), (uint16_t) (dst_h - 1));
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 0);
+    gpio_write(PIN_DC_PORT, PIN_DC_PIN, 1);
+
+    for (int y = 0; y < dst_h; y++) {
+        const uint8_t *p = row_ptr;
+        for (int x = 0; x < dst_w; x++) {
+            g_line_buf[2 * x + 0] = p[1];
+            g_line_buf[2 * x + 1] = p[0];
+            p += 2;
+        }
+        if (FSP_SUCCESS != spi_write_bytes(g_line_buf, sizeof(g_line_buf))) {
+            break;
+        }
+        row_ptr += row_bytes;
+    }
+
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 1);
+}
+
+void st7789_display_rgb565_qvga_center(const uint8_t *buf)
+{
+    const int row_bytes = 320 * 2;
+    const uint8_t *row_ptr = buf + ((40 * 320 + 96) * 2);
+
+    st7789_set_window(0, 0, (uint16_t) (DISPLAY_WIDTH - 1), (uint16_t) (DISPLAY_HEIGHT - 1));
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 0);
+    gpio_write(PIN_DC_PORT, PIN_DC_PIN, 1);
+
+    for (int y = 0; y < DISPLAY_HEIGHT; y++) {
+        const uint8_t *p = row_ptr;
+        for (int x = 0; x < DISPLAY_WIDTH; x++) {
+            g_line_buf[2 * x + 0] = p[1];
+            g_line_buf[2 * x + 1] = p[0];
+            p += 2;
+        }
+        if (FSP_SUCCESS != spi_write_bytes(g_line_buf, sizeof(g_line_buf))) {
+            break;
+        }
+        row_ptr += row_bytes;
+    }
+
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 1);
+}
+
+void st7789_display_yuyv(const uint8_t *buf, int src_w, int src_h)
+{
+    int dst_w = DISPLAY_WIDTH;
+    int dst_h = DISPLAY_HEIGHT;
+    int off_x = (src_w - dst_w) / 2;
+    int off_y = (src_h - dst_h) / 2;
+    int row_bytes = src_w * 2;
+
+    st7789_set_window(0, 0, (uint16_t) (dst_w - 1), (uint16_t) (dst_h - 1));
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 0);
+    gpio_write(PIN_DC_PORT, PIN_DC_PIN, 1);
+
+    for (int y = 0; y < dst_h; y++) {
+        int sy = y + off_y;
+        const uint8_t *row = buf + sy * row_bytes;
+
+        for (int x = 0; x < dst_w; x++) {
+            int sx = x + off_x;
+            int mp = sx / 2;
+            const uint8_t *p = row + mp * 4;
+            int y_val = p[(sx & 1) * 2];
+            int u = p[1] - 128;
+            int v = p[3] - 128;
+
+            int r = y_val + ((359 * v) >> 8);
+            int g = y_val - ((88 * u + 183 * v) >> 8);
+            int b = y_val + ((453 * u) >> 8);
+
+            if (r < 0) {
+                r = 0;
+            } else if (r > 255) {
+                r = 255;
+            }
+            if (g < 0) {
+                g = 0;
+            } else if (g > 255) {
+                g = 255;
+            }
+            if (b < 0) {
+                b = 0;
+            } else if (b > 255) {
+                b = 255;
+            }
+
+            uint16_t rgb = (uint16_t) (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3));
+            g_line_buf[2 * x + 0] = (uint8_t) (rgb >> 8);
+            g_line_buf[2 * x + 1] = (uint8_t) rgb;
+        }
+
+        if (FSP_SUCCESS != spi_write_bytes(g_line_buf, sizeof(g_line_buf))) {
+            break;
+        }
+    }
+
+    gpio_write(PIN_CS_PORT, PIN_CS_PIN, 1);
+}

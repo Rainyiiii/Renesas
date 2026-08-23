@@ -1,0 +1,28 @@
+/*
+ * SCC8660 Camera UART Driver - Header
+ */
+
+#ifndef SCC8660_H
+#define SCC8660_H
+
+#include <stdint.h>
+
+/* Camera modes */
+#define SCC8660_MODE_RAW_DVP     0x00
+#define SCC8660_MODE_JPEG        0x01
+
+/* Resolution */
+#define SCC8660_SIZE_QQVGA_160x120  0x00
+#define SCC8660_SIZE_QVGA_320x240   0x01
+#define SCC8660_SIZE_VGA_640x480    0x02
+
+/* FPS */
+#define SCC8660_FPS_15    0x00
+#define SCC8660_FPS_30    0x01
+
+void scc8660_init(void);
+void scc8660_set_mode(uint8_t mode);
+void scc8660_set_size(uint8_t size);
+void scc8660_set_fps(uint8_t fps);
+
+#endif

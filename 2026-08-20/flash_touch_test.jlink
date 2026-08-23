@@ -1,0 +1,9 @@
+device R7KA8P1KF
+si SWD
+speed 4000
+r
+h
+loadfile D:\RA\second\rainy\Debug\rainy_touch_test.srec
+r
+g
+exit

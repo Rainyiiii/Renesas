@@ -1,0 +1,59 @@
+/*
+ * SCC8660 Camera UART Driver
+ * Uses direct register writes to SCI_B0
+ * Protocol: 0xA5 + CMD + DH + DL, 9600bps 8N1
+ */
+
+#include "hal_data.h"
+#include "scc8660.h"
+
+/* SCI_B0 CSR bit definitions (32-bit register at offset 0x48) */
+#define CSR_TDRE    (1UL << 29)  /* Transmit Data Empty */
+#define CSR_TEND    (1UL << 30)  /* Transmit End */
+
+static void uart_tx_byte(uint8_t byte)
+{
+    /* Wait for TDRE (TX buffer empty) */
+    while (!(g_uart0_ctrl.p_reg->CSR & CSR_TDRE));
+
+    /* Write data byte */
+    g_uart0_ctrl.p_reg->TDR_BY = byte;
+
+    /* Wait for TEND (transmission complete) */
+    while (!(g_uart0_ctrl.p_reg->CSR & CSR_TEND));
+}
+
+static void uart_tx_word(uint16_t word)
+{
+    uart_tx_byte((uint8_t)(word >> 8));
+    uart_tx_byte((uint8_t)(word & 0xFF));
+}
+
+static void scc8660_send_cmd(uint8_t cmd, uint16_t data)
+{
+    uart_tx_byte(0xA5);
+    uart_tx_byte(cmd);
+    uart_tx_word(data);
+}
+
+void scc8660_init(void)
+{
+    /* Disable CTS hardware flow control (CCR1 bit 0 = CTSE).
+     * Already done in manual init, but safe to call again. */
+    g_uart0_ctrl.p_reg->CCR1 &= ~1U;
+}
+
+void scc8660_set_mode(uint8_t mode)
+{
+    scc8660_send_cmd(0x05, mode);
+}
+
+void scc8660_set_size(uint8_t size)
+{
+    scc8660_send_cmd(0x04, size);
+}
+
+void scc8660_set_fps(uint8_t fps)
+{
+    scc8660_send_cmd(0x03, fps);
+}

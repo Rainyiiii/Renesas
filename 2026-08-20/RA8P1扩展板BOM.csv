@@ -1,0 +1,53 @@
+分组,位号,数量,器件/建议型号,封装,关键要求,备注
+逐飞上插,J_ZF_P4,1,2.54mm通孔双排母座2x8,TH_2.54,底面装配并与逐飞P4公针对插,1脚对1脚禁止镜像
+逐飞上插,J_ZF_P5,1,2.54mm通孔双排母座2x8,TH_2.54,底面装配并与逐飞P5公针对插,摄像头RST和PWDN
+逐飞上插,J_ZF_P6,1,2.54mm通孔双排母座2x20,TH_2.54,底面装配并与逐飞P6公针对插,未用针脚不走线
+逐飞上插,J_ZF_P7,1,2.54mm通孔双排母座2x10,TH_2.54,底面装配并与逐飞P7公针对插,1脚对1脚禁止镜像
+逐飞上插,J_ZF_P8,1,2.54mm通孔双排母座2x8,TH_2.54,底面装配并与逐飞P8公针对插,LCD和摄像头高速信号
+逐飞上插,J_ZF_P9,1,2.54mm通孔双排母座2x3,TH_2.54,底面装配并与逐飞P9公针对插,3.3V多脚并联
+逐飞上插,J_ZF_P10,1,2.54mm通孔双排母座2x4,TH_2.54,底面装配并与逐飞P10公针对插,GND多脚并联
+叠板支撑,M_STACK1~M_STACK4,4,M3铜柱或尼龙柱,M3,高度按母座完全插合后的板间距实测,与逐飞板四角M1~M4固定
+电源连接,J_PWR12 J_PWR_LOGIC,2,KF301-2P 5.08mm,TH_5.08,防反插丝印,
+电源连接,J_PWR_SERVO,1,KF301-3P 5.08mm,TH_5.08,8.4V/GND/5V,
+电源保护,F_12V,1,5A保险丝或自恢复保险丝,按选型,12V主路,
+电源保护,F_LOGIC,1,0.75A自恢复保险丝,1206/1812,5V逻辑,
+电源保护,F_SERVO5 F_SERVO84,2,5A保险丝,按选型,两路舵机总电源,
+电源保护,F_S1~F_S6,6,2A自恢复保险丝,1812,每路舵机独立,按实际舵机峰值复核
+电源保护,D_TVS12,1,SMBJ18A,SMB,12V输入TVS,
+电源保护,D_REVERSE12,1,AO4407A可选,SO-8,-30V P-MOS反接保护,大电流时核算温升
+逻辑缓冲,U_MOTOR1 U_MOTOR2,2,74AHCT244PW,TSSOP-20,5V供电且接受3.3V高电平,仅用于电机驱动信号
+电平转换,U_WEIGHT,1,TXS0102DCTR,SSOP-8,3.3V/可选模块电压,SCI4 9600bps
+电机接口,J_MOTOR1~J_MOTOR4 J_LIFT,5,XH2.54-8P直插座,TH_2.54,保留旧线束脚位,
+舵机接口,J_SERVO1~J_SERVO6,6,XH2.54-3P直插座,TH_2.54,1地2电源3信号,
+舵机选择,JP_SERVO1~JP_SERVO6,6,2.54mm 1x3排针加跳帽,TH_2.54,5V/8.4V选择,默认5V
+传感器接口,J_ESTOP,1,XH2.54-4P直插座,TH_2.54,双触点急停,
+传感器接口,J_LIMIT_UP J_LIMIT_HOME,2,XH2.54-2P直插座,TH_2.54,独立限位,
+通信接口,J_WEIGHT J_SPARE_UART6 J_SPARE_I2C2,3,XH2.54-4P直插座,TH_2.54,每设备独立接口,
+显示接口,J_DISPLAY,1,2.54mm 1x14单排母座,TH_2.54,脚位按屏幕INT到VCC顺序,1脚方焊盘且标INT/GND/3V3
+摄像头接口,J_CAMERA,1,2.54mm双排母座2x9,TH_2.54,ATK-MC5640 V1.2原厂脚位,不得旋转180度
+背光选择,JP_LCD_LED,1,2.54mm 1x3排针加跳帽,TH_2.54,3V3常亮/P415控制选择,默认3V3
+冗余接口,J_SPARE_GPIO1~J_SPARE_GPIO3 J_SPARE_ADC,4,XH2.54-3P直插座,TH_2.54,3V3/GND/信号,
+电源选择,JP_WEIGHT_V,1,2.54mm 1x3排针加跳帽,TH_2.54,称重3.3V/5V选择,默认5V
+电阻,R_STEP_PD R_DIR1_PD~R_DIR4_PD,5,47k,0603,输入下拉,
+电阻,R_DRIVE_EN_PU R_LIFT_EN_PU,2,47k,0603,低有效EN上拉到3.3V,
+电阻,R_MOTOR_OUT,15,68R,0603,电机缓冲输出串联,
+电阻,R_M2_INDEP R_M3_INDEP R_M4_INDEP,3,0R,0603,独立STEP输入选择,默认焊接
+电阻,R_M2_SHARED R_M3_SHARED R_M4_SHARED,3,0R,0603,P304共用STEP调试备选,默认DNP
+电阻,R_M1_EN_OPT~R_M4_EN_OPT R_LIFT_EN_OPT,5,0R,0603,电机驱动使能选配,默认DNP
+电阻,R_M1_5V_OPT~R_M4_5V_OPT R_LIFT_5V_OPT,5,0R,0603,电机驱动5V选配,默认DNP
+电阻,R_I2C_SDA R_I2C_SCL,2,4.7k,0603,备用I2C上拉,通过焊桥选择
+电阻,R_TOUCH_SDA_PU R_TOUCH_SCL_PU,2,4.7k,0603,FT6336上拉,模块已有上拉时DNP
+电阻,R_CAM_SDA_PU R_CAM_SCL_PU,2,4.7k,0603,OV5640 SCCB上拉,默认焊接
+电阻,R_CAM_D0~R_CAM_D7 R_CAM_PCLK R_CAM_VSYNC R_CAM_HREF,11,22R或33R,0603,摄像头源端串联阻尼,靠近J_CAMERA
+电阻,R_CAM_RST_PD R_CAM_PWDN_PU,2,10k,0603,摄像头上电默认状态,RST下拉PWDN上拉
+电阻,R_TOUCH_INT_OPT,1,0R,0603,触摸INT连接P513,默认DNP
+电阻,R_LCD_LED_3V3 R_LCD_LED_CTRL,2,10R/33R,0603,背光选择支路,由跳帽二选一
+电容,C_IC_DEC,2,100nF,0603,每片电机AHCT就近,
+电容,C_WEIGHT_DEC,2,100nF/1uF,0603,TXS0102去耦,
+电容,C_12V_BULK,1,470uF 25V,径向/贴片,12V入口,
+电容,C_SERVO_BULK5 C_SERVO_BULK84,2,1000uF 16V,径向,靠近舵机接口,
+电容,C_LOGIC_BULK,1,47uF 10V,径向/贴片,5V逻辑入口,
+电容,C_DISPLAY_BULK C_CAMERA_BULK,2,47uF 6.3V以上,1206/电解,靠近两个媒体接口,
+电容,C_DISPLAY_DEC C_CAMERA_DEC,2,100nF,0603,靠近两个媒体接口,
+测试点,TP_GND TP_3V3 TP_5V TP_8V4 TP_12V,5,圆形测试点,TH/SMD,电源测试,
+测试点,TP_CONTROL,18,圆形测试点,SMD,STEP/DIR/EN/PWM/传感器/UART,按网络名丝印

@@ -1,0 +1,3 @@
+{
+    "clangd.path": "${config:renesas-platform.crossProbeClangdPath}"
+}
