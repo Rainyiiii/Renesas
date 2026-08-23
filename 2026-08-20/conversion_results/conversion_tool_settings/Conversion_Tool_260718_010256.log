@@ -1,0 +1,557 @@
+2026-07-18 01:02:32,356 [INFO] (check_requirements.py #28, load_requirements): 📥 Downloading requirements from https://Tool-support.renesas.com/tool-support/Zoo/MCT/requirements.txt
+2026-07-18 01:02:32,360 [DEBUG] (connectionpool.py #1062, _new_conn): Starting new HTTPS connection (1): tool-support.renesas.com:443
+CMD:[D:/RA/second/.metadata/.plugins/com.renesas.ai.translator/py.bat D:/RA/second/rainy/.settings/.plugin/com.renesas.ai.translator/renesas_aicompiler_caller/cli.py comm get_model_info --framework onnx --input_model C:\Users\Rainy\Downloads\ho-ra8p1-192-float-raw-op11.onnx --output_shape_dict_jsonpath D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ra8p1-192-float-raw-op11.onnx_input_shape.json --output_model_info_jsonpath D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ra8p1-192-float-raw-op11.onnx_model_info.json --accelerator_type ethos-u55 ]
+2026-07-18 01:02:35,345 [INFO] (environment_check.py #360, check_ruhmi_environment): Checking RUHMI environment ...
+2026-07-18 01:02:35,645 [DEBUG] (__init__.py #342, wrapper): matplotlib data path: D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\lib\site-packages\matplotlib\mpl-data
+2026-07-18 01:02:35,649 [DEBUG] (__init__.py #342, wrapper): CONFIGDIR=C:\Users\Rainy\.matplotlib
+2026-07-18 01:02:35,650 [DEBUG] (__init__.py #1560, <module>): interactive is False
+2026-07-18 01:02:35,651 [DEBUG] (__init__.py #1561, <module>): platform is win32
+2026-07-18 01:02:35,677 [DEBUG] (__init__.py #342, wrapper): CACHEDIR=C:\Users\Rainy\.matplotlib
+2026-07-18 01:02:35,679 [DEBUG] (font_manager.py #1635, _load_fontmanager): Using fontManager instance from C:\Users\Rainy\.matplotlib\fontlist-v390.json
+2026-07-18 01:02:36,509 [INFO] (environment_check.py #248, _check_python_deps_for_ruhmi): mera version 2.6.0+pkg.4815 released on 2026-03-05
+2026-07-18 01:02:36,511 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera' version 2.6.0+pkg.4815 is installed.
+2026-07-18 01:02:36,514 [INFO] (environment_check.py #234, _check_python_package_and_version): 'ethos-u-vela' version 4.2.0 is installed.
+2026-07-18 01:02:36,517 [INFO] (environment_check.py #234, _check_python_package_and_version): 'tflite' version 2.18.0 is installed.
+2026-07-18 01:02:36,519 [INFO] (environment_check.py #234, _check_python_package_and_version): 'onnx' version 1.17.0 is installed.
+2026-07-18 01:02:36,522 [INFO] (environment_check.py #234, _check_python_package_and_version): 'typing_extensions' version 4.16.0 is installed.
+2026-07-18 01:02:36,524 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera-visualizer' version 2.5.0+mcuv4 is installed.
+2026-07-18 01:02:36,528 [INFO] (get_model_info.py #533, main): Environment check passed.
+2026-07-18 01:02:36,528 [INFO] (get_model_info.py #538, main): [Parsing input model node start...]
+2026-07-18 01:02:36,528 [INFO] (get_model_info.py #424, make_shape_dict_from_model): Make shape_dict from model.
+2026-07-18 01:02:36,605 [INFO] (get_model_info.py #318, get_onnx_shape_dict): shape_dict: {'images': [1, 3, 192, 192]}
+2026-07-18 01:02:36,605 [INFO] (get_model_info.py #328, get_onnx_shape_dict): Validated shape_dict: {'images': [1, 3, 192, 192]}
+2026-07-18 01:02:36,608 [INFO] (get_model_info.py #506, write_dict2json): Write dictionary to json file.
+2026-07-18 01:02:36,610 [INFO] (get_model_info.py #506, write_dict2json): Write dictionary to json file.
+2026-07-18 01:02:36,611 [INFO] (get_model_info.py #552, main): [Parsing input model node finished]
+Variable container does not have anything...
+[INFO] Success to execute the command
+CMD:[D:/RA/second/.metadata/.plugins/com.renesas.ai.translator/py.bat D:/RA/second/rainy/.settings/.plugin/com.renesas.ai.translator/renesas_aicompiler_caller/cli.py ruhmi quantize --framework onnx --input_model C:\Users\Rainy\Downloads\ho-ra8p1-192-float-raw-op11.onnx --output_dir D:/RA/second/rainy/conversion_results/quantized --quant_config_json D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ra8p1-192-float-raw-op11.onnx_quant_config.json --shape_dict_json D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ra8p1-192-float-raw-op11.onnx_input_shape.json ]
+2026-07-18 01:02:48,500 [DEBUG] (__init__.py #342, wrapper): matplotlib data path: D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\lib\site-packages\matplotlib\mpl-data
+2026-07-18 01:02:48,505 [DEBUG] (__init__.py #342, wrapper): CONFIGDIR=C:\Users\Rainy\.matplotlib
+2026-07-18 01:02:48,507 [DEBUG] (__init__.py #1560, <module>): interactive is False
+2026-07-18 01:02:48,507 [DEBUG] (__init__.py #1561, <module>): platform is win32
+2026-07-18 01:02:48,534 [DEBUG] (__init__.py #342, wrapper): CACHEDIR=C:\Users\Rainy\.matplotlib
+2026-07-18 01:02:48,536 [DEBUG] (font_manager.py #1635, _load_fontmanager): Using fontManager instance from C:\Users\Rainy\.matplotlib\fontlist-v390.json
+2026-07-18 01:02:49,305 [INFO] (environment_check.py #360, check_ruhmi_environment): Checking RUHMI environment ...
+2026-07-18 01:02:49,306 [INFO] (environment_check.py #248, _check_python_deps_for_ruhmi): mera version 2.6.0+pkg.4815 released on 2026-03-05
+2026-07-18 01:02:49,307 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera' version 2.6.0+pkg.4815 is installed.
+2026-07-18 01:02:49,309 [INFO] (environment_check.py #234, _check_python_package_and_version): 'ethos-u-vela' version 4.2.0 is installed.
+2026-07-18 01:02:49,311 [INFO] (environment_check.py #234, _check_python_package_and_version): 'tflite' version 2.18.0 is installed.
+2026-07-18 01:02:49,313 [INFO] (environment_check.py #234, _check_python_package_and_version): 'onnx' version 1.17.0 is installed.
+2026-07-18 01:02:49,316 [INFO] (environment_check.py #234, _check_python_package_and_version): 'typing_extensions' version 4.16.0 is installed.
+2026-07-18 01:02:49,319 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera-visualizer' version 2.5.0+mcuv4 is installed.
+2026-07-18 01:02:49,322 [INFO] (quantize_model.py #465, main): Arguments: Namespace(framework='onnx', input_model='C:\\Users\\Rainy\\Downloads\\ho-ra8p1-192-float-raw-op11.onnx', output_dir='D:/RA/second/rainy/conversion_results/quantized', quant_config_json='D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ra8p1-192-float-raw-op11.onnx_quant_config.json', shape_dict_json='D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ra8p1-192-float-raw-op11.onnx_input_shape.json')
+Variable container does not have anything...
+2026-07-18 01:02:49,323 [INFO] (quantize_model.py #485, main): Using Device Platform: ALT2
+2026-07-18 01:02:49,323 [INFO] (quantize_model.py #388, quantize): Running MERA quantization ...
+2026-07-18 01:02:49,419 [INFO] (utils.py #49, get_onnx_symbolic_shape_mapping): Check input name: images ...
+2026-07-18 01:02:49,423 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in model
+2026-07-18 01:02:49,426 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\fe_onnx_cli --io_desc_input C:\Users\Rainy\Downloads\ho-ra8p1-192-float-raw-op11.onnx --io_desc_result C:\Users\Rainy\AppData\Local\Temp\tmp8er29h7b\tempfile'
+2026-07-18 01:02:49,584 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'input_desc.json' into D:\RA\second\rainy\conversion_results\quantized\model
+2026-07-18 01:02:49,585 [DEBUG] (deploy_project.py #248, popd): (popd) cwd is now D:\RA\second\rainy\conversion_results\quantized
+2026-07-18 01:02:49,587 [INFO] (quantize_model.py #155, glob_calibration_data_file): Calibration data size: 100
+2026-07-18 01:02:49,587 [INFO] (quantize_model.py #165, glob_calibration_data_file): Updated: {'skip_preprocess': 'False', 'num_calibrate_samples': 100, 'calibrate_method': 'MinMax', 'percentile_value': 99.999, 'quant_options': '', 'drp_compiler_version': '100', 'cpu_data_type': 'float16', 'nodes': [{'name': 'images', 'calibrate_sample_dir': 'D:\\RA\\second\\rainy\\Yolo-FastestV2\\calibration_ra8p1_192_float', 'mean': [0.0, 0.0, 0.0], 'std': [1.0, 1.0, 1.0], 'file_list': array([WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0026.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0086.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0002.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0055.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0075.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0093.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0016.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0073.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0054.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0095.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0053.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0092.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0078.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0013.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0007.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0030.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0022.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0024.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0033.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0008.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0043.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0062.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0003.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0071.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0045.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0048.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0006.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0099.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0082.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0076.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0060.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0080.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0090.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0068.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0051.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0027.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0018.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0056.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0063.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0074.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0001.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0061.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0042.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0041.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0004.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0015.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0017.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0040.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0038.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0005.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0091.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0059.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0000.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0034.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0028.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0050.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0011.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0035.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0023.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0052.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0010.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0031.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0066.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0057.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0079.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0085.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0032.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0084.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0014.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0089.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0019.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0029.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0049.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0097.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0098.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0069.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0020.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0094.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0072.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0077.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0025.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0037.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0081.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0046.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0039.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0065.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0058.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0012.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0088.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0070.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0087.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0036.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0021.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0083.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0009.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0096.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0067.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0064.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0047.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0044.npy')],
+      dtype=object)}], 'node': [{'name': 'images', 'calibrate_sample_dir': 'D:\\RA\\second\\rainy\\Yolo-FastestV2\\calibration_ra8p1_192_float', 'mean': [0.0, 0.0, 0.0], 'std': [1.0, 1.0, 1.0], 'file_list': array([WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0026.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0086.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0002.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0055.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0075.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0093.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0016.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0073.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0054.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0095.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0053.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0092.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0078.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0013.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0007.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0030.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0022.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0024.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0033.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0008.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0043.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0062.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0003.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0071.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0045.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0048.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0006.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0099.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0082.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0076.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0060.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0080.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0090.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0068.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0051.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0027.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0018.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0056.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0063.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0074.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0001.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0061.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0042.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0041.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0004.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0015.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0017.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0040.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0038.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0005.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0091.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0059.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0000.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0034.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0028.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0050.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0011.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0035.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0023.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0052.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0010.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0031.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0066.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0057.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0079.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0085.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0032.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0084.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0014.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0089.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0019.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0029.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0049.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0097.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0098.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0069.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0020.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0094.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0072.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0077.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0025.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0037.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0081.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0046.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0039.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0065.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0058.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0012.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0088.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0070.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0087.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0036.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0021.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0083.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0009.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0096.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0067.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0064.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0047.npy'),
+       WindowsPath('D:/RA/second/rainy/Yolo-FastestV2/calibration_ra8p1_192_float/sample_0044.npy')],
+      dtype=object)}]}
+2026-07-18 01:02:49,588 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0026.npy...
+2026-07-18 01:02:49,588 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0026.npy
+2026-07-18 01:02:49,589 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0086.npy...
+2026-07-18 01:02:49,589 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0086.npy
+2026-07-18 01:02:49,590 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0002.npy...
+2026-07-18 01:02:49,590 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0002.npy
+2026-07-18 01:02:49,591 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0055.npy...
+2026-07-18 01:02:49,591 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0055.npy
+2026-07-18 01:02:49,592 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0075.npy...
+2026-07-18 01:02:49,592 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0075.npy
+2026-07-18 01:02:49,593 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0093.npy...
+2026-07-18 01:02:49,593 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0093.npy
+2026-07-18 01:02:49,594 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0016.npy...
+2026-07-18 01:02:49,594 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0016.npy
+2026-07-18 01:02:49,594 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0073.npy...
+2026-07-18 01:02:49,594 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0073.npy
+2026-07-18 01:02:49,595 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0054.npy...
+2026-07-18 01:02:49,596 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0054.npy
+2026-07-18 01:02:49,596 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0095.npy...
+2026-07-18 01:02:49,596 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0095.npy
+2026-07-18 01:02:49,597 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0053.npy...
+2026-07-18 01:02:49,597 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0053.npy
+2026-07-18 01:02:49,598 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0092.npy...
+2026-07-18 01:02:49,598 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0092.npy
+2026-07-18 01:02:49,599 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0078.npy...
+2026-07-18 01:02:49,599 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0078.npy
+2026-07-18 01:02:49,599 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0013.npy...
+2026-07-18 01:02:49,599 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0013.npy
+2026-07-18 01:02:49,600 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0007.npy...
+2026-07-18 01:02:49,600 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0007.npy
+2026-07-18 01:02:49,601 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0030.npy...
+2026-07-18 01:02:49,601 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0030.npy
+2026-07-18 01:02:49,601 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0022.npy...
+2026-07-18 01:02:49,602 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0022.npy
+2026-07-18 01:02:49,602 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0024.npy...
+2026-07-18 01:02:49,602 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0024.npy
+2026-07-18 01:02:49,603 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0033.npy...
+2026-07-18 01:02:49,603 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0033.npy
+2026-07-18 01:02:49,603 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0008.npy...
+2026-07-18 01:02:49,603 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0008.npy
+2026-07-18 01:02:49,604 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0043.npy...
+2026-07-18 01:02:49,604 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0043.npy
+2026-07-18 01:02:49,605 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0062.npy...
+2026-07-18 01:02:49,605 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0062.npy
+2026-07-18 01:02:49,605 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0003.npy...
+2026-07-18 01:02:49,605 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0003.npy
+2026-07-18 01:02:49,606 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0071.npy...
+2026-07-18 01:02:49,606 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0071.npy
+2026-07-18 01:02:49,606 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0045.npy...
+2026-07-18 01:02:49,606 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0045.npy
+2026-07-18 01:02:49,607 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0048.npy...
+2026-07-18 01:02:49,607 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0048.npy
+2026-07-18 01:02:49,608 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0006.npy...
+2026-07-18 01:02:49,608 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0006.npy
+2026-07-18 01:02:49,608 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0099.npy...
+2026-07-18 01:02:49,608 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0099.npy
+2026-07-18 01:02:49,609 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0082.npy...
+2026-07-18 01:02:49,609 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0082.npy
+2026-07-18 01:02:49,610 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0076.npy...
+2026-07-18 01:02:49,610 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0076.npy
+2026-07-18 01:02:49,611 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0060.npy...
+2026-07-18 01:02:49,611 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0060.npy
+2026-07-18 01:02:49,611 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0080.npy...
+2026-07-18 01:02:49,611 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0080.npy
+2026-07-18 01:02:49,612 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0090.npy...
+2026-07-18 01:02:49,612 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0090.npy
+2026-07-18 01:02:49,612 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0068.npy...
+2026-07-18 01:02:49,612 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0068.npy
+2026-07-18 01:02:49,613 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0051.npy...
+2026-07-18 01:02:49,613 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0051.npy
+2026-07-18 01:02:49,613 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0027.npy...
+2026-07-18 01:02:49,613 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0027.npy
+2026-07-18 01:02:49,614 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0018.npy...
+2026-07-18 01:02:49,614 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0018.npy
+2026-07-18 01:02:49,615 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0056.npy...
+2026-07-18 01:02:49,615 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0056.npy
+2026-07-18 01:02:49,615 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0063.npy...
+2026-07-18 01:02:49,615 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0063.npy
+2026-07-18 01:02:49,616 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0074.npy...
+2026-07-18 01:02:49,616 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0074.npy
+2026-07-18 01:02:49,616 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0001.npy...
+2026-07-18 01:02:49,616 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0001.npy
+2026-07-18 01:02:49,617 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0061.npy...
+2026-07-18 01:02:49,617 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0061.npy
+2026-07-18 01:02:49,617 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0042.npy...
+2026-07-18 01:02:49,617 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0042.npy
+2026-07-18 01:02:49,618 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0041.npy...
+2026-07-18 01:02:49,618 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0041.npy
+2026-07-18 01:02:49,618 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0004.npy...
+2026-07-18 01:02:49,618 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0004.npy
+2026-07-18 01:02:49,619 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0015.npy...
+2026-07-18 01:02:49,619 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0015.npy
+2026-07-18 01:02:49,620 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0017.npy...
+2026-07-18 01:02:49,620 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0017.npy
+2026-07-18 01:02:49,620 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0040.npy...
+2026-07-18 01:02:49,620 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0040.npy
+2026-07-18 01:02:49,621 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0038.npy...
+2026-07-18 01:02:49,621 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0038.npy
+2026-07-18 01:02:49,621 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0005.npy...
+2026-07-18 01:02:49,621 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0005.npy
+2026-07-18 01:02:49,622 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0091.npy...
+2026-07-18 01:02:49,622 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0091.npy
+2026-07-18 01:02:49,622 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0059.npy...
+2026-07-18 01:02:49,623 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0059.npy
+2026-07-18 01:02:49,623 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0000.npy...
+2026-07-18 01:02:49,623 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0000.npy
+2026-07-18 01:02:49,624 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0034.npy...
+2026-07-18 01:02:49,624 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0034.npy
+2026-07-18 01:02:49,624 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0028.npy...
+2026-07-18 01:02:49,624 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0028.npy
+2026-07-18 01:02:49,625 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0050.npy...
+2026-07-18 01:02:49,625 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0050.npy
+2026-07-18 01:02:49,625 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0011.npy...
+2026-07-18 01:02:49,625 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0011.npy
+2026-07-18 01:02:49,626 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0035.npy...
+2026-07-18 01:02:49,626 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0035.npy
+2026-07-18 01:02:49,626 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0023.npy...
+2026-07-18 01:02:49,626 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0023.npy
+2026-07-18 01:02:49,627 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0052.npy...
+2026-07-18 01:02:49,627 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0052.npy
+2026-07-18 01:02:49,628 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0010.npy...
+2026-07-18 01:02:49,628 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0010.npy
+2026-07-18 01:02:49,628 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0031.npy...
+2026-07-18 01:02:49,628 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0031.npy
+2026-07-18 01:02:49,629 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0066.npy...
+2026-07-18 01:02:49,629 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0066.npy
+2026-07-18 01:02:49,629 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0057.npy...
+2026-07-18 01:02:49,629 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0057.npy
+2026-07-18 01:02:49,630 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0079.npy...
+2026-07-18 01:02:49,630 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0079.npy
+2026-07-18 01:02:49,630 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0085.npy...
+2026-07-18 01:02:49,630 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0085.npy
+2026-07-18 01:02:49,631 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0032.npy...
+2026-07-18 01:02:49,631 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0032.npy
+2026-07-18 01:02:49,631 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0084.npy...
+2026-07-18 01:02:49,631 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0084.npy
+2026-07-18 01:02:49,632 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0014.npy...
+2026-07-18 01:02:49,632 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0014.npy
+2026-07-18 01:02:49,632 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0089.npy...
+2026-07-18 01:02:49,632 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0089.npy
+2026-07-18 01:02:49,633 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0019.npy...
+2026-07-18 01:02:49,633 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0019.npy
+2026-07-18 01:02:49,633 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0029.npy...
+2026-07-18 01:02:49,633 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0029.npy
+2026-07-18 01:02:49,634 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0049.npy...
+2026-07-18 01:02:49,634 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0049.npy
+2026-07-18 01:02:49,634 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0097.npy...
+2026-07-18 01:02:49,634 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0097.npy
+2026-07-18 01:02:49,635 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0098.npy...
+2026-07-18 01:02:49,635 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0098.npy
+2026-07-18 01:02:49,635 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0069.npy...
+2026-07-18 01:02:49,635 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0069.npy
+2026-07-18 01:02:49,636 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0020.npy...
+2026-07-18 01:02:49,636 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0020.npy
+2026-07-18 01:02:49,636 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0094.npy...
+2026-07-18 01:02:49,636 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0094.npy
+2026-07-18 01:02:49,637 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0072.npy...
+2026-07-18 01:02:49,637 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0072.npy
+2026-07-18 01:02:49,637 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0077.npy...
+2026-07-18 01:02:49,637 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0077.npy
+2026-07-18 01:02:49,638 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0025.npy...
+2026-07-18 01:02:49,638 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0025.npy
+2026-07-18 01:02:49,638 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0037.npy...
+2026-07-18 01:02:49,638 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0037.npy
+2026-07-18 01:02:49,639 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0081.npy...
+2026-07-18 01:02:49,639 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0081.npy
+2026-07-18 01:02:49,639 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0046.npy...
+2026-07-18 01:02:49,639 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0046.npy
+2026-07-18 01:02:49,640 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0039.npy...
+2026-07-18 01:02:49,640 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0039.npy
+2026-07-18 01:02:49,640 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0065.npy...
+2026-07-18 01:02:49,640 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0065.npy
+2026-07-18 01:02:49,641 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0058.npy...
+2026-07-18 01:02:49,641 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0058.npy
+2026-07-18 01:02:49,641 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0012.npy...
+2026-07-18 01:02:49,641 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0012.npy
+2026-07-18 01:02:49,642 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0088.npy...
+2026-07-18 01:02:49,642 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0088.npy
+2026-07-18 01:02:49,642 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0070.npy...
+2026-07-18 01:02:49,642 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0070.npy
+2026-07-18 01:02:49,643 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0087.npy...
+2026-07-18 01:02:49,643 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0087.npy
+2026-07-18 01:02:49,643 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0036.npy...
+2026-07-18 01:02:49,643 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0036.npy
+2026-07-18 01:02:49,644 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0021.npy...
+2026-07-18 01:02:49,644 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0021.npy
+2026-07-18 01:02:49,644 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0083.npy...
+2026-07-18 01:02:49,644 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0083.npy
+2026-07-18 01:02:49,645 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0009.npy...
+2026-07-18 01:02:49,645 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0009.npy
+2026-07-18 01:02:49,645 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0096.npy...
+2026-07-18 01:02:49,645 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0096.npy
+2026-07-18 01:02:49,646 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0067.npy...
+2026-07-18 01:02:49,646 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0067.npy
+2026-07-18 01:02:49,646 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0064.npy...
+2026-07-18 01:02:49,647 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0064.npy
+2026-07-18 01:02:49,647 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0047.npy...
+2026-07-18 01:02:49,647 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0047.npy
+2026-07-18 01:02:49,647 [INFO] (quantize_model.py #197, read_calibration_data): Load D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0044.npy...
+2026-07-18 01:02:49,648 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: D:\RA\second\rainy\Yolo-FastestV2\calibration_ra8p1_192_float\sample_0044.npy
+2026-07-18 01:02:49,648 [INFO] (deploy.py #309, deploy):  *** mera v2.6.0+pkg.4815 ***
+2026-07-18 01:02:49,648 [INFO] (deploy.py #310, deploy): Starting deployment of model 'ho-ra8p1-192-float-raw-op11'...
+2026-07-18 01:02:49,648 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in build
+2026-07-18 01:02:49,648 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in MERAInterpreter
+2026-07-18 01:02:49,650 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'deploy_cfg.json' into D:\RA\second\rainy\conversion_results\quantized\build\MERAInterpreter
+2026-07-18 01:02:49,652 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\fe_onnx_cli D:\RA\second\rainy\conversion_results\quantized\build\MERAInterpreter\deploy_cfg.json'
+2026-07-18 01:02:50,156 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in model
+2026-07-18 01:02:50,157 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'input_desc.json' into D:\RA\second\rainy\conversion_results\quantized\model
+2026-07-18 01:02:50,157 [DEBUG] (deploy_project.py #248, popd): (popd) cwd is now D:\RA\second\rainy\conversion_results\quantized\build\MERAInterpreter
+2026-07-18 01:02:50,159 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'qtz_conf.json' into D:\RA\second\rainy\conversion_results\quantized\build\MERAInterpreter
+[2026-07-18 01:02:50.179] [info] Setting up observers
+[2026-07-18 01:02:50.181] [info] Quantizer Ready
+2026-07-18 01:02:50,181 [INFO] (mera_quantizer.py #229, __init__): Model ready for quantization
+2026-07-18 01:02:50,181 [INFO] (mera_quantizer.py #322, __run_samples_core): Running model calibration with 100 samples ...
+[2026-07-18 01:02:49.704] [info] Loading and converting ONNX model ... 
+[2026-07-18 01:02:49.823] [info] Converting to canonical ...
+[2026-07-18 01:02:50.097] [info] Converting to target IR ...
+
+Running calibration:   0%|[33m                                             [0m| 0/100 [00:00<?,? samples/s][0m
+Running calibration:   2%|[33m��                                    [0m| 2/100 [00:00<00:06,15.97 samples/s][0m
+Running calibration:   4%|[33m����                                   [0m| 4/100 [00:00<00:05,17.56 samples/s][0m
+Running calibration:   6%|[33m������                                  [0m| 6/100 [00:00<00:05,18.06 samples/s][0m
+Running calibration:   8%|[33m������                                  [0m| 8/100 [00:00<00:04,18.60 samples/s][0m
+Running calibration:  10%|[33m��������                                [0m| 10/100 [00:00<00:04,18.70 samples/s][0m
+Running calibration:  12%|[33m����������                               [0m| 12/100 [00:00<00:04,18.62 samples/s][0m
+Running calibration:  14%|[33m����������                               [0m| 14/100 [00:00<00:04,18.61 samples/s][0m
+Running calibration:  16%|[33m������������                              [0m| 16/100 [00:00<00:04,17.92 samples/s][0m
+Running calibration:  18%|[33m��������������                             [0m| 18/100 [00:00<00:04,18.01 samples/s][0m
+Running calibration:  20%|[33m����������������                            [0m| 20/100 [00:01<00:04,17.44 samples/s][0m
+Running calibration:  22%|[33m����������������                            [0m| 22/100 [00:01<00:04,16.91 samples/s][0m
+Running calibration:  24%|[33m������������������                           [0m| 24/100 [00:01<00:04,17.20 samples/s][0m
+Running calibration:  26%|[33m��������������������                          [0m| 26/100 [00:01<00:04,17.75 samples/s][0m
+Running calibration:  28%|[33m��������������������                          [0m| 28/100 [00:01<00:04,17.88 samples/s][0m
+Running calibration:  30%|[33m����������������������                         [0m| 30/100 [00:01<00:03,18.25 samples/s][0m
+Running calibration:  32%|[33m������������������������                        [0m| 32/100 [00:01<00:03,18.62 samples/s][0m
+Running calibration:  34%|[33m��������������������������                       [0m| 34/100 [00:01<00:03,18.88 samples/s][0m
+Running calibration:  36%|[33m��������������������������                       [0m| 36/100 [00:01<00:03,19.14 samples/s][0m
+Running calibration:  38%|[33m����������������������������                      [0m| 38/100 [00:02<00:03,19.32 samples/s][0m
+Running calibration:  41%|[33m������������������������������                     [0m| 41/100 [00:02<00:02,19.84 samples/s][0m
+Running calibration:  43%|[33m��������������������������������                    [0m| 43/100 [00:02<00:02,19.83 samples/s][0m
+Running calibration:  45%|[33m����������������������������������                   [0m| 45/100 [00:02<00:02,19.80 samples/s][0m
+Running calibration:  47%|[33m����������������������������������                   [0m| 47/100 [00:02<00:02,19.85 samples/s][0m
+Running calibration:  49%|[33m������������������������������������                  [0m| 49/100 [00:02<00:02,19.55 samples/s][0m
+Running calibration:  52%|[33m��������������������������������������                 [0m| 52/100 [00:02<00:02,19.89 samples/s][0m
+Running calibration:  55%|[33m����������������������������������������                [0m| 55/100 [00:02<00:02,20.09 samples/s][0m
+Running calibration:  58%|[33m������������������������������������������               [0m| 58/100 [00:03<00:02,20.24 samples/s][0m
+Running calibration:  61%|[33m��������������������������������������������              [0m| 61/100 [00:03<00:01,20.25 samples/s][0m
+Running calibration:  64%|[33m����������������������������������������������             [0m| 64/100 [00:03<00:01,20.14 samples/s][0m
+Running calibration:  67%|[33m������������������������������������������������            [0m| 67/100 [00:03<00:01,19.85 samples/s][0m
+Running calibration:  69%|[33m��������������������������������������������������           [0m| 69/100 [00:03<00:01,19.73 samples/s][0m
+Running calibration:  71%|[33m����������������������������������������������������          [0m| 71/100 [00:03<00:01,19.73 samples/s][0m
+Running calibration:  73%|[33m������������������������������������������������������         [0m| 73/100 [00:03<00:01,19.69 samples/s][0m
+Running calibration:  75%|[33m������������������������������������������������������         [0m| 75/100 [00:03<00:01,19.70 samples/s][0m
+Running calibration:  78%|[33m��������������������������������������������������������        [0m| 78/100 [00:04<00:01,19.94 samples/s][0m
+Running calibration:  80%|[33m����������������������������������������������������������       [0m| 80/100 [00:04<00:01,19.68 samples/s][0m
+Running calibration:  82%|[33m������������������������������������������������������������      [0m| 82/100 [00:04<00:00,19.73 samples/s][0m
+Running calibration:  85%|[33m��������������������������������������������������������������     [0m| 85/100 [00:04<00:00,20.12 samples/s][0m
+Running calibration:  88%|[33m����������������������������������������������������������������    [0m| 88/100 [00:04<00:00,19.96 samples/s][0m
+Running calibration:  90%|[33m������������������������������������������������������������������   [0m| 90/100 [00:04<00:00,19.84 samples/s][0m
+Running calibration:  92%|[33m������������������������������������������������������������������   [0m| 92/100 [00:04<00:00,19.85 samples/s][0m
+Running calibration:  94%|[33m��������������������������������������������������������������������  [0m| 94/100 [00:04<00:00,19.58 samples/s][0m
+Running calibration:  96%|[33m���������������������������������������������������������������������� [0m| 96/100 [00:04<00:00,19.59 samples/s][0m
+Running calibration:  98%|[33m������������������������������������������������������������������������[0m| 98/100 [00:05<00:00,19.63 samples/s][0m
+Running calibration: 100%|[33m����������������������������������������������������������������������[0m| 100/100 [00:05<00:00,19.59 samples/s][0m
+Running calibration: 100%|[33m����������������������������������������������������������������������[0m| 100/100 [00:05<00:00,19.23 samples/s][0m
+[2026-07-18 01:02:55.392] [info]  + At Concat _backbone_stage2_stage2_0_Concat_output_0_70178, fused 2/2 input domains
+[2026-07-18 01:02:55.392] [info]  + At Concat _backbone_stage2_stage2_1_Concat_output_0_70196, fused 2/2 input domains
+[2026-07-18 01:02:55.393] [info]  + At Concat _backbone_stage2_stage2_2_Concat_output_0_70214, fused 2/2 input domains
+[2026-07-18 01:02:55.393] [info]  + At Concat _backbone_stage2_stage2_3_Concat_output_0_70232, fused 2/2 input domains
+[2026-07-18 01:02:55.393] [info]  + At Concat _backbone_stage3_stage3_0_Concat_output_0_70241, fused 2/2 input domains
+[2026-07-18 01:02:55.393] [info]  + At Concat _backbone_stage3_stage3_1_Concat_output_0_70259, fused 2/2 input domains
+[2026-07-18 01:02:55.393] [info]  + At Concat _backbone_stage3_stage3_2_Concat_output_0_70277, fused 2/2 input domains
+[2026-07-18 01:02:55.393] [info]  + At Concat _backbone_stage3_stage3_3_Concat_output_0_70295, fused 2/2 input domains
+[2026-07-18 01:02:55.393] [info]  + At Concat _backbone_stage3_stage3_4_Concat_output_0_70313, fused 2/2 input domains
+[2026-07-18 01:02:55.394] [info]  + At Concat _backbone_stage3_stage3_5_Concat_output_0_70331, fused 2/2 input domains
+[2026-07-18 01:02:55.394] [info]  + At Concat _backbone_stage3_stage3_6_Concat_output_0_70349, fused 2/2 input domains
+[2026-07-18 01:02:55.394] [info]  + At Concat _backbone_stage3_stage3_7_Concat_output_0_70367, fused 2/2 input domains
+[2026-07-18 01:02:55.394] [info]  + At Concat _backbone_stage4_stage4_0_Concat_output_0_70376, fused 2/2 input domains
+[2026-07-18 01:02:55.394] [info]  + At Concat _backbone_stage4_stage4_1_Concat_output_0_70394, fused 2/2 input domains
+[2026-07-18 01:02:55.394] [info]  + At Concat _backbone_stage4_stage4_2_Concat_output_0_70412, fused 2/2 input domains
+[2026-07-18 01:02:55.394] [info]  + At Concat _backbone_stage4_stage4_3_Concat_output_0_70430, fused 2/2 input domains
+[2026-07-18 01:02:55.394] [info]  + At Concat _fpn_Concat_output_0_70447, fused 2/2 input domains
+[2026-07-18 01:02:56.060] [info] All recipes applied successfully
+[2026-07-18 01:02:56.060] [info] All nodes checked and transformed
+2026-07-18 01:02:56,111 [INFO] (quantize_model.py #494, main): SUCCESS, saved at D:\RA\second\rainy\conversion_results\quantized\model.mera
+Model param post-quantization report:
+  Original size:    1.7MB (418.1K params)
+  Transformed size: 436.9KB (418.5K params)
+  Not transformed size: 0.0B (0.0)
+  Transform ratio: 3.83
+╒═════════════════════════════╤═══════════════╤═════════════╕
+│ Node Class                  │ # Int8        │ # Float32   │
+╞═════════════════════════════╪═══════════════╪═════════════╡
+│ TFLiteQConv2dBias           │ 92 (435.1KB)  │ 0           │
+│ TFLiteRelu                  │ 46            │ 0           │
+│ TFLiteAveragePool           │ 1             │ 0           │
+│ TFLiteConcatenate           │ 17            │ 0           │
+│ TFLiteTranspose             │ 59 (944.0B)   │ 0           │
+│ TFLiteSlice                 │ 26 (832.0B)   │ 0           │
+│ TFLiteResizeNearestNeighbor │ 1 (8.0B)      │ 0           │
+│ Var                         │ 0             │ 1           │
+│ TOTAL                       │ 242 (436.9KB) │ 1 (0.0B)    │
+╘═════════════════════════════╧═══════════════╧═════════════╛
+[INFO] Success to execute the command

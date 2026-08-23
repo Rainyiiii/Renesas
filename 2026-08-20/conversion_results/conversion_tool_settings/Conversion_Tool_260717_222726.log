@@ -1,0 +1,100 @@
+CMD:[D:/RA/second/.metadata/.plugins/com.renesas.ai.translator/py.bat D:/RA/second/rainy/.settings/.plugin/com.renesas.ai.translator/renesas_aicompiler_caller/cli.py ruhmi quantize --framework onnx --input_model C:\Users\Rainy\Downloads\ho-ruhmi-raw-op11-norank5-sim.onnx --output_dir D:/RA/second/rainy/conversion_results/quantized --quant_config_json D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ruhmi-raw-op11-norank5-sim.onnx_quant_config.json --shape_dict_json D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ruhmi-raw-op11-norank5-sim.onnx_input_shape.json ]
+2026-07-17 22:27:23,401 [DEBUG] (__init__.py #342, wrapper): matplotlib data path: D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\lib\site-packages\matplotlib\mpl-data
+2026-07-17 22:27:23,406 [DEBUG] (__init__.py #342, wrapper): CONFIGDIR=C:\Users\Rainy\.matplotlib
+2026-07-17 22:27:23,407 [DEBUG] (__init__.py #1560, <module>): interactive is False
+2026-07-17 22:27:23,407 [DEBUG] (__init__.py #1561, <module>): platform is win32
+2026-07-17 22:27:23,432 [DEBUG] (__init__.py #342, wrapper): CACHEDIR=C:\Users\Rainy\.matplotlib
+2026-07-17 22:27:23,433 [DEBUG] (font_manager.py #1635, _load_fontmanager): Using fontManager instance from C:\Users\Rainy\.matplotlib\fontlist-v390.json
+2026-07-17 22:27:24,069 [INFO] (environment_check.py #360, check_ruhmi_environment): Checking RUHMI environment ...
+2026-07-17 22:27:24,069 [INFO] (environment_check.py #248, _check_python_deps_for_ruhmi): mera version 2.6.0+pkg.4815 released on 2026-03-05
+2026-07-17 22:27:24,070 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera' version 2.6.0+pkg.4815 is installed.
+2026-07-17 22:27:24,071 [INFO] (environment_check.py #234, _check_python_package_and_version): 'ethos-u-vela' version 4.2.0 is installed.
+2026-07-17 22:27:24,072 [INFO] (environment_check.py #234, _check_python_package_and_version): 'tflite' version 2.18.0 is installed.
+2026-07-17 22:27:24,075 [INFO] (environment_check.py #234, _check_python_package_and_version): 'onnx' version 1.17.0 is installed.
+2026-07-17 22:27:24,077 [INFO] (environment_check.py #234, _check_python_package_and_version): 'typing_extensions' version 4.16.0 is installed.
+2026-07-17 22:27:24,079 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera-visualizer' version 2.5.0+mcuv4 is installed.
+2026-07-17 22:27:24,083 [INFO] (quantize_model.py #465, main): Arguments: Namespace(framework='onnx', input_model='C:\\Users\\Rainy\\Downloads\\ho-ruhmi-raw-op11-norank5-sim.onnx', output_dir='D:/RA/second/rainy/conversion_results/quantized', quant_config_json='D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ruhmi-raw-op11-norank5-sim.onnx_quant_config.json', shape_dict_json='D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ruhmi-raw-op11-norank5-sim.onnx_input_shape.json')
+Variable container does not have anything...
+2026-07-17 22:27:24,084 [INFO] (quantize_model.py #485, main): Using Device Platform: ALT2
+2026-07-17 22:27:24,084 [INFO] (quantize_model.py #388, quantize): Running MERA quantization ...
+2026-07-17 22:27:24,183 [INFO] (utils.py #49, get_onnx_symbolic_shape_mapping): Check input name: images ...
+2026-07-17 22:27:24,184 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in model
+2026-07-17 22:27:24,186 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\fe_onnx_cli --io_desc_input C:\Users\Rainy\Downloads\ho-ruhmi-raw-op11-norank5-sim.onnx --io_desc_result C:\Users\Rainy\AppData\Local\Temp\tmpninisw31\tempfile'
+2026-07-17 22:27:24,342 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'input_desc.json' into D:\RA\second\rainy\conversion_results\quantized\model
+2026-07-17 22:27:24,343 [DEBUG] (deploy_project.py #248, popd): (popd) cwd is now D:\RA\second\rainy\conversion_results\quantized
+2026-07-17 22:27:24,343 [INFO] (quantize_model.py #88, generate_random_data): Generate sample images with npy extension to temp_dir='C:\\Users\\Rainy\\AppData\\Local\\Temp\\tmpau3bzdoz'...
+2026-07-17 22:27:24,370 [INFO] (quantize_model.py #155, glob_calibration_data_file): Calibration data size: 5
+2026-07-17 22:27:24,370 [INFO] (quantize_model.py #165, glob_calibration_data_file): Updated: {'skip_preprocess': 'False', 'num_calibrate_samples': 5, 'calibrate_method': 'MinMax', 'percentile_value': 99.999, 'quant_options': '', 'drp_compiler_version': '100', 'cpu_data_type': 'float16', 'nodes': [{'name': 'images', 'calibrate_sample_dir': 'C:\\Users\\Rainy\\AppData\\Local\\Temp\\tmpau3bzdoz', 'mean': [0.0, 0.0, 0.0], 'std': [250.0, 250.0, 250.0], 'file_list': array([WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmpau3bzdoz/rand4.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmpau3bzdoz/rand2.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmpau3bzdoz/rand1.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmpau3bzdoz/rand0.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmpau3bzdoz/rand3.npy')],
+      dtype=object)}], 'node': [{'name': 'images', 'calibrate_sample_dir': 'C:\\Users\\Rainy\\AppData\\Local\\Temp\\tmpau3bzdoz', 'mean': [0.0, 0.0, 0.0], 'std': [250.0, 250.0, 250.0], 'file_list': array([WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmpau3bzdoz/rand4.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmpau3bzdoz/rand2.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmpau3bzdoz/rand1.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmpau3bzdoz/rand0.npy'),
+       WindowsPath('C:/Users/Rainy/AppData/Local/Temp/tmpau3bzdoz/rand3.npy')],
+      dtype=object)}]}
+2026-07-17 22:27:24,371 [INFO] (quantize_model.py #197, read_calibration_data): Load C:\Users\Rainy\AppData\Local\Temp\tmpau3bzdoz\rand4.npy...
+2026-07-17 22:27:24,371 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: C:\Users\Rainy\AppData\Local\Temp\tmpau3bzdoz\rand4.npy
+2026-07-17 22:27:24,372 [INFO] (quantize_model.py #197, read_calibration_data): Load C:\Users\Rainy\AppData\Local\Temp\tmpau3bzdoz\rand2.npy...
+2026-07-17 22:27:24,373 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: C:\Users\Rainy\AppData\Local\Temp\tmpau3bzdoz\rand2.npy
+2026-07-17 22:27:24,375 [INFO] (quantize_model.py #197, read_calibration_data): Load C:\Users\Rainy\AppData\Local\Temp\tmpau3bzdoz\rand1.npy...
+2026-07-17 22:27:24,375 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: C:\Users\Rainy\AppData\Local\Temp\tmpau3bzdoz\rand1.npy
+2026-07-17 22:27:24,378 [INFO] (quantize_model.py #197, read_calibration_data): Load C:\Users\Rainy\AppData\Local\Temp\tmpau3bzdoz\rand0.npy...
+2026-07-17 22:27:24,378 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: C:\Users\Rainy\AppData\Local\Temp\tmpau3bzdoz\rand0.npy
+2026-07-17 22:27:24,380 [INFO] (quantize_model.py #197, read_calibration_data): Load C:\Users\Rainy\AppData\Local\Temp\tmpau3bzdoz\rand3.npy...
+2026-07-17 22:27:24,380 [WARNING] (quantize_model.py #201, read_calibration_data): No preprocessing functions are applied to this file: C:\Users\Rainy\AppData\Local\Temp\tmpau3bzdoz\rand3.npy
+2026-07-17 22:27:24,383 [INFO] (mera_quantizer.py #195, __init__): Using existing prepared model for quantization.
+2026-07-17 22:27:24,384 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'qtz_conf.json' into D:\RA\second\rainy\conversion_results\quantized
+[2026-07-17 22:27:24.416] [info] Setting up observers
+[2026-07-17 22:27:24.418] [info] Quantizer Ready
+2026-07-17 22:27:24,417 [INFO] (mera_quantizer.py #229, __init__): Model ready for quantization
+2026-07-17 22:27:24,417 [INFO] (mera_quantizer.py #322, __run_samples_core): Running model calibration with 5 samples ...
+
+Running calibration:   0%|[33m                                               [0m| 0/5 [00:00<?,? samples/s][0m
+Running calibration:  20%|[33m����������������                               [0m| 1/5 [00:00<00:00, 6.83 samples/s][0m
+Running calibration:  40%|[33m��������������������������������                       [0m| 2/5 [00:00<00:00, 7.05 samples/s][0m
+Running calibration:  60%|[33m������������������������������������������������               [0m| 3/5 [00:00<00:00, 7.27 samples/s][0m
+Running calibration:  80%|[33m����������������������������������������������������������������       [0m| 4/5 [00:00<00:00, 7.16 samples/s][0m
+Running calibration: 100%|[33m������������������������������������������������������������������������������[0m| 5/5 [00:00<00:00, 7.06 samples/s][0m
+Running calibration: 100%|[33m������������������������������������������������������������������������������[0m| 5/5 [00:00<00:00, 7.07 samples/s][0m
+[2026-07-17 22:27:25.136] [info]  + At Concat _backbone_stage2_stage2_0_Concat_output_0_70169, fused 2/2 input domains
+[2026-07-17 22:27:25.136] [info]  + At Concat _backbone_stage2_stage2_1_Concat_output_0_70177, fused 2/2 input domains
+[2026-07-17 22:27:25.136] [info]  + At Concat _backbone_stage2_stage2_2_Concat_output_0_70185, fused 2/2 input domains
+[2026-07-17 22:27:25.136] [info]  + At Concat _backbone_stage2_stage2_3_Concat_output_0_70193, fused 2/2 input domains
+[2026-07-17 22:27:25.137] [info]  + At Concat _backbone_stage3_stage3_0_Concat_output_0_70202, fused 2/2 input domains
+[2026-07-17 22:27:25.137] [info]  + At Concat _backbone_stage3_stage3_1_Concat_output_0_70210, fused 2/2 input domains
+[2026-07-17 22:27:25.137] [info]  + At Concat _backbone_stage3_stage3_2_Concat_output_0_70218, fused 2/2 input domains
+[2026-07-17 22:27:25.137] [info]  + At Concat _backbone_stage3_stage3_3_Concat_output_0_70226, fused 2/2 input domains
+[2026-07-17 22:27:25.137] [info]  + At Concat _backbone_stage3_stage3_4_Concat_output_0_70234, fused 2/2 input domains
+[2026-07-17 22:27:25.138] [info]  + At Concat _backbone_stage3_stage3_5_Concat_output_0_70242, fused 2/2 input domains
+[2026-07-17 22:27:25.138] [info]  + At Concat _backbone_stage3_stage3_6_Concat_output_0_70250, fused 2/2 input domains
+[2026-07-17 22:27:25.138] [info]  + At Concat _backbone_stage3_stage3_7_Concat_output_0_70258, fused 2/2 input domains
+[2026-07-17 22:27:25.139] [info]  + At Concat _backbone_stage4_stage4_0_Concat_output_0_70267, fused 2/2 input domains
+[2026-07-17 22:27:25.139] [info]  + At Concat _backbone_stage4_stage4_1_Concat_output_0_70275, fused 2/2 input domains
+[2026-07-17 22:27:25.139] [info]  + At Concat _backbone_stage4_stage4_2_Concat_output_0_70283, fused 2/2 input domains
+[2026-07-17 22:27:25.139] [info]  + At Concat _backbone_stage4_stage4_3_Concat_output_0_70291, fused 2/2 input domains
+[2026-07-17 22:27:25.139] [info]  + At Concat _fpn_Concat_output_0_70308, fused 2/2 input domains
+[2026-07-17 22:27:25.889] [info] All recipes applied successfully
+[2026-07-17 22:27:25.890] [info] All nodes checked and transformed
+2026-07-17 22:27:25,969 [INFO] (quantize_model.py #494, main): SUCCESS, saved at D:\RA\second\rainy\conversion_results\quantized\model.mera
+Model param post-quantization report:
+  Original size:    938.8KB (234.7K params)
+  Transformed size: 249.7KB (235.2K params)
+  Not transformed size: 0.0B (0.0)
+  Transform ratio: 3.76
+╒═════════════════════════════╤═════════════╤═══════════════╕
+│ Node Class                  │ # Float32   │ # Int8        │
+╞═════════════════════════════╪═════════════╪═══════════════╡
+│ TFLiteQConv2dBias           │ 0           │ 79 (247.5KB)  │
+│ TFLiteRelu                  │ 0           │ 46            │
+│ TFLiteAveragePool           │ 0           │ 1             │
+│ TFLiteConcatenate           │ 0           │ 17            │
+│ TFLiteTranspose             │ 0           │ 59 (944.0B)   │
+│ TFLiteStridedSlice          │ 0           │ 26 (1.2KB)    │
+│ TFLiteResizeNearestNeighbor │ 0           │ 1 (8.0B)      │
+│ Var                         │ 1           │ 0             │
+│ TOTAL                       │ 1 (0.0B)    │ 229 (249.7KB) │
+╘═════════════════════════════╧═════════════╧═══════════════╛
+[INFO] Success to execute the command

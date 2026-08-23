@@ -1,0 +1,639 @@
+CMD:[D:/RA/second/.metadata/.plugins/com.renesas.ai.translator/py.bat D:/RA/second/rainy/.settings/.plugin/com.renesas.ai.translator/renesas_aicompiler_caller/cli.py ruhmi deploy --framework quantized --input_model D:/RA/second/rainy/conversion_results/quantized/model.mera --output_dir D:/RA/second/rainy/conversion_results/converted --optimization_mode 0 --memory_mode 0 --mera_options  --vela_options  --shape_dict_json D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ruhmi-raw-op11-norank5-sim.onnx_input_shape.json ]
+2026-07-17 22:27:39,076 [DEBUG] (__init__.py #342, wrapper): matplotlib data path: D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\lib\site-packages\matplotlib\mpl-data
+2026-07-17 22:27:39,082 [DEBUG] (__init__.py #342, wrapper): CONFIGDIR=C:\Users\Rainy\.matplotlib
+2026-07-17 22:27:39,083 [DEBUG] (__init__.py #1560, <module>): interactive is False
+2026-07-17 22:27:39,083 [DEBUG] (__init__.py #1561, <module>): platform is win32
+2026-07-17 22:27:39,110 [DEBUG] (__init__.py #342, wrapper): CACHEDIR=C:\Users\Rainy\.matplotlib
+2026-07-17 22:27:39,112 [DEBUG] (font_manager.py #1635, _load_fontmanager): Using fontManager instance from C:\Users\Rainy\.matplotlib\fontlist-v390.json
+2026-07-17 22:27:39,809 [INFO] (environment_check.py #360, check_ruhmi_environment): Checking RUHMI environment ...
+2026-07-17 22:27:39,810 [INFO] (environment_check.py #248, _check_python_deps_for_ruhmi): mera version 2.6.0+pkg.4815 released on 2026-03-05
+2026-07-17 22:27:39,811 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera' version 2.6.0+pkg.4815 is installed.
+2026-07-17 22:27:39,812 [INFO] (environment_check.py #234, _check_python_package_and_version): 'ethos-u-vela' version 4.2.0 is installed.
+2026-07-17 22:27:39,814 [INFO] (environment_check.py #234, _check_python_package_and_version): 'tflite' version 2.18.0 is installed.
+2026-07-17 22:27:39,816 [INFO] (environment_check.py #234, _check_python_package_and_version): 'onnx' version 1.17.0 is installed.
+2026-07-17 22:27:39,817 [INFO] (environment_check.py #234, _check_python_package_and_version): 'typing_extensions' version 4.16.0 is installed.
+2026-07-17 22:27:39,818 [INFO] (environment_check.py #234, _check_python_package_and_version): 'mera-visualizer' version 2.5.0+mcuv4 is installed.
+2026-07-17 22:27:39,821 [INFO] (deploy_model.py #337, main): Arguments: Namespace(framework='quantized', input_model='D:/RA/second/rainy/conversion_results/quantized/model.mera', output_dir='D:/RA/second/rainy/conversion_results/converted', shape_dict_json='D:/RA/second/rainy/conversion_results/conversion_tool_settings/ho-ruhmi-raw-op11-norank5-sim.onnx_input_shape.json', optimization_mode=0, memory_mode=0, use_only_cpu=False, weight_loc=0, ethos_configuration_filepath=None, mera_options='', vela_options='')
+2026-07-17 22:27:39,821 [INFO] (deploy_model.py #338, main): Mera options: Namespace(target='mcu', enable_ospi=False, enable_ref_data=True, suffix='', use_x86=False, args=[])
+2026-07-17 22:27:39,822 [INFO] (deploy_model.py #339, main): Vela options: Namespace(sys_config='RA8P1', accel_config='ethos-u55-256', verbose_all=False, args=[])
+2026-07-17 22:27:39,822 [WARNING] (deploy_model.py #264, _validate_args): enable_ref_data can only be specified when using .tflite models. Therefore forcing enable_ref_data to False.
+Variable container does not have anything...
+2026-07-17 22:27:39,822 [INFO] (deploy_model.py #363, main): Targeting MCU on ALT2 
+2026-07-17 22:27:39,822 [INFO] (deploy_model.py #295, compile_mera): 
+Deploying MERA model ...
+2026-07-17 22:27:39,828 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in model
+2026-07-17 22:27:39,841 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'input_desc.json' into D:\RA\second\rainy\conversion_results\converted\model
+2026-07-17 22:27:39,841 [DEBUG] (deploy_project.py #248, popd): (popd) cwd is now D:\RA\second\rainy\conversion_results\converted
+2026-07-17 22:27:39,841 [INFO] (deploy.py #309, deploy):  *** mera v2.6.0+pkg.4815 ***
+2026-07-17 22:27:39,841 [INFO] (deploy.py #310, deploy): Starting deployment of model 'model'...
+2026-07-17 22:27:39,841 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in build
+2026-07-17 22:27:39,842 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in MCU
+2026-07-17 22:27:39,843 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'deploy_cfg.json' into D:\RA\second\rainy\conversion_results\converted\build\MCU
+2026-07-17 22:27:39,844 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\fe_meraqtz_cli D:\RA\second\rainy\conversion_results\converted\build\MCU\deploy_cfg.json'
+2026-07-17 22:27:44,854 [DEBUG] (deploy_project.py #241, pushd): (pushd) Running in model
+2026-07-17 22:27:44,855 [DEBUG] (deploy_project.py #208, save_artifact): Saved json artifact 'input_desc.json' into D:\RA\second\rainy\conversion_results\converted\model
+2026-07-17 22:27:44,855 [DEBUG] (deploy_project.py #248, popd): (popd) cwd is now D:\RA\second\rainy\conversion_results\converted\build\MCU
+2026-07-17 22:27:44,862 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src  '
+2026-07-17 22:27:45,442 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0000__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0000 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:45,916 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0002__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0002 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:46,395 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0004__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0004 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:46,928 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0006__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0006 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:47,501 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0008__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0008 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:48,038 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0010__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0010 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:48,212 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0012__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0012 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:48,404 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0014__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0014 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:48,614 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0016__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0016 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:48,819 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0018__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0018 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:48,971 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0020__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0020 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:49,128 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0022__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0022 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:49,281 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0024__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0024 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:49,434 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0026__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0026 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:49,584 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0028__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0028 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:49,757 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\c_codegen D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0030__CPU_C_CODEGEN\model.merair D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\templates D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\kernel_library sub_0030 D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\src flash   '
+2026-07-17 22:27:49,912 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0001__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0001__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:27:51,657 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0003__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0003__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:27:52,664 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0005__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0005__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:27:53,771 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0007__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0007__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:27:55,228 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0009__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0009__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:27:56,386 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0011__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0011__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:27:57,585 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0013__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0013__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:27:58,809 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0015__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0015__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:27:59,870 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0017__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0017__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+[2026-07-17 22:27:40.471] [info] Loading and converting MERAQtz model ... 
+[2026-07-17 22:27:40.506] [info] Converting to canonical ...
+[2026-07-17 22:27:41.726] [info] Converting to target IR ...
+[2026-07-17 22:27:41.748] [info] Dividing and exporting regions ...
+[2026-07-17 22:27:41.927] [info] Ethos-U support is enabled, matching patterns for target Ethos-U55
+[2026-07-17 22:27:44.752] [info]   [DivideByTarget] Assembled 31 final regions:
+[2026-07-17 22:27:44.752] [info]     + C_CODEGEN = 16 regions.
+[2026-07-17 22:27:44.752] [info]     + ARM_ETHOS_U55 = 15 regions.
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Loaded MERA IR
+>> src_dir: 
+"D:\\RA\\second\\rainy\\conversion_results\\converted\\build\\MCU\\compilation\\src/"
+Success
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                               1331.00 KiB
+Total On-chip Flash used                         7.58 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 15 (100.0%)
+
+Average SRAM bandwidth                           0.54 GB/s
+Input   SRAM bandwidth                           3.29 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           2.04 MB/batch
+Total   SRAM bandwidth                           5.32 MB/batch
+Total   SRAM bandwidth            per input      5.32 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.02 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.21 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.21 MB/batch
+Total   On-chip Flash bandwidth   per input      0.21 MB/inference (batch size 1)
+
+Neural network macs                          36334848 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                272.25 KiB
+Total On-chip Flash used                         4.33 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 13 (100.0%)
+
+Average SRAM bandwidth                           0.24 GB/s
+Input   SRAM bandwidth                           0.77 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.65 MB/batch
+Total   SRAM bandwidth                           1.42 MB/batch
+Total   SRAM bandwidth            per input      1.42 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.00 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.02 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.02 MB/batch
+Total   On-chip Flash bandwidth   per input      0.02 MB/inference (batch size 1)
+
+Neural network macs                           3113088 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                272.25 KiB
+Total On-chip Flash used                         4.14 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 11 (100.0%)
+
+Average SRAM bandwidth                           0.20 GB/s
+Input   SRAM bandwidth                           0.64 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.53 MB/batch
+Total   SRAM bandwidth                           1.18 MB/batch
+Total   SRAM bandwidth            per input      1.18 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.00 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.02 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.02 MB/batch
+Total   On-chip Flash bandwidth   per input      0.02 MB/inference (batch size 1)
+
+Neural network macs                           3020160 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+2026-07-17 22:28:01,009 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0019__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0019__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:28:02,277 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0021__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0021__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:28:03,410 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0023__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0023__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:28:04,859 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0025__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0025__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                226.88 KiB
+Total On-chip Flash used                        18.34 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 20 (100.0%)
+
+Average SRAM bandwidth                           0.33 GB/s
+Input   SRAM bandwidth                           1.12 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.71 MB/batch
+Total   SRAM bandwidth                           1.83 MB/batch
+Total   SRAM bandwidth            per input      1.83 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.03 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.14 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.15 MB/batch
+Total   On-chip Flash bandwidth   per input      0.15 MB/inference (batch size 1)
+
+Neural network macs                          10129152 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                136.12 KiB
+Total On-chip Flash used                         9.70 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 13 (100.0%)
+
+Average SRAM bandwidth                           0.22 GB/s
+Input   SRAM bandwidth                           0.34 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.29 MB/batch
+Total   SRAM bandwidth                           0.63 MB/batch
+Total   SRAM bandwidth            per input      0.63 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.02 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.04 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.04 MB/batch
+Total   On-chip Flash bandwidth   per input      0.04 MB/inference (batch size 1)
+
+Neural network macs                           2671680 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                136.12 KiB
+Total On-chip Flash used                         9.67 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 13 (100.0%)
+
+Average SRAM bandwidth                           0.22 GB/s
+Input   SRAM bandwidth                           0.34 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.29 MB/batch
+Total   SRAM bandwidth                           0.63 MB/batch
+Total   SRAM bandwidth            per input      0.63 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.01 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.04 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.04 MB/batch
+Total   On-chip Flash bandwidth   per input      0.04 MB/inference (batch size 1)
+
+Neural network macs                           2671680 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                136.12 KiB
+Total On-chip Flash used                         9.75 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 13 (100.0%)
+
+Average SRAM bandwidth                           0.22 GB/s
+Input   SRAM bandwidth                           0.34 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.29 MB/batch
+Total   SRAM bandwidth                           0.63 MB/batch
+Total   SRAM bandwidth            per input      0.63 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.02 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.04 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.04 MB/batch
+Total   On-chip Flash bandwidth   per input      0.04 MB/inference (batch size 1)
+
+Neural network macs                           2671680 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                136.12 KiB
+Total On-chip Flash used                         9.70 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 11 (100.0%)
+
+Average SRAM bandwidth                           0.19 GB/s
+Input   SRAM bandwidth                           0.29 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.24 MB/batch
+Total   SRAM bandwidth                           0.54 MB/batch
+Total   SRAM bandwidth            per input      0.54 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.02 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.04 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.04 MB/batch
+Total   On-chip Flash bandwidth   per input      0.04 MB/inference (batch size 1)
+
+Neural network macs                           2625216 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+2026-07-17 22:28:06,075 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0027__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0027__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:28:07,307 [DEBUG] (utils.py #22, cmd): Running command 'vela --config D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\system_config.ini --system-config RA8P1 --memory-mode Sram_Only --accelerator-config ethos-u55-256 --optimise Performance --output-dir D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0029__ARM_ETHOS_U55_C_CODEGEN  D:\RA\second\rainy\conversion_results\converted\build\MCU\compilation\sub_0029__ARM_ETHOS_U55_C_CODEGEN/model.tflite'
+2026-07-17 22:28:08,355 [DEBUG] (utils.py #22, cmd): Running command 'D:\Renesas\RA\e2studio_v2025-12_fsp_v6.4.0\ruhmi\.venv\Lib\site-packages\mera\bin_utils\ccodegen\vela_optimized_to_source D:\RA\second\rainy\conversion_results\converted\build\MCU  '
+2026-07-17 22:28:09,121 [INFO] (deploy_model.py #380, main): SUCCESS, saved at D:/RA/second/rainy/conversion_results/converted
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                136.12 KiB
+Total On-chip Flash used                         9.62 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 11 (100.0%)
+
+Average SRAM bandwidth                           0.19 GB/s
+Input   SRAM bandwidth                           0.29 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.24 MB/batch
+Total   SRAM bandwidth                           0.54 MB/batch
+Total   SRAM bandwidth            per input      0.54 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.02 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.04 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.04 MB/batch
+Total   On-chip Flash bandwidth   per input      0.04 MB/inference (batch size 1)
+
+Neural network macs                           2625216 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                136.12 KiB
+Total On-chip Flash used                         9.61 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 11 (100.0%)
+
+Average SRAM bandwidth                           0.19 GB/s
+Input   SRAM bandwidth                           0.29 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.24 MB/batch
+Total   SRAM bandwidth                           0.54 MB/batch
+Total   SRAM bandwidth            per input      0.54 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.02 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.04 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.04 MB/batch
+Total   On-chip Flash bandwidth   per input      0.04 MB/inference (batch size 1)
+
+Neural network macs                           2625216 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                124.78 KiB
+Total On-chip Flash used                        47.88 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 20 (100.0%)
+
+Average SRAM bandwidth                           0.34 GB/s
+Input   SRAM bandwidth                           0.62 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.33 MB/batch
+Total   SRAM bandwidth                           0.96 MB/batch
+Total   SRAM bandwidth            per input      0.96 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.05 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.15 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.15 MB/batch
+Total   On-chip Flash bandwidth   per input      0.15 MB/inference (batch size 1)
+
+Neural network macs                           9525120 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                 68.06 KiB
+Total On-chip Flash used                        25.11 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 13 (100.0%)
+
+Average SRAM bandwidth                           0.23 GB/s
+Input   SRAM bandwidth                           0.18 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.14 MB/batch
+Total   SRAM bandwidth                           0.33 MB/batch
+Total   SRAM bandwidth            per input      0.33 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.03 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.03 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.04 MB/batch
+Total   On-chip Flash bandwidth   per input      0.04 MB/inference (batch size 1)
+
+Neural network macs                           2450976 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                 68.06 KiB
+Total On-chip Flash used                        25.20 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 13 (100.0%)
+
+Average SRAM bandwidth                           0.23 GB/s
+Input   SRAM bandwidth                           0.18 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.14 MB/batch
+Total   SRAM bandwidth                           0.33 MB/batch
+Total   SRAM bandwidth            per input      0.33 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.03 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.03 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.04 MB/batch
+Total   On-chip Flash bandwidth   per input      0.04 MB/inference (batch size 1)
+
+Neural network macs                           2450976 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                 51.05 KiB
+Total On-chip Flash used                        86.25 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 24 (100.0%)
+
+Average SRAM bandwidth                           0.56 GB/s
+Input   SRAM bandwidth                           0.38 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.19 MB/batch
+Total   SRAM bandwidth                           0.57 MB/batch
+Total   SRAM bandwidth            per input      0.57 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.18 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.18 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.19 MB/batch
+Total   On-chip Flash bandwidth   per input      0.19 MB/inference (batch size 1)
+
+Neural network macs                           7625299 MACs/batch
+
+Info: Changing const_mem_area from Sram to OnChipFlash. This will use the same characteristics as Sram.
+Warning: Input TensorFlow Lite network contains a zero length buffer (index = 0) which is semantically not empty. However, it will be treated as an empty buffer.
+
+Network summary for model
+Accelerator configuration               Ethos_U55_256
+System configuration                            RA8P1
+Memory mode                                 Sram_Only
+Accelerator clock                                 500 MHz
+Design peak SRAM bandwidth                       1.86 GB/s
+Design peak On-chip Flash bandwidth              1.86 GB/s
+
+Total SRAM used                                272.25 KiB
+Total On-chip Flash used                        67.50 KiB
+
+CPU operators = 0 (0.0%)
+NPU operators = 17 (100.0%)
+
+Average SRAM bandwidth                           0.87 GB/s
+Input   SRAM bandwidth                           0.87 MB/batch
+Weight  SRAM bandwidth                           0.00 MB/batch
+Output  SRAM bandwidth                           0.48 MB/batch
+Total   SRAM bandwidth                           1.35 MB/batch
+Total   SRAM bandwidth            per input      1.35 MB/inference (batch size 1)
+
+Average On-chip Flash bandwidth                  0.32 GB/s
+Input   On-chip Flash bandwidth                  0.00 MB/batch
+Weight  On-chip Flash bandwidth                  0.50 MB/batch
+Output  On-chip Flash bandwidth                  0.00 MB/batch
+Total   On-chip Flash bandwidth                  0.50 MB/batch
+Total   On-chip Flash bandwidth   per input      0.50 MB/inference (batch size 1)
+
+Neural network macs                          24367948 MACs/batch
+
+[INFO] Success to execute the command
